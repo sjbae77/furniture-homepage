@@ -906,6 +906,73 @@ input:focus {
   background-color: #ccc;
 }
 
+#number {
+  margin-bottom: 100px;
+  width: 100%;
+  padding: 100px 0;
+  background: url(../img/sub_banner3.jpg) no-repeat center/cover;
+}
+#number .inner .text {
+  float: left;
+  width: 24%;
+}
+#number .inner .text span {
+  margin-right: 20px;
+  float: left;
+  font-size: 36px;
+  font-weight: 600;
+}
+#number .inner .text p {
+  float: left;
+  font-size: 16px;
+  color: #555;
+  line-height: 46px;
+}
+
+#gallery {
+  width: 100%;
+}
+#gallery .pic {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  height: 300px;
+}
+#gallery .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#gallery .pic .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  text-align: center;
+}
+#gallery .pic .text h1 {
+  font-size: 26px;
+}
+#gallery .pic .text h2 {
+  font-size: 15px;
+}
+#gallery .pic .text a {
+  display: block;
+  margin-top: 25px;
+  font-size: 13px;
+}
+#gallery .pic:nth-of-type(1) img {
+  filter: grayscale(1);
+}
+#gallery .pic:nth-of-type(1) .text h1, #gallery .pic:nth-of-type(1) .text h2, #gallery .pic:nth-of-type(1) .text a {
+  color: #fff;
+}
+#gallery .pic:nth-of-type(1) .text a span {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 #footer {
   width: 100%;
   padding: 60px 0 30px 0;
@@ -942,13 +1009,14 @@ input:focus {
   font-size: 20px;
   color: #fff;
 }
-#footer .inner .footer-cont .cont:nth-of-type(1) button {
+#footer .inner .footer-cont .cont:nth-of-type(1) .subscribe {
   background-color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 40px;
   font-size: 16px;
   padding: 15px 30px;
   color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
 }
 #footer .inner .footer-cont .cont:nth-of-type(1) > p {
   margin-top: 20px;
@@ -994,6 +1062,10 @@ input:focus {
     padding: 0 20px;
   }
 
+  #header {
+    height: 80px;
+    line-height: 80px;
+  }
   #header .inner h1 a {
     font-size: 25px;
   }
@@ -1008,7 +1080,7 @@ input:focus {
   #footer .inner .footer-cont .cont:nth-of-type(1) h1 {
     font-size: 24px;
   }
-  #footer .inner .footer-cont .cont:nth-of-type(1) button {
+  #footer .inner .footer-cont .cont:nth-of-type(1) .subscribe {
     padding: 8px 20px;
   }
   #footer .inner .footer-cont .cont:nth-of-type(1) > p {

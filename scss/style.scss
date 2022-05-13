@@ -514,6 +514,91 @@ $mobile: 539px;
   }
 }
 
+#number {
+  margin-bottom: 100px;
+  width: 100%;
+  padding: 100px 0;
+  background: url(../img/sub_banner3.jpg) no-repeat center/cover;
+
+  .inner {
+    .text {
+      float: left;
+      width: 24%;
+
+      span {
+        margin-right: 20px;
+        float: left;
+        font-size: 36px;
+        font-weight: 600;
+      }
+      p {
+        float: left;
+        font-size: 16px;
+        color: #555;
+        line-height: 46px;
+      }
+    }
+  }
+}
+
+#gallery {
+  width: 100%;
+
+  .pic {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 55%;
+      text-align: center;
+
+      
+      h1 {
+        font-size: 26px;
+      }
+      h2 {
+        font-size: 15px;
+      }
+      a {
+        display: block;
+        margin-top: 25px;
+        font-size: 13px;
+      }
+    }
+
+    &:nth-of-type(1) {
+      img {
+        filter: grayscale(1)
+      }
+
+      .text {
+        h1,h2, a {
+          color: #fff;
+        }
+
+        a {
+          span {
+            color: #fff;
+            border: 1px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
 $footerTextColor:rgba($color: #fff, $alpha: 0.6);
 $footerTitleColor:rgba($color: #fff, $alpha: 0.8); 
 
@@ -556,13 +641,14 @@ $footerTitleColor:rgba($color: #fff, $alpha: 0.8);
             font-size: 20px;
             color: #fff;
           }
-          button {
+          .subscribe {
             background-color: inherit;
             border: 1px solid $footerTextColor;
             border-radius: 40px;
             font-size: 16px;
             padding: 15px 30px;
             color: $footerTextColor;
+            cursor: pointer;
           }
           >p {
             margin-top: 20px;
@@ -627,6 +713,9 @@ $footerTitleColor:rgba($color: #fff, $alpha: 0.8);
     padding: 0 20px;
   }
   #header{
+    height: 80px;
+    line-height: 80px;
+
     .inner{
       h1 {
         a {
@@ -651,7 +740,7 @@ $footerTitleColor:rgba($color: #fff, $alpha: 0.8);
             h1 {
               font-size: 24px;
             }
-            button {
+            .subscribe {
               padding: 8px 20px;
             }
 
