@@ -570,6 +570,7 @@ input:focus {
   padding: 100px 0;
 }
 #about .article1 .icon-wrap .cont {
+  position: relative;
   float: left;
   width: 25%;
   text-align: center;
@@ -581,6 +582,28 @@ input:focus {
 #about .article1 .icon-wrap .cont span {
   display: block;
   font-size: 16px;
+}
+#about .article1 .icon-wrap .cont:first-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background-color: #ddd;
+}
+#about .article1 .icon-wrap .cont::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background-color: #ddd;
 }
 #about .article1 .text-wrap .left {
   float: left;
