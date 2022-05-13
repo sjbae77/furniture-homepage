@@ -72,7 +72,7 @@
 
         >div {
           width: 100%;
-          height: 150px;
+          min-height: 150px;
           margin: 0 auto;
           padding: 30px 50px;
           background-color: #eee;
@@ -92,7 +92,7 @@
 
     .pagination {
       margin: 30px auto;
-      width: 20%;
+      width: 200px;
       text-align: center;
 
       .prev {
@@ -150,4 +150,16 @@
     }
   }
   
+}
+
+@media screen and (max-width:$tablet) {
+  .community {
+    > .inner{
+      padding: 50px 20px;
+    }
+  } 
+}
+
+@media screen and (max-width:$mobile) {
+
 }

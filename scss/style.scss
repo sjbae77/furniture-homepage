@@ -31,11 +31,15 @@ $mobile: 539px;
   left: 0;
   width: 100%;
   height: 100px;
-  line-height: 100px;
+  line-height: 98px;
   border-bottom: 1px solid #ccc;
 
   h1 {
     float: left;
+
+    a {
+      font-size: 30px;
+    }
   }
   nav {
     float: right;
@@ -613,6 +617,68 @@ $footerTitleColor:rgba($color: #fff, $alpha: 0.8);
       padding-top: 30px;
       border-top: 1px solid $footerTextColor;
       color: $footerTextColor;
+    }
+  }
+}
+
+@media screen and (max-width:$tablet) {
+  .inner{
+    width: 100%;
+    padding: 0 20px;
+  }
+  #header{
+    .inner{
+      h1 {
+        a {
+          font-size: 25px;
+        }
+      }
+      .webNav {
+        display: none;
+      }
+    }
+  }
+
+  #footer {
+    .inner {
+      .footer-cont {
+        .cont {
+          width: 48%;
+          margin-right: 2%;
+
+          &:nth-of-type(1) {
+
+            h1 {
+              font-size: 24px;
+            }
+            button {
+              padding: 8px 20px;
+            }
+
+            > p {
+              font-size: 15px;
+            }
+          }
+
+          &:nth-of-type(2n) {
+            margin-right: 0;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:$mobile) {
+  #footer {
+    .inner {
+      .footer-cont {
+        .cont {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
     }
   }
 }

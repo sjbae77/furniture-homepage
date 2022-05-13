@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
@@ -48,11 +49,16 @@ input:focus {
   opacity: 0;
 }
 
+#header.header_sub {
+  position: relative;
+}
+
 .sub_visual {
   width: 100%;
   background-color: #eee;
   text-align: center;
   padding: 100px 0;
+  background: url(../img/sub_banner.jpg) no-repeat center/cover;
 }
 .sub_visual h1 {
   font-size: 30px;
@@ -65,7 +71,7 @@ input:focus {
   padding-left: 20px;
   font-size: 24px;
   font-weight: 400;
-  color: #777;
+  color: #555;
 }
 .sub_visual h1 span::after {
   content: "/";
@@ -151,7 +157,7 @@ input:focus {
 }
 .community > .inner .list-wrap .list > div {
   width: 100%;
-  height: 150px;
+  min-height: 150px;
   margin: 0 auto;
   padding: 30px 50px;
   background-color: #eee;
@@ -165,7 +171,7 @@ input:focus {
 }
 .community > .inner .pagination {
   margin: 30px auto;
-  width: 20%;
+  width: 200px;
   text-align: center;
 }
 .community > .inner .pagination .prev {
@@ -216,20 +222,26 @@ input:focus {
   color: #fff;
 }
 
+@media screen and (max-width: 1179px) {
+  .community > .inner {
+    padding: 50px 20px;
+  }
+}
+/* 회원가입 페이지 */
 .join {
   width: 100%;
 }
 .join > .inner {
   padding: 50px 0;
 }
-.join .terms-wrap {
+.join > .inner .terms-wrap {
   margin-bottom: 20px;
 }
-.join .terms-wrap h2 {
+.join > .inner .terms-wrap h2 {
   font-size: 25px;
   margin-bottom: 20px;
 }
-.join .terms-wrap #terms {
+.join > .inner .terms-wrap #terms {
   width: 100%;
   height: 100px;
   font-size: 16px;
@@ -238,20 +250,20 @@ input:focus {
   padding: 20px;
   resize: none;
 }
-.join .terms-wrap .agreement {
+.join > .inner .terms-wrap .agreement {
   text-align: right;
 }
-.join .userInfo-wrap {
+.join > .inner .userInfo-wrap {
   width: 100%;
 }
-.join .userInfo-wrap h2 {
+.join > .inner .userInfo-wrap h2 {
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
   font-size: 25px;
   color: #333;
 }
-.join .userInfo-wrap .userInfo {
+.join > .inner .userInfo-wrap .userInfo {
   position: relative;
   float: left;
   width: 48%;
@@ -259,22 +271,22 @@ input:focus {
   margin-bottom: 20px;
   padding-bottom: 10px;
 }
-.join .userInfo-wrap .userInfo:nth-of-type(2n) {
+.join > .inner .userInfo-wrap .userInfo:nth-of-type(2n) {
   float: right;
   margin-right: 0;
 }
-.join .userInfo-wrap .userInfo label {
+.join > .inner .userInfo-wrap .userInfo label {
   display: block;
   margin-bottom: 10px;
   font-size: 15px;
   color: #777;
 }
-.join .userInfo-wrap .userInfo input {
+.join > .inner .userInfo-wrap .userInfo input {
   border: none;
   width: 100%;
   font-size: 18px;
 }
-.join .userInfo-wrap .userInfo::after {
+.join > .inner .userInfo-wrap .userInfo::after {
   content: "";
   display: block;
   width: 100%;
@@ -284,37 +296,37 @@ input:focus {
   left: 0;
   bottom: 0;
 }
-.join .userInfo-wrap .userInfo .gender-wrap {
+.join > .inner .userInfo-wrap .userInfo .gender-wrap {
   margin-top: 10px;
   width: 100%;
 }
-.join .userInfo-wrap .userInfo .gender-wrap input {
+.join > .inner .userInfo-wrap .userInfo .gender-wrap input {
   margin-top: 2px;
   margin-right: 5px;
   width: auto;
   float: left;
 }
-.join .userInfo-wrap .userInfo .gender-wrap label {
+.join > .inner .userInfo-wrap .userInfo .gender-wrap label {
   float: left;
   margin-bottom: 0;
 }
-.join .userInfo-wrap .userInfo .gender-wrap label:last-child {
+.join > .inner .userInfo-wrap .userInfo .gender-wrap label:last-child {
   margin-left: 20px;
 }
-.join .btn-wrap {
+.join > .inner .btn-wrap {
   width: 100%;
 }
-.join .btn-wrap input {
-  padding: 20px 30px;
+.join > .inner .btn-wrap input {
+  padding: 16px 30px;
   font-size: 20px;
 }
-.join .btn-wrap .resetBtn {
+.join > .inner .btn-wrap .resetBtn {
   float: left;
   border: none;
   background-color: inherit;
   cursor: pointer;
 }
-.join .btn-wrap .submitBtn {
+.join > .inner .btn-wrap .submitBtn {
   float: right;
   border-radius: 50px;
   background-color: #333;
@@ -322,6 +334,57 @@ input:focus {
   cursor: pointer;
 }
 
+/* 회원가입 완료 페이지 */
+#result {
+  height: calc(100vh - 100px);
+}
+#result .inner {
+  position: relative;
+  height: 100%;
+}
+#result .inner .wrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#result .inner .wrap p {
+  font-size: 50px;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 1179px) {
+  /* 회원가입 페이지 */
+  .join > .inner {
+    padding: 50px 20px;
+  }
+  .join > .inner .userInfo-wrap .userInfo {
+    width: 100%;
+    margin-right: 0;
+  }
+  .join > .inner .btn-wrap input {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  #result .inner .wrap p {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 539px) {
+  #result .inner .wrap p {
+    font-size: 24px;
+  }
+}
+.members .sub_visual_members .inner h1 {
+  padding: 100px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.members .sub_visual_members .inner h1 strong {
+  font-weight: 400;
+  color: lightpink;
+}
 .members > .inner .member-wrap .member {
   position: relative;
   float: left;
@@ -338,6 +401,7 @@ input:focus {
   position: absolute;
   top: 0;
   left: 0;
+  transition: 0.5s;
 }
 .members > .inner .member-wrap .member:nth-of-type(2)::after, .members > .inner .member-wrap .member:nth-of-type(8)::after, .members > .inner .member-wrap .member:nth-of-type(9)::after {
   background-color: #f5a7b4;
@@ -345,6 +409,8 @@ input:focus {
 .members > .inner .member-wrap .member.noMember .text {
   left: 30px;
   bottom: 70px;
+  opacity: 1;
+  transform: translateY(0);
 }
 .members > .inner .member-wrap .member.noMember .text span {
   display: block;
@@ -376,15 +442,44 @@ input:focus {
   position: absolute;
   bottom: 20px;
   left: 10px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(30px);
 }
 .members > .inner .member-wrap .member .text h2 {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
 }
 .members > .inner .member-wrap .member .text p {
-  font-size: 16px;
+  font-size: 18px;
+}
+.members > .inner .member-wrap .member:hover .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.members > .inner .member-wrap .member:hover::after {
+  background-color: #fff;
+}
+.members > .inner .member-wrap .member:hover img {
+  filter: grayscale(0);
 }
 
+@media screen and (max-width: 1179px) {
+  .members .sub_visual_members .inner h1 {
+    padding: 100px 20px;
+  }
+  .members > .inner .member-wrap .member {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 539px) {
+  .members .sub_visual_members .inner h1 {
+    font-size: 28px;
+  }
+  .members > .inner .member-wrap .member {
+    width: 100%;
+  }
+}
 .inner {
   width: 1180px;
   margin: 0 auto;
@@ -405,11 +500,14 @@ input:focus {
   left: 0;
   width: 100%;
   height: 100px;
-  line-height: 100px;
+  line-height: 98px;
   border-bottom: 1px solid #ccc;
 }
 #header h1 {
   float: left;
+}
+#header h1 a {
+  font-size: 30px;
 }
 #header nav {
   float: right;
@@ -888,6 +986,44 @@ input:focus {
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 1179px) {
+  .inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  #header .inner h1 a {
+    font-size: 25px;
+  }
+  #header .inner .webNav {
+    display: none;
+  }
+
+  #footer .inner .footer-cont .cont {
+    width: 48%;
+    margin-right: 2%;
+  }
+  #footer .inner .footer-cont .cont:nth-of-type(1) h1 {
+    font-size: 24px;
+  }
+  #footer .inner .footer-cont .cont:nth-of-type(1) button {
+    padding: 8px 20px;
+  }
+  #footer .inner .footer-cont .cont:nth-of-type(1) > p {
+    font-size: 15px;
+  }
+  #footer .inner .footer-cont .cont:nth-of-type(2n) {
+    margin-right: 0;
+    float: right;
+  }
+}
+@media screen and (max-width: 539px) {
+  #footer .inner .footer-cont .cont {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

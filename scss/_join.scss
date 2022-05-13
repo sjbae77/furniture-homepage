@@ -1,123 +1,176 @@
+/* 회원가입 페이지 */
 .join {
   width: 100%;
 
   >.inner{
     padding: 50px 0;
-  }
 
-  .terms-wrap {
-    margin-bottom: 20px;
-
-    h2 {
-      font-size: 25px;
+    .terms-wrap {
       margin-bottom: 20px;
+  
+      h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      #terms {
+        width: 100%;
+        height: 100px;
+        font-size: 16px;
+        line-height: 1.4;
+        background-color: #eee;
+        padding: 20px;
+        resize: none;
+      }
+      .agreement {
+        text-align: right;
+      }
     }
-    #terms {
+  
+    .userInfo-wrap {
       width: 100%;
-      height: 100px;
-      font-size: 16px;
-      line-height: 1.4;
-      background-color: #eee;
-      padding: 20px;
-      resize: none;
-    }
-    .agreement {
-      text-align: right;
-    }
-  }
-
-  .userInfo-wrap {
-    width: 100%;
-
-    h2 {
-      padding: 20px 0;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 20px;
-      font-size: 25px;
-      color: #333;
-    }
-
-    .userInfo {
-      position: relative;
-      float: left;
-      width: 48%;
-      margin-right: 2%;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-
-      &:nth-of-type(2n) {
-        float: right;
-        margin-right: 0;
+  
+      h2 {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+        font-size: 25px;
+        color: #333;
       }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 15px;
-        color: #777;
-      }
-
-      input {
-        border: none;
-        width: 100%;
-        font-size: 18px;
-      }
-
-      &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 1px;
-        background-color: #ddd;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
-
-      .gender-wrap {
-        margin-top: 10px;
-        width: 100%;
-
-        input{
-          margin-top: 2px;
-          margin-right: 5px;
-          width: auto;
-          float: left;
+  
+      .userInfo {
+        position: relative;
+        float: left;
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+  
+        &:nth-of-type(2n) {
+          float: right;
+          margin-right: 0;
         }
-        label{
-          float: left;
-          margin-bottom: 0;
-
-          &:last-child{
-            margin-left: 20px;
+  
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-size: 15px;
+          color: #777;
+        }
+  
+        input {
+          border: none;
+          width: 100%;
+          font-size: 18px;
+        }
+  
+        &::after {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #ddd;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+  
+        .gender-wrap {
+          margin-top: 10px;
+          width: 100%;
+  
+          input{
+            margin-top: 2px;
+            margin-right: 5px;
+            width: auto;
+            float: left;
+          }
+          label{
+            float: left;
+            margin-bottom: 0;
+  
+            &:last-child{
+              margin-left: 20px;
+            }
           }
         }
       }
     }
-  }
-
-  .btn-wrap{
-    width: 100%;
-
-    input{
-      padding: 20px 30px;
-      font-size: 20px;
-    }
-
-    .resetBtn{
-      float: left;
-      border: none;
-      background-color: inherit;
-      cursor: pointer;
-    }
-    .submitBtn{
-      float: right;
-      border-radius: 50px;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
-    }
-  }
-
   
+    .btn-wrap{
+      width: 100%;
+  
+      input{
+        padding: 16px 30px;
+        font-size: 20px;
+      }
+  
+      .resetBtn{
+        float: left;
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+      }
+      .submitBtn{
+        float: right;
+        border-radius: 50px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/* 회원가입 완료 페이지 */
+#result {
+  height: calc(100vh - 100px);
+
+  .inner {
+    position: relative;
+    height: 100%;
+
+    .wrap {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+      p {
+        font-size: 50px;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width:$tablet) {
+  /* 회원가입 페이지 */
+  .join {
+    > .inner{
+      padding: 50px 20px;
+
+      .userInfo-wrap {
+        .userInfo {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+      .btn-wrap {
+        input {
+          padding: 12px 20px;
+          font-size: 15px;
+        }
+      }
+    }
+  } 
+
+  #result .inner .wrap p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width:$mobile) {
+  #result .inner .wrap p {
+    font-size: 24px;
+  }
 }
