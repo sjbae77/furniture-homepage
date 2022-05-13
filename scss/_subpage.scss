@@ -1,0 +1,29 @@
+.sub_visual{
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  padding: 100px 0;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+
+    span {
+      margin-left: 20px;
+      position: relative;
+      padding-left: 20px;
+      font-size: 24px;
+      font-weight: 400;
+      color: #777;
+
+      &::after {
+        content: '/';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

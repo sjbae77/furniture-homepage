@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>join</title>
+  <script src="https://kit.fontawesome.com/81033de9ce.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <section class="content join">
+    <div class="sub_visual">
+      <div class="inner">
+        <h1>회원가입</h1>
+      </div>
+    </div>
+    <div class="inner">
+      <form action="result.html" method="get">
+        <fieldset>
+          <legend class="hidden">회원가입 양식 폼</legend>
+
+          <div class="terms-wrap">
+            <h2><label for="terms">Tearms & Policy</label></h2>
+            <textarea name="terms" id="terms" cols="30" rows="10">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum excepturi nesciunt nihil vel veritatis, voluptatum, magni non dolorem provident voluptate quo, nisi minus et. Veniam delectus amet perferendis earum quam dolores vel impedit nisi adipisci molestiae magnam ducimus iure, maxime itaque voluptatem aperiam ab facilis sunt. Perferendis natus non cum molestiae dolores impedit itaque illum eum et, corporis ad fugiat rem recusandae dolore sequi id quo. Architecto adipisci eius sapiente, harum rem delectus quo sint sunt ut possimus voluptas corrupti fugit neque ipsam animi earum recusandae deleniti accusantium beatae! Quod ducimus deserunt voluptatem ullam cum. Labore enim qui ipsa blanditiis?
+            </textarea>
+            <div class="agreement">
+              <input type="checkbox" name="agree" id="agree">
+              <label for="agree">약관에 동의합니다</label>
+            </div>
+          </div>
+          
+          <div class="userInfo-wrap clearfix">
+            <h2>Member Information</h2>
+
+            <div class="userInfo">
+              <label for="user_id">아이디</label>
+              <input type="text" name="user_id" id="user_id" placeholder="아이디를 입력해주세요" required>
+            </div>
+            <div class="userInfo">
+              <label for="user_psw">비밀번호</label>
+              <input type="password" name="user_psw" id="user_psw" placeholder="비밀번호를 입력해주세요" required>
+            </div>
+            <div class="userInfo">
+              <label for="user_psw">비밀번호 재확인</label>
+              <input type="password" name="user_psw" id="user_psw" placeholder="비밀번호를 재입력해주세요" required>
+            </div>
+            <div class="userInfo">
+              <label for="user_name">이름</label>
+              <input type="text" name="user_name" id="user_name" placeholder="이름을 입력해주세요" required>
+            </div>
+            <div class="userInfo">
+              <label for="user_year">생년월일</label>
+              <input type="text" name="user_year" id="user_year" placeholder="ex) 1996.11.30">
+            </div>
+            <div class="userInfo">
+              <label for="user_email">이메일</label>
+              <input type="email" name="user_email" id="user_email" placeholder="이메일주소를 입력해주세요">
+            </div>
+            <div class="userInfo">
+              <label for="user_loc">지역</label>
+              <select name="user_loc" id="user_loc">
+                <option value="">지역을 선택해 주세요</option>
+                <option value="seoul">서울특별시</option>
+                <option value="gyeonggi">경기도</option>
+                <option value="incheon">인천광역시</option>
+                <option value="busan">부산광역시</option>
+              </select>
+            </div>
+            <div class="userInfo">
+              <span>성별을 선택해주세요</span>
+              <div class="gender-wrap clearfix">
+                <label for="male">
+                  <input type="radio" name="gender" id="male" value="male">
+                  MALE
+                </label>
+                <label for="female">
+                  <input type="radio" name="gender" id="female" value="female">
+                  FEMALE
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-wrap clearfix">
+            <input type="reset" value="RESET ALL" class="resetBtn">
+            <input type="submit" value="SUBMIT" class="submitBtn">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    
+  </section>
+</body>
+</html>
