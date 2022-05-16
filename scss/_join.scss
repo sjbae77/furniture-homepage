@@ -31,6 +31,7 @@
         }
         p {
           font-size: 20px;
+          word-break: keep-all;
         }
       }
   
@@ -200,6 +201,14 @@
 }
 
 @media screen and (max-width:$mobile) {
+  .join > .inner .terms-wrap .title {
+    h2{
+      font-size: 27px;
+    }
+    p {
+      font-size: 15px;
+    }
+  } 
   #result .inner .wrap p {
     font-size: 24px;
   }
