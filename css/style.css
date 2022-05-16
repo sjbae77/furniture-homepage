@@ -56,23 +56,28 @@ input:focus {
 
 .sub_visual {
   width: 100%;
-  background-color: #eee;
-  text-align: center;
-  padding: 100px 0;
+  height: 40vh;
   background: url(../img/sub_banner.jpg) no-repeat center/cover;
 }
+.sub_visual .inner {
+  position: relative;
+  height: 100%;
+}
 .sub_visual h1 {
-  font-size: 30px;
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  font-size: 6vh;
   font-weight: 600;
-  color: #333;
+  color: #fff;
 }
 .sub_visual h1 span {
   margin-left: 20px;
   position: relative;
   padding-left: 20px;
-  font-size: 24px;
+  font-size: 4vh;
   font-weight: 400;
-  color: #555;
+  color: #eee;
 }
 .sub_visual h1 span::after {
   content: "/";
@@ -82,6 +87,23 @@ input:focus {
   left: 0;
 }
 
+@media screen and (max-width: 1179px) {
+  .sub_visual h1 {
+    font-size: 5vh;
+  }
+  .sub_visual span {
+    display: block;
+    font-size: 3vh;
+  }
+}
+@media screen and (max-width: 539px) {
+  .sub_visual h1 {
+    font-size: 4vh;
+  }
+  .sub_visual span {
+    font-size: 2vh;
+  }
+}
 .community {
   width: 100%;
 }
