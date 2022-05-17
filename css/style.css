@@ -285,16 +285,23 @@ input:focus {
 }
 .join > .inner .terms-wrap .all-agree-wrap {
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .join > .inner .terms-wrap .agree-wrap {
   margin-top: 30px;
 }
+.join > .inner .terms-wrap .agree-wrap .agreement {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 .join > .inner .terms-wrap .agree-wrap .terms {
+  padding: 20px 0 20px 20px;
+}
+.join > .inner .terms-wrap .agree-wrap .terms .content {
   width: 100%;
   height: 150px;
-  margin-top: 20px;
   padding: 20px;
   overflow: auto;
   background-color: #fbfbfb;
@@ -344,12 +351,16 @@ input:focus {
   left: 0;
   bottom: 0;
 }
+.join > .inner .userInfo-wrap .userInfo select {
+  padding: 2px;
+  font-size: 15px;
+}
 .join > .inner .userInfo-wrap .userInfo .gender-wrap {
   margin-top: 10px;
   width: 100%;
 }
 .join > .inner .userInfo-wrap .userInfo .gender-wrap input {
-  margin-top: 2px;
+  margin-top: 4px;
   margin-right: 5px;
   width: auto;
   float: left;
@@ -357,6 +368,7 @@ input:focus {
 .join > .inner .userInfo-wrap .userInfo .gender-wrap label {
   float: left;
   margin-bottom: 0;
+  font-size: 18px;
 }
 .join > .inner .userInfo-wrap .userInfo .gender-wrap label:last-child {
   margin-left: 20px;
@@ -367,6 +379,7 @@ input:focus {
 .join > .inner .btn-wrap input {
   padding: 16px 30px;
   font-size: 20px;
+  border-radius: 50px;
 }
 .join > .inner .btn-wrap .resetBtn {
   float: left;
@@ -376,7 +389,6 @@ input:focus {
 }
 .join > .inner .btn-wrap .submitBtn {
   float: right;
-  border-radius: 50px;
   background-color: #333;
   color: #fff;
   cursor: pointer;
@@ -495,6 +507,7 @@ input:focus {
   filter: grayscale(1);
 }
 .members > .inner .member-wrap .member .text {
+  z-index: 2;
   position: absolute;
   bottom: 20px;
   left: 10px;
@@ -504,7 +517,7 @@ input:focus {
 }
 .members > .inner .member-wrap .member .text h2 {
   font-size: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
 }
 .members > .inner .member-wrap .member .text p {
   font-size: 18px;

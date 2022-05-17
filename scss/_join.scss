@@ -34,25 +34,35 @@
           word-break: keep-all;
         }
       }
-  
+
       .all-agree-wrap{
         padding: 20px;
-        border: 1px solid #ddd;
         border-radius: 5px;
+        box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.1);
       }
 
       .agree-wrap{
         margin-top: 30px;
 
-        .terms{
-          width: 100%;
-          height: 150px;
-          margin-top: 20px;
+        .agreement{
           padding: 20px;
-          overflow: auto;
-          background-color: #fbfbfb;
-          font-size: 18px;
-          line-height: 1.6;
+          border-radius: 5px;
+          box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.1);
+        }
+
+        .terms{
+          padding: 20px 0 20px 20px;
+
+          .content{
+            width: 100%;
+            height: 150px;
+            padding: 20px;
+            overflow: auto;
+            background-color: #fbfbfb;
+            font-size: 18px;
+            line-height: 1.6;
+          }
+          
         }
       }
     }
@@ -104,13 +114,18 @@
           left: 0;
           bottom: 0;
         }
+
+        select{
+          padding: 2px;
+          font-size: 15px;
+        }
   
         .gender-wrap {
           margin-top: 10px;
           width: 100%;
   
           input{
-            margin-top: 2px;
+            margin-top: 4px;
             margin-right: 5px;
             width: auto;
             float: left;
@@ -118,6 +133,7 @@
           label{
             float: left;
             margin-bottom: 0;
+            font-size: 18px;
   
             &:last-child{
               margin-left: 20px;
@@ -133,6 +149,8 @@
       input{
         padding: 16px 30px;
         font-size: 20px;
+        // box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.15);
+        border-radius: 50px;
       }
   
       .resetBtn{
@@ -143,7 +161,6 @@
       }
       .submitBtn{
         float: right;
-        border-radius: 50px;
         background-color: #333;
         color: #fff;
         cursor: pointer;

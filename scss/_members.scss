@@ -80,6 +80,7 @@
         }
 
         .text {
+          z-index: 2;
           position: absolute;
           bottom: 20px;
           left: 10px;
@@ -89,7 +90,7 @@
 
           h2 {
             font-size: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 3px;
           }
           p {
             font-size: 18px;
