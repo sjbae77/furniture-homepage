@@ -549,6 +549,209 @@ input:focus {
     width: 100%;
   }
 }
+.about {
+  width: 100%;
+  min-height: 500px;
+}
+.about .inner #aboutTab {
+  position: relative;
+  margin: 50px auto 0;
+  padding-top: 50px;
+  width: 100%;
+}
+.about .inner #aboutTab dt {
+  position: absolute;
+  top: 0;
+}
+.about .inner #aboutTab dt a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+  color: #777;
+  transition: 0.5s;
+}
+.about .inner #aboutTab dt:nth-of-type(1) {
+  left: 0;
+}
+.about .inner #aboutTab dt:nth-of-type(2) {
+  left: 120px;
+}
+.about .inner #aboutTab dt.on a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.about .inner #aboutTab dd {
+  width: 100%;
+  background-color: #fff;
+  display: none;
+  font-size: 50px;
+}
+.about .inner #aboutTab dd.on {
+  display: block;
+}
+.about .inner #aboutTab dd .company {
+  width: 100%;
+  padding: 100px 0;
+}
+.about .inner #aboutTab dd .company .content {
+  width: 100%;
+}
+.about .inner #aboutTab dd .company .content .left {
+  width: 40%;
+  margin-right: 20%;
+  float: left;
+}
+.about .inner #aboutTab dd .company .content .left span {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+.about .inner #aboutTab dd .company .content .left h2 {
+  margin-bottom: 60px;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.about .inner #aboutTab dd .company .content .left p {
+  font-size: 25px;
+  line-height: 1.4;
+}
+.about .inner #aboutTab dd .company .content .right {
+  width: 40%;
+  float: right;
+}
+.about .inner #aboutTab dd .company .content .right .img {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.about .inner #aboutTab dd .company .content .right .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .inner #aboutTab dd .company .content .right .img img.img2 {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  transform: translateY(-50%);
+  width: 60%;
+  height: 400px;
+  padding: 20px;
+  border: 2px solid #ddd;
+}
+.about .inner #aboutTab dd .members .sub_visual_members .inner h1 {
+  padding: 100px 0;
+  font-family: "Koulen";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.about .inner #aboutTab dd .members .sub_visual_members .inner h1 strong {
+  font-weight: 400;
+  color: lightpink;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 300px;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #b9edfd;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(2)::after, .about .inner #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(8)::after, .about .inner #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(9)::after {
+  background-color: #f5a7b4;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member.noMember .text {
+  left: 30px;
+  bottom: 70px;
+  opacity: 1;
+  transform: translateY(0);
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member.noMember .text span {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member.noMember .text h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member.noMember .text a {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid lightpink;
+  color: lightpink;
+  font-size: 13px;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member.noMember::after {
+  display: none;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member .text {
+  z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member .text h2 {
+  font-size: 25px;
+  margin-bottom: 3px;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member .text p {
+  font-size: 18px;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member:hover .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member:hover::after {
+  background-color: #fff;
+}
+.about .inner #aboutTab dd .members > .inner .member-wrap .member:hover img {
+  filter: grayscale(0);
+}
+
+@media screen and (max-width: 1179px) {
+  .members .sub_visual_members .inner h1 {
+    padding: 100px 20px;
+  }
+  .members > .inner .member-wrap .member {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 539px) {
+  .members .sub_visual_members .inner h1 {
+    font-size: 28px;
+  }
+  .members > .inner .member-wrap .member {
+    width: 100%;
+  }
+}
 .inner {
   width: 1180px;
   margin: 0 auto;
@@ -975,19 +1178,43 @@ input:focus {
 #clients {
   margin-bottom: 100px;
 }
-#clients .inner .cont-wrap {
+#clients .inner {
+  position: relative;
+}
+#clients .inner .btn-wrap a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#clients .inner .btn-wrap a.prev {
+  left: -65px;
+}
+#clients .inner .btn-wrap a.next {
+  right: -65px;
+}
+#clients .inner .slide-wrap {
+  position: relative;
   width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+#clients .inner .slide-wrap .cont-wrap {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: calc(100% * 4);
   height: 20vh;
-  margin: 50px auto 0;
-  padding: 0 20px;
 }
-#clients .inner .cont-wrap .cont {
+#clients .inner .slide-wrap .cont-wrap .cont {
   float: left;
-  width: 18%;
+  width: calc(100% / 4);
   height: 100%;
-  margin-right: 2%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-#clients .inner .cont-wrap .cont a {
+#clients .inner .slide-wrap .cont-wrap .cont:last-child {
+  margin-right: 0;
+}
+#clients .inner .slide-wrap .cont-wrap .cont a {
   position: relative;
   display: block;
   width: 100%;
@@ -998,36 +1225,14 @@ input:focus {
   transition: 0.5s;
   opacity: 0.5;
 }
-#clients .inner .cont-wrap .cont a::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #ddd;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.6s;
-}
-#clients .inner .cont-wrap .cont a::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #ddd;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.6s;
-}
-#clients .inner .cont-wrap .cont a:hover {
+#clients .inner .slide-wrap .cont-wrap .cont a:hover {
   opacity: 1;
   transform: scale(0.9);
 }
-#clients .inner .cont-wrap .cont a:hover::before {
+#clients .inner .slide-wrap .cont-wrap .cont a:hover::before {
   background-color: #ccc;
 }
-#clients .inner .cont-wrap .cont a:hover::after {
+#clients .inner .slide-wrap .cont-wrap .cont a:hover::after {
   background-color: #ccc;
 }
 

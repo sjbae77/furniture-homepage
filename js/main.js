@@ -8,6 +8,75 @@ const _left = document.querySelectorAll(".borderLeft");
 const speed = 300;
 const _unHover = [];
 
+const clientSec = document.querySelector("#clients");
+const prevBtn = clientSec.querySelector(".prev");
+const nextBtn = clientSec.querySelector(".next");
+let enableClick = true;
+const clientSlideSpeed = 500;
+
+init(clientSec);
+
+nextBtn.addEventListener("click",e=>{
+  e.preventDefault();
+
+  if(enableClick){
+    enableClick = false; 
+    nextSlide(clientSec);
+  }
+
+})
+prevBtn.addEventListener("click",e=>{
+  e.preventDefault();
+
+  if(enableClick){
+    enableClick = false; 
+    prevSlide(clientSec);
+  }
+
+})
+
+function init(frame){
+  const ul = frame.querySelector("ul"); 
+  const lis = ul.querySelectorAll("li"); 
+  const len = lis.length; 
+
+  ul.style.left = "-100%";    
+  ul.style.width = `${100 * len}%`; 
+  ul.prepend(ul.lastElementChild);
+  lis.forEach((li)=>li.style.width = `${100 / len}%`)
+}
+
+function nextSlide(frame){
+  const ul = frame.querySelector("ul");
+
+  new Anime(ul,{
+      prop:"left", 
+      value:"-200%", 
+      duration: clientSlideSpeed, 
+      callback:()=>{
+        ul.append(ul.firstElementChild); 
+        ul.style.left = "-100%"; 
+        enableClick = true; 
+      }
+  })
+}
+
+function prevSlide(frame){
+  const ul = frame.querySelector("ul");
+
+  new Anime(ul, {
+      prop:"left", 
+      value:"0%", 
+      duration:clientSlideSpeed, 
+      callback:()=>{
+        ul.prepend(ul.lastElementChild);
+        ul.style.left = "-100%"; 
+        enableClick = true; 
+      }
+  })
+}
+
+
 window.addEventListener("scroll", ()=>{
   if(this.scrollY > 900) {
     topBtn.classList.add("on");
@@ -44,8 +113,6 @@ newsArticles.forEach((el,index)=>{
 })
 
 function ani(_dir, _idx, _prop, _value, _call) {
-  // if(on == false)
-  //   return;
   if(_unHover[_idx] == true){
     
     borderRemove(_idx);
@@ -83,7 +150,6 @@ function borderDraw(index){
                                     "height",
                                     "100%"))));
 }
-
 
 
 // function borderDraw(index){
@@ -146,7 +212,6 @@ function borderRemove(index){
   })
 
 }
-
 
 
 // function borderRemove(index){
