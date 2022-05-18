@@ -40,8 +40,8 @@ function init(frame){
   const lis = ul.querySelectorAll("li"); 
   const len = lis.length; 
 
-  ul.style.left = "-100%";    
-  ul.style.width = `${100 * len}%`; 
+  ul.style.left = "-27%";    
+  ul.style.width = `${25 * len}%`; 
   ul.prepend(ul.lastElementChild);
   lis.forEach((li)=>li.style.width = `${100 / len}%`)
 }
@@ -51,11 +51,11 @@ function nextSlide(frame){
 
   new Anime(ul,{
       prop:"left", 
-      value:"-200%", 
+      value:"-54%", 
       duration: clientSlideSpeed, 
       callback:()=>{
         ul.append(ul.firstElementChild); 
-        ul.style.left = "-100%"; 
+        ul.style.left = "-27%"; 
         enableClick = true; 
       }
   })
@@ -70,7 +70,7 @@ function prevSlide(frame){
       duration:clientSlideSpeed, 
       callback:()=>{
         ul.prepend(ul.lastElementChild);
-        ul.style.left = "-100%"; 
+        ul.style.left = "-27%"; 
         enableClick = true; 
       }
   })
