@@ -14,6 +14,11 @@ const nextBtn = clientSec.querySelector(".next");
 let enableClick = true;
 const clientSlideSpeed = 500;
 
+const mainSecs = document.querySelectorAll("section");
+const mainHd = document.querySelector(".main_hd");
+const secPosArr = [];
+
+//클라이언트 섹션 슬라이드
 init(clientSec);
 
 nextBtn.addEventListener("click",e=>{
@@ -40,8 +45,8 @@ function init(frame){
   const lis = ul.querySelectorAll("li"); 
   const len = lis.length; 
 
-  ul.style.left = "-27%";    
-  ul.style.width = `${25 * len}%`; 
+  ul.style.left = "-26%";    
+  ul.style.width = `${26 * len}%`; 
   ul.prepend(ul.lastElementChild);
   lis.forEach((li)=>li.style.width = `${100 / len}%`)
 }
@@ -51,11 +56,11 @@ function nextSlide(frame){
 
   new Anime(ul,{
       prop:"left", 
-      value:"-54%", 
+      value:"-52%", 
       duration: clientSlideSpeed, 
       callback:()=>{
         ul.append(ul.firstElementChild); 
-        ul.style.left = "-27%"; 
+        ul.style.left = "-26%"; 
         enableClick = true; 
       }
   })
@@ -76,12 +81,19 @@ function prevSlide(frame){
   })
 }
 
+for(let section of mainSecs){
+  secPosArr.push(section.offsetTop);
+}
 
+//스크롤이벤트 - 탑버튼 추가, 헤더 on으로 활성화
 window.addEventListener("scroll", ()=>{
-  if(this.scrollY > 900) {
+
+  if(this.scrollY > secPosArr[1] -200) {
     topBtn.classList.add("on");
+    mainHd.classList.add("on");
   } else {
     topBtn.classList.remove("on");
+    mainHd.classList.remove("on");
   }
 })
 
@@ -95,6 +107,7 @@ topBtn.addEventListener("click",e=>{
   })
 })
 
+//뉴스 섹션 보더 이벤트
 newsArticles.forEach((el,index)=>{
   _unHover.push(false);
 
