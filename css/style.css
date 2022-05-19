@@ -598,7 +598,7 @@ input:focus {
   padding: 100px 0;
 }
 .about #aboutTab dd .company article {
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 .about #aboutTab dd .company .content {
   width: 100%;
@@ -710,16 +710,8 @@ input:focus {
   fill: transparent;
   stroke: #a5a199;
   stroke-width: 1px;
-  stroke-dasharray: 465px;
-  animation: stroke 2s linear;
-}
-@keyframes stroke {
-  0% {
-    stroke-dashoffset: 465px;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+  stroke-dasharray: 465;
+  stroke-dashoffset: 465;
 }
 .about #aboutTab dd .company .banner {
   background: url(../img/company.jpg) no-repeat center/cover;
@@ -727,7 +719,7 @@ input:focus {
   height: 400px;
   transition: 0.5s;
 }
-.about #aboutTab dd .company .banner:hover {
+.about #aboutTab dd .company .banner.on {
   transform: scale(1.2);
 }
 .about #aboutTab dd .members .sub_visual_members .inner h1 {

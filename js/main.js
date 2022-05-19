@@ -112,7 +112,7 @@ newsArticles.forEach((el,index)=>{
   })
 })
 
-function ani(_dir, _idx, _prop, _value, _call) {
+function ani(_dir, _idx, _prop, _value, _dur, _call) {
   if(_unHover[_idx] == true){
     
     borderRemove(_idx);
@@ -122,6 +122,7 @@ function ani(_dir, _idx, _prop, _value, _call) {
   new Anime(_dir[_idx], {
     prop: _prop,
     value: _value,
+    duration: _dur,
     callback: _call
   })
 }
@@ -136,19 +137,24 @@ function borderDraw(index){
   ani(_top,
       index, 
       "width", 
-      "100%", 
+      "100%",
+      300,
       () => ani(_right,
                 index, 
                 "height",
                 "100%",
+                300,
                 () => ani(_bottom,     
                           index, 
                           "width",
                           "100%",
+                          300,
                           () => ani(_left,
                                     index, 
                                     "height",
-                                    "100%"))));
+                                    "100%",
+                                    300
+                                    ))));
 }
 
 

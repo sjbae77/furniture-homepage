@@ -53,7 +53,7 @@
           padding: 100px 0;
 
           article{
-            margin-bottom: 100px;
+            margin-bottom: 200px;
           }
 
           .content{
@@ -180,18 +180,20 @@
                 fill: transparent;
                 stroke:#a5a199;
                 stroke-width: 1px;
-                stroke-dasharray: 465px;
-                animation: stroke 2s linear;
+                stroke-dasharray: 465;
+                stroke-dashoffset: 465;
+                // animation: stroke 2s linear;
+                
               }
       
-              @keyframes stroke{
-                0%{
-                  stroke-dashoffset: 465px;
-                }
-                100%{
-                  stroke-dashoffset: 0;
-                }
-              }
+              // @keyframes stroke{
+              //   0%{
+              //     stroke-dashoffset: 465px;
+              //   }
+              //   100%{
+              //     stroke-dashoffset: 0;
+              //   }
+              // }
             }
           }
       
@@ -202,7 +204,7 @@
             // background-attachment: fixed;
             transition: 0.5s;
 
-            &:hover{
+            &.on{
               transform: scale(1.2);
             }
           }
