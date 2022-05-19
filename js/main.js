@@ -214,37 +214,4 @@ function borderRemove(index){
 }
 
 
-// function borderRemove(index){
-//   new Anime(_left[index],{
-//     prop:"height",
-//     value:"0%",
-//     duration: speed,
-//     callback:()=>{
-
-//       new Anime(_bottom[index],{
-//           prop:"width", 
-//           value:"0%",
-//           duration: speed,
-//           callback:()=>{
-
-//               new Anime(_right[index],{
-//                   prop:"height", 
-//                   value:"0%",
-//                   duration: speed,
-//                   callback:()=>{
-
-//                       new Anime(_top[index],{
-//                           prop:"width", 
-//                           value:"0%",
-//                           duration: speed,
-//                       })
-//                   } 
-//               })
-//           } 
-//       })
-//     }
-//   })
-// }
-
-
 
