@@ -341,7 +341,7 @@ input:focus {
 .join > .inner .userInfo-wrap h2 {
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-size: 30px;
   color: #333;
 }
@@ -349,6 +349,7 @@ input:focus {
   position: relative;
   float: left;
   width: 48%;
+  height: 100px;
   margin-right: 2%;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -367,16 +368,8 @@ input:focus {
   border: none;
   width: 100%;
   font-size: 18px;
-}
-.join > .inner .userInfo-wrap .userInfo::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
 }
 .join > .inner .userInfo-wrap .userInfo select {
   padding: 2px;
@@ -400,6 +393,16 @@ input:focus {
 .join > .inner .userInfo-wrap .userInfo .gender-wrap label:last-child {
   margin-left: 20px;
 }
+.join > .inner .userInfo-wrap .userInfo .line {
+  margin-top: 10px;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+.join > .inner .userInfo-wrap .userInfo p {
+  margin-top: 5px;
+  color: lightpink;
+}
 .join > .inner .btn-wrap {
   width: 100%;
 }
@@ -408,13 +411,13 @@ input:focus {
   font-size: 20px;
   border-radius: 50px;
 }
-.join > .inner .btn-wrap .resetBtn {
+.join > .inner .btn-wrap .btnReset {
   float: left;
   border: none;
   background-color: inherit;
   cursor: pointer;
 }
-.join > .inner .btn-wrap .submitBtn {
+.join > .inner .btn-wrap .btnSubmit {
   float: right;
   background-color: #333;
   color: #fff;

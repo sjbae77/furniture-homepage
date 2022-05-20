@@ -7,7 +7,7 @@
   <title>join</title>
   <script src="https://kit.fontawesome.com/81033de9ce.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script src="js/join.js" defer></script>
 </head>
 <body>
   <header id="header" class="header_sub">
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="inner">
-      <form action="result.html" method="get">
+      <form action="result.html" method="get" id="signUp">
         <fieldset>
           <legend class="hidden">회원가입 양식 폼</legend>
 
@@ -78,19 +78,19 @@
 
             <div class="userInfo">
               <label for="user_id">아이디</label>
-              <input type="text" name="user_id" id="user_id" placeholder="아이디를 입력해주세요" required>
+              <input type="text" name="user_id" id="user_id" placeholder="아이디를 입력해주세요">
             </div>
             <div class="userInfo">
-              <label for="user_psw">비밀번호</label>
-              <input type="password" name="user_psw" id="user_psw" placeholder="비밀번호를 입력해주세요" required>
+              <label for="user_pwd1">비밀번호</label>
+              <input type="password" name="user_pwd1" id="user_pwd1" placeholder="비밀번호를 입력해주세요">
             </div>
             <div class="userInfo">
-              <label for="user_psw">비밀번호 재확인</label>
-              <input type="password" name="user_psw" id="user_psw" placeholder="비밀번호를 재입력해주세요" required>
+              <label for="user_pwd2">비밀번호 재확인</label>
+              <input type="password" name="user_pwd2" id="user_pwd2" placeholder="비밀번호를 재입력해주세요">
             </div>
             <div class="userInfo">
               <label for="user_name">이름</label>
-              <input type="text" name="user_name" id="user_name" placeholder="이름을 입력해주세요" required>
+              <input type="text" name="user_name" id="user_name" placeholder="이름을 입력해주세요">
             </div>
             <div class="userInfo">
               <label for="user_year">생년월일</label>
@@ -109,6 +109,7 @@
                 <option value="incheon">인천광역시</option>
                 <option value="busan">부산광역시</option>
               </select>
+              <div class="line"></div>
             </div>
             <div class="userInfo">
               <span>성별을 선택해주세요</span>
@@ -122,12 +123,13 @@
                   FEMALE
                 </label>
               </div>
+              <div class="line"></div>
             </div>
           </div>
 
           <div class="btn-wrap clearfix">
-            <input type="reset" value="RESET ALL" class="resetBtn">
-            <input type="submit" value="SUBMIT" class="submitBtn">
+            <input type="reset" value="RESET ALL" class="btnReset">
+            <input type="submit" value="SUBMIT" class="btnSubmit">
           </div>
         </fieldset>
       </form>
@@ -182,5 +184,6 @@
       <p>Copyright &copy; 2022 Furniture ALL Right reserved.</p>
     </div>
   </footer>
+  
 </body>
 </html>

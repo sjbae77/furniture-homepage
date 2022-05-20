@@ -73,7 +73,7 @@
       h2 {
         padding-bottom: 20px;
         border-bottom: 1px solid #ddd;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
         font-size: 30px;
         color: #333;
       }
@@ -82,6 +82,7 @@
         position: relative;
         float: left;
         width: 48%;
+        height: 100px;
         margin-right: 2%;
         margin-bottom: 20px;
         padding-bottom: 10px;
@@ -102,17 +103,8 @@
           border: none;
           width: 100%;
           font-size: 18px;
-        }
-  
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 1px;
-          background-color: #ddd;
-          position: absolute;
-          left: 0;
-          bottom: 0;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd;
         }
 
         select{
@@ -140,6 +132,18 @@
             }
           }
         }
+
+        .line{
+          margin-top: 10px;
+          width: 100%;
+          height: 1px;
+          background-color: #ddd;
+        }
+
+        p{
+          margin-top: 5px;
+          color: lightpink;
+        }
       }
     }
   
@@ -153,13 +157,13 @@
         border-radius: 50px;
       }
   
-      .resetBtn{
+      .btnReset{
         float: left;
         border: none;
         background-color: inherit;
         cursor: pointer;
       }
-      .submitBtn{
+      .btnSubmit{
         float: right;
         background-color: #333;
         color: #fff;
