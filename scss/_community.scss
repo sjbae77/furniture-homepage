@@ -1,93 +1,148 @@
-.community {
-  width: 100%;
-
+.community{
   >.inner {
     min-height: 500px;
     padding: 50px 0;
 
     .search-wrap {
-      text-align: right;
+      text-align: center;
+      padding: 20px 0;
+      background-color: #f5f5fa;
+      border-radius: 10px;
+      line-height: 81px;
 
+      h2{
+        display: inline-block;
+        font-size: 18px;
+        margin-right: 20px;
+      }
+  
       input {
         padding-left: 10px;
-        width: 150px;
-        height: 25px;
+        width: 300px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        margin-right: 10px;
+        font-size: 16px;
       }
       button {
-        width: 50px;
-        height: 25px;
+        width: 100px;
+        height: 40px;
         line-height: 1;
-        font-size: 13px;
-        color: #555;
+        font-size: 15px;
+        background-color: lightblue;
+        color: #fff;
+        border-radius: 10px;
         cursor: pointer;
       }
     }
 
-    .list-wrap {
-      margin-top: 20px;
+    #faqList{
+      margin-top: 30px;
       width: 100%;
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
-  
-      .list{
-        border-bottom: 1px solid #ddd;
-        transition: 0.5s;
-  
-        ul {
-          width: 100%;
-          text-align: center;
-          cursor: pointer;
-  
-          li {
-            float: left;
-            padding: 20px 0;
-            font-size: 16px;
-            line-height: 1;
-            color: #333;
-  
-            &:nth-of-type(1) { width: 10%; }
-            &:nth-of-type(2) { width: 50%; }
-            &:nth-of-type(3) { width: 30%; color: #777; }
-            &:nth-of-type(4) { width: 10%; }
 
-            &.question {
+      thead{
+        tr {
+          th{
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+  
+            &:nth-of-type(1){
+              width: 10%;
+            }
+            &:nth-of-type(2){
+              width: 20%;
+            }
+            &:nth-of-type(3){
+              width: 70%;
+            }
+          }
+        }
+      }
+
+      tbody{
+        border-bottom: 1px solid #ddd;
+        tr td {
+          span{
+            i{
+              font-size: 20px;
               position: relative;
 
-              &::before {
+              &::after{
                 z-index: -1;
                 content: '';
                 display: block;
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background-color: #ddd;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: lightblue;
               }
             }
           }
+          &:nth-of-type(2){
+            color: #aeaeba;
+          }
         }
 
-        >div {
-          width: 100%;
-          min-height: 150px;
-          margin: 0 auto;
-          padding: 30px 50px;
-          background-color: #eee;
+        tr.toggle_faq{
+          border-top: 1px solid #ddd;
+          cursor: pointer;
 
-            p {
-              font-size: 16px;
-              line-height: 1.6;
+          td{
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px;
+
+            strong{
+              margin-left: 20px;
+              i{
+                position: absolute;
+                top: 50%;
+                right: 50px;
+                transform: translateY(-50%);
+                font-size: 30px;
+              }
             }
+
+            &:last-child{
+              text-align: left;
+            }
+          }
+
+          &:first-of-type{
+            border-top: none;
+          }
+
+        }
+
+        tr.toggle_faq_a{
+          width: 100%;
+          background-color: #f5f5fa;
+          border-radius: 10px;
+          // display: none;
+          
+          td{
+            padding: 50px 50px 50px 30%;
+
+            .board_faq_content{
+              padding: 15px;
+
+              p{
+                display: inline-block;
+                margin-left: 20px;
+                font-size: 16px;
+              }
+            }
+          }
           
         }
-
-        &:last-child {
-          border-bottom: none;
-        }
-      } 
+      }
     }
 
     .pagination {
@@ -150,16 +205,4 @@
     }
   }
   
-}
-
-@media screen and (max-width:$tablet) {
-  .community {
-    > .inner{
-      padding: 50px 20px;
-    }
-  } 
-}
-
-@media screen and (max-width:$mobile) {
-
 }

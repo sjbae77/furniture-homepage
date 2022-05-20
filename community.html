@@ -7,7 +7,6 @@
   <title>community</title>
   <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header id="header" class="header_sub">
@@ -28,82 +27,121 @@
   <section class="content community">
     <div class="sub_visual">
       <div class="inner">
-        <h1>자주묻는 질문<span>Q & A</span></h1>
+        <h1>자주묻는 질문<span>FAQ</span></h1>
       </div>
     </div>
+
     <div class="inner">
       <div class="search-wrap">
-        <input type="text" name="search" id="search">
+        <h2>자주묻는 질문 검색</h2>
+        <input type="text" name="search" id="search" placeholder="검색어를 입력하세요">
         <button>검색</button>
       </div>
-      <ul class="list-wrap">
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-        <li class="list">
-          <ul class="clearfix">
-            <li class="question">Q</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>상품관련</li>
-            <li><i class="fas fa-angle-down"></i></li>
-          </ul>
-          <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, veniam?</p>
-          </div>
-        </li>
-      </ul>
+
+      <table id="faqList">
+        <caption class="hidden">자주묻는 질문 게시판</caption>
+        <thead>
+          <tr>
+            <th scope="col">번호</th>
+            <th scope="col">분류</th>
+            <th scope="col">내용</th>
+          </tr>
+          <tbody>
+            
+            <tr class="toggle_faq">
+              <td>5</td>
+              <td>회원관련</td>
+              <td>
+                <span><i class="fab fa-quora ques"></i></span>
+                <strong>ID/비밀번호를 분실 했어요<i class="fas fa-angle-down arrow"></i></strong>
+              </td>
+            </tr>
+            <tr class="toggle_faq_a">
+              <td colspan="3" class="board_faq">
+                <div class="board_faq_content">
+                  <span><i class="fas fa-font"></i></span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quae.
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr class="toggle_faq">
+              <td>5</td>
+              <td>회원관련</td>
+              <td>
+                <span><i class="fab fa-quora ques"></i></span>
+                <strong>ID/비밀번호를 분실 했어요<i class="fas fa-angle-down arrow"></i></strong>
+              </td>
+            </tr>
+            <tr class="toggle_faq_a">
+              <td colspan="3" class="board_faq">
+                <div class="board_faq_content">
+                  <span><i class="fas fa-font"></i></span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quae.
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr class="toggle_faq">
+              <td>5</td>
+              <td>회원관련</td>
+              <td>
+                <span><i class="fab fa-quora ques"></i></span>
+                <strong>ID/비밀번호를 분실 했어요<i class="fas fa-angle-down arrow"></i></strong>
+              </td>
+            </tr>
+            <tr class="toggle_faq_a">
+              <td colspan="3" class="board_faq">
+                <div class="board_faq_content">
+                  <span><i class="fas fa-font"></i></span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quae.
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr class="toggle_faq">
+              <td>5</td>
+              <td>회원관련</td>
+              <td>
+                <span><i class="fab fa-quora ques"></i></span>
+                <strong>ID/비밀번호를 분실 했어요<i class="fas fa-angle-down arrow"></i></strong>
+              </td>
+            </tr>
+            <tr class="toggle_faq_a">
+              <td colspan="3" class="board_faq">
+                <div class="board_faq_content">
+                  <span><i class="fas fa-font"></i></span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quae.
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr class="toggle_faq">
+              <td>5</td>
+              <td>회원관련</td>
+              <td>
+                <span><i class="fab fa-quora ques"></i></span>
+                <strong>ID/비밀번호를 분실 했어요<i class="fas fa-angle-down arrow"></i></strong>
+              </td>
+            </tr>
+            <tr class="toggle_faq_a">
+              <td colspan="3" class="board_faq">
+                <div class="board_faq_content">
+                  <span><i class="fas fa-font"></i></span>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, quae.
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </thead>
+      </table>
 
       <div class="pagination clearfix">
         <a href="#" class="prev">
@@ -121,6 +159,7 @@
         </a>
       </div>
     </div>
+
   </section>
 
   <footer id="footer">

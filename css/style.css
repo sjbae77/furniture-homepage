@@ -58,7 +58,8 @@ input:focus {
 .sub_visual {
   width: 100%;
   height: 40vh;
-  background: url(../img/sub_banner.jpg) no-repeat center/cover;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 .sub_visual .inner {
   position: relative;
@@ -70,7 +71,7 @@ input:focus {
   bottom: 30px;
   font-size: 6vh;
   font-weight: 600;
-  color: #fff;
+  color: #333;
 }
 .sub_visual h1 span {
   margin-left: 20px;
@@ -78,7 +79,7 @@ input:focus {
   padding-left: 20px;
   font-size: 4vh;
   font-weight: 400;
-  color: #eee;
+  color: #777;
 }
 .sub_visual h1 span::after {
   content: "/";
@@ -105,93 +106,123 @@ input:focus {
     font-size: 2vh;
   }
 }
-.community {
-  width: 100%;
-}
 .community > .inner {
   min-height: 500px;
   padding: 50px 0;
 }
 .community > .inner .search-wrap {
-  text-align: right;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f5f5fa;
+  border-radius: 10px;
+  line-height: 81px;
+}
+.community > .inner .search-wrap h2 {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 20px;
 }
 .community > .inner .search-wrap input {
   padding-left: 10px;
-  width: 150px;
-  height: 25px;
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
 }
 .community > .inner .search-wrap button {
-  width: 50px;
-  height: 25px;
+  width: 100px;
+  height: 40px;
   line-height: 1;
-  font-size: 13px;
-  color: #555;
+  font-size: 15px;
+  background-color: lightblue;
+  color: #fff;
+  border-radius: 10px;
   cursor: pointer;
 }
-.community > .inner .list-wrap {
-  margin-top: 20px;
+.community > .inner #faqList {
+  margin-top: 30px;
   width: 100%;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
 }
-.community > .inner .list-wrap .list {
+.community > .inner #faqList thead tr th {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+}
+.community > .inner #faqList thead tr th:nth-of-type(1) {
+  width: 10%;
+}
+.community > .inner #faqList thead tr th:nth-of-type(2) {
+  width: 20%;
+}
+.community > .inner #faqList thead tr th:nth-of-type(3) {
+  width: 70%;
+}
+.community > .inner #faqList tbody {
   border-bottom: 1px solid #ddd;
-  transition: 0.5s;
 }
-.community > .inner .list-wrap .list ul {
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-}
-.community > .inner .list-wrap .list ul li {
-  float: left;
-  padding: 20px 0;
-  font-size: 16px;
-  line-height: 1;
-  color: #333;
-}
-.community > .inner .list-wrap .list ul li:nth-of-type(1) {
-  width: 10%;
-}
-.community > .inner .list-wrap .list ul li:nth-of-type(2) {
-  width: 50%;
-}
-.community > .inner .list-wrap .list ul li:nth-of-type(3) {
-  width: 30%;
-  color: #777;
-}
-.community > .inner .list-wrap .list ul li:nth-of-type(4) {
-  width: 10%;
-}
-.community > .inner .list-wrap .list ul li.question {
+.community > .inner #faqList tbody tr td span i {
+  font-size: 20px;
   position: relative;
 }
-.community > .inner .list-wrap .list ul li.question::before {
+.community > .inner #faqList tbody tr td span i::after {
   z-index: -1;
   content: "";
   display: block;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #ddd;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: lightblue;
 }
-.community > .inner .list-wrap .list > div {
+.community > .inner #faqList tbody tr td:nth-of-type(2) {
+  color: #aeaeba;
+}
+.community > .inner #faqList tbody tr.toggle_faq {
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+.community > .inner #faqList tbody tr.toggle_faq td {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+}
+.community > .inner #faqList tbody tr.toggle_faq td strong {
+  margin-left: 20px;
+}
+.community > .inner #faqList tbody tr.toggle_faq td strong i {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  font-size: 30px;
+}
+.community > .inner #faqList tbody tr.toggle_faq td:last-child {
+  text-align: left;
+}
+.community > .inner #faqList tbody tr.toggle_faq:first-of-type {
+  border-top: none;
+}
+.community > .inner #faqList tbody tr.toggle_faq_a {
   width: 100%;
-  min-height: 150px;
-  margin: 0 auto;
-  padding: 30px 50px;
-  background-color: #eee;
+  background-color: #f5f5fa;
+  border-radius: 10px;
 }
-.community > .inner .list-wrap .list > div p {
+.community > .inner #faqList tbody tr.toggle_faq_a td {
+  padding: 50px 50px 50px 30%;
+}
+.community > .inner #faqList tbody tr.toggle_faq_a td .board_faq_content {
+  padding: 15px;
+}
+.community > .inner #faqList tbody tr.toggle_faq_a td .board_faq_content p {
+  display: inline-block;
+  margin-left: 20px;
   font-size: 16px;
-  line-height: 1.6;
-}
-.community > .inner .list-wrap .list:last-child {
-  border-bottom: none;
 }
 .community > .inner .pagination {
   margin: 30px auto;
@@ -246,11 +277,6 @@ input:focus {
   color: #fff;
 }
 
-@media screen and (max-width: 1179px) {
-  .community > .inner {
-    padding: 50px 20px;
-  }
-}
 /* 회원가입 페이지 */
 .join {
   width: 100%;
@@ -858,6 +884,7 @@ input:focus {
   line-height: 98px;
   background: inherit;
   transition: 0.5s;
+  border-bottom: 1px solid #ddd;
 }
 #header h1 {
   float: left;
@@ -875,6 +902,9 @@ input:focus {
 #header nav ul li a {
   font-size: 20px;
   color: #777;
+}
+#header.main_hd {
+  border-bottom: none;
 }
 #header.main_hd.on {
   z-index: 20;
