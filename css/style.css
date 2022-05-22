@@ -938,7 +938,7 @@ input:focus {
 }
 #visual .inner {
   position: relative;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
 }
 #visual .inner h1 {

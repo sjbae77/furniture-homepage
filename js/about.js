@@ -43,7 +43,6 @@ window.addEventListener("scroll", e=>{
 
   //두번째 article에 스크롤이 도달했을 때
   if(scroll >= posArr[1] -600 ){
-    console.log("zzz");
     let startOffset = scroll - posArr[1]; //전체 스크롤값에서 첫번째 높이값만큼 빼서 0으로 초기화
     let result = 465 - (startOffset*1.5) // 스크롤값을 빼줘서 0으로 도달하게
 
