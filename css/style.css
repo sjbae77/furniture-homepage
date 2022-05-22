@@ -917,9 +917,23 @@ input:focus {
 }
 
 .moreBtn {
+  display: inline-block;
+  position: relative;
   font-size: 16px;
   font-weight: 600;
   color: #555;
+  transition: 0.5s;
+}
+.moreBtn::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: lightblue;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.5s;
 }
 .moreBtn span {
   display: inline-block;
@@ -929,6 +943,17 @@ input:focus {
   line-height: 20px;
   text-align: center;
   color: #555;
+  opacity: 1;
+  transition: 0.5s;
+}
+.moreBtn:hover {
+  color: lightblue;
+}
+.moreBtn:hover::after {
+  width: 100%;
+}
+.moreBtn:hover span {
+  opacity: 0;
 }
 
 #visual {
@@ -972,10 +997,15 @@ input:focus {
   float: left;
   width: 25%;
   text-align: center;
+  cursor: pointer;
+}
+#about .article1 .icon-wrap .cont:hover i {
+  transform: translateY(-10px);
 }
 #about .article1 .icon-wrap .cont i {
   font-size: 35px;
   margin-bottom: 20px;
+  transition: 0.5s;
 }
 #about .article1 .icon-wrap .cont span {
   display: block;
@@ -1016,7 +1046,6 @@ input:focus {
   color: #555;
 }
 #about .article1 .text-wrap .right a {
-  display: block;
   margin-top: 20px;
   font-size: 16px;
 }
@@ -1090,7 +1119,6 @@ input:focus {
   float: right;
 }
 #about .article3 .inner .text-wrap a {
-  display: block;
   margin-top: 20px;
 }
 
@@ -1191,7 +1219,6 @@ input:focus {
   line-height: 1.6;
 }
 #display .inner .card a {
-  display: block;
   margin-top: 60px;
 }
 #display .inner .img {
@@ -1420,7 +1447,6 @@ input:focus {
   font-size: 15px;
 }
 #gallery .pic .text a {
-  display: block;
   margin-top: 25px;
   font-size: 13px;
 }

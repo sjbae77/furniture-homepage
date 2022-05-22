@@ -74,9 +74,24 @@ $mobile: 539px;
 }
 
 .moreBtn {
+  display: inline-block;
+  position: relative;
   font-size: 16px;
   font-weight: 600;
   color: #555;
+  transition: 0.5s;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: lightblue;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.5s;
+  }
 
   span {
     display: inline-block;
@@ -86,6 +101,19 @@ $mobile: 539px;
     line-height: 20px;
     text-align: center;
     color: #555;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  &:hover{
+    color: lightblue;
+
+    &::after {
+      width: 100%;
+    }
+    span{
+      opacity: 0;
+    }
   }
 }
 
@@ -133,10 +161,18 @@ $mobile: 539px;
           float: left;
           width: 25%;
           text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            i {
+              transform: translateY(-10px);
+            }
+          }
 
           i {
             font-size: 35px;
             margin-bottom: 20px;
+            transition: 0.5s;
           }
           span {
             display: block;
@@ -187,7 +223,6 @@ $mobile: 539px;
           }
 
           a {
-            display: block;
             margin-top: 20px;
             font-size: 16px;
           }
@@ -276,7 +311,6 @@ $mobile: 539px;
           }
 
           a {
-            display: block;
             margin-top: 20px;
           }
         }
@@ -396,7 +430,6 @@ $mobile: 539px;
         line-height: 1.6;
       }
       a {
-        display: block;
         margin-top: 60px;
       }
     }
@@ -664,7 +697,6 @@ $mobile: 539px;
         font-size: 15px;
       }
       a {
-        display: block;
         margin-top: 25px;
         font-size: 13px;
       }
