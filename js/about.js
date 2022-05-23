@@ -9,7 +9,10 @@ const svgTxt = company.querySelector("svg text");
 const banner = company.querySelector(".banner");
 let posArr = null;
 
+const memberList = document.querySelector(".member-wrap")
+
 setPos();
+createList("data.json");
 
 //웹접근성 개선
 btns_a.forEach((el,idx)=>{
@@ -62,4 +65,50 @@ function setPos(){
   for(let article of articles){
     posArr.push(article.offsetTop);
   }
+}
+
+//데이터 호출 함수
+function createList(url){
+  fetch(url)
+  .then(data => {
+    return data.json();
+  })
+  .then(json => {
+
+    let items = json.memberImgSrc;
+
+    let tags = '';
+
+    items.forEach((item,idx) =>{
+      tags += `
+      <div class="member">
+        <img src=${item.img}>
+        <div class="text">
+          <h2>${item.name}</h2>
+          <p>${item.text}</p>
+        </div>
+      </div>
+      `;
+
+      if(idx === items.length-2){
+        tags += `
+          <div class="member noMember">
+            <div class="text">
+              <span>2022</span>
+              <h2>
+                We're always looking<br/>
+                for new member
+              </h2>
+              <a href="#">VIEW MORE</a>
+            </div>
+          </div>
+        `;
+      }
+    })
+
+    memberList.innerHTML = tags;
+  })
+  .catch(err=>{
+    console.log("데이터를 호출하는데 실패하였습니다.");
+  })
 }

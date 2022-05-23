@@ -1,0 +1,59 @@
+{
+  "memberImgSrc":[
+    {
+      "img":"img/member1.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member2.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member3.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member4.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member2.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member3.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member4.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member1.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member4.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member2.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    },
+    {
+      "img":"img/member3.jpg",
+      "name":"Member",
+      "text":"Lorem ipsum dolor sit amet."
+    }
+  ]
+}
