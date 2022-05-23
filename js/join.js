@@ -138,22 +138,29 @@ function isSelect(name){
 function isRadio(name){
   let items = form.querySelectorAll(`[name=${name}]`);
 
-  items.forEach((el,index)=>{
-    if(el.checked) {
-      const errMsgs = items[0].closest(".userInfo").querySelectorAll("p"); 
-      if(errMsgs.length > 0) items[0].closest(".userInfo").querySelector("p").remove(); 
+  if(items[0].checked || items[1].checked) {
+    const errMsgs = items[0].closest(".userInfo").querySelectorAll("p"); 
+    if(errMsgs.length > 0) items[0].closest(".userInfo").querySelector("p").remove(); 
 
-      return true;
+    return true;
 
-    }else{
-      const errMsgs = items[0].closest(".userInfo").querySelectorAll("p"); 
-      if(errMsgs.length > 0) items[0].closest(".userInfo").querySelector("p").remove(); 
+  }else{
+    const errMsgs = items[0].closest(".userInfo").querySelectorAll("p"); 
+    if(errMsgs.length > 0) items[0].closest(".userInfo").querySelector("p").remove(); 
 
-      const errMsg = document.createElement("p"); 
-      errMsg.append("항목을 선택해 주세요."); 
-      items[0].closest(".userInfo").append(errMsg); 
+    const errMsg = document.createElement("p"); 
+    errMsg.append("항목을 선택해 주세요."); 
+    items[0].closest(".userInfo").append(errMsg); 
 
-      return false;
-    }
-  })
+    console.log("미체크")
+
+    return false;
+  }
+}
+
+//입력수 제한 함수
+function numberMaxLength(e){
+  if(e.value.length > e.maxLength){
+    e.value = e.value.slice(0, e.maxLength);
+  }
 }
