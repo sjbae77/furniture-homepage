@@ -3,6 +3,14 @@ const btns = tab.querySelectorAll("dt");
 const boxs = tab.querySelectorAll("dd");
 const btns_a = document.querySelectorAll("dt>a");
 
+const company = document.querySelector(".company")
+const articles = company.querySelectorAll("article");
+const svgTxt = company.querySelector("svg text");
+const banner = company.querySelector(".banner");
+let posArr = null;
+
+setPos();
+
 //웹접근성 개선
 btns_a.forEach((el,idx)=>{
     el.addEventListener("focusin", ()=>{
@@ -23,21 +31,8 @@ btns.forEach((el,index)=>{
   })
 })
 
-function activation(arr, index){
-  for(const item of arr) item.classList.remove("on");
-  arr[index].classList.add("on");
-}
-
-// company section의 article들 offset값을 구하여 svg모션,banner scale 구현
-const company = document.querySelector(".company")
-const articles = company.querySelectorAll("article");
-const svgTxt = company.querySelector("svg text");
-const banner = company.querySelector(".banner");
-let posArr = null;
-
-setPos();
-
 //브라우저 스크롤시 현재의 스크롤 거리값 출력
+// company section의 article들 offset값을 구하여 svg모션,banner scale 구현
 window.addEventListener("scroll", e=>{
   let scroll = window.scrollY || window.pageYOffset;
 
@@ -55,6 +50,11 @@ window.addEventListener("scroll", e=>{
   if(scroll >= posArr[2] -200) banner.classList.add("on");
   else if(scroll < posArr[2] || scroll > posArr[2]) banner.classList.remove("on");
 })
+
+function activation(arr, index){
+  for(const item of arr) item.classList.remove("on");
+  arr[index].classList.add("on");
+}
 
 function setPos(){
   posArr = [];

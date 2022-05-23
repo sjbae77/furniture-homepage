@@ -768,13 +768,13 @@ input:focus {
   font-weight: 400;
   color: lightpink;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member {
   position: relative;
   float: left;
   width: 25%;
   height: 300px;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member::after {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member::after {
   content: "";
   display: block;
   width: 100%;
@@ -786,42 +786,42 @@ input:focus {
   left: 0;
   transition: 0.5s;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(2)::after, .about #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(8)::after, .about #aboutTab dd .members > .inner .member-wrap .member:nth-of-type(9)::after {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:nth-of-type(2)::after, .about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:nth-of-type(8)::after, .about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:nth-of-type(9)::after {
   background-color: #f5a7b4;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member.noMember .text {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember .text {
   left: 30px;
   bottom: 70px;
   opacity: 1;
   transform: translateY(0);
 }
-.about #aboutTab dd .members > .inner .member-wrap .member.noMember .text span {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember .text span {
   display: block;
   margin-bottom: 15px;
   font-size: 14px;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member.noMember .text h2 {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember .text h2 {
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: 400;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member.noMember .text a {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember .text a {
   display: inline-block;
   padding: 10px 25px;
   border: 1px solid lightpink;
   color: lightpink;
   font-size: 13px;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member.noMember::after {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember::after {
   display: none;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member img {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(1);
 }
-.about #aboutTab dd .members > .inner .member-wrap .member .text {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member .text {
   z-index: 2;
   position: absolute;
   bottom: 20px;
@@ -830,21 +830,21 @@ input:focus {
   opacity: 0;
   transform: translateY(30px);
 }
-.about #aboutTab dd .members > .inner .member-wrap .member .text h2 {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member .text h2 {
   font-size: 25px;
   margin-bottom: 3px;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member .text p {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member .text p {
   font-size: 18px;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member:hover .text {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:hover .text {
   opacity: 1;
   transform: translateY(0);
 }
-.about #aboutTab dd .members > .inner .member-wrap .member:hover::after {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:hover::after {
   background-color: #fff;
 }
-.about #aboutTab dd .members > .inner .member-wrap .member:hover img {
+.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member:hover img {
   filter: grayscale(0);
 }
 
@@ -852,7 +852,7 @@ input:focus {
   .members .sub_visual_members .inner h1 {
     padding: 100px 20px;
   }
-  .members > .inner .member-wrap .member {
+  .members .sub_visual_members .inner .member-wrap .member {
     width: 50%;
   }
 }
@@ -860,7 +860,7 @@ input:focus {
   .members .sub_visual_members .inner h1 {
     font-size: 28px;
   }
-  .members > .inner .member-wrap .member {
+  .members .member-wrap .member {
     width: 100%;
   }
 }
