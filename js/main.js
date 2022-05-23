@@ -51,7 +51,7 @@ function createList(url){
 
     items.forEach(item => {
       tags += `
-        <li><a href=${item.img}><img src=${item.img}></a></li>
+        <li><a href=${item.img}><img src=${item.img}><span>CLICK</span></a></li>
       `;
     })
 

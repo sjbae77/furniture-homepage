@@ -29,13 +29,49 @@
   </header>
 
   <section id="visual">
-    <div class="inner">
-      <h1>THIS IS A STATE OF MIND</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
-        Non maxime iure optio. maxime iure optio.
-      </p>
-      <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
+    <div class="swiper visualSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide1">
+          <div class="inner">
+            <div class="text-wrap">
+              <h1>THIS IS A STATE OF MIND</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Non maxime iure optio. maxime iure optio.
+              </p>
+              <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide2">
+          <div class="inner">
+            <div class="text-wrap">
+              <h1>THIS IS A STATE OF MIND</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Non maxime iure optio. maxime iure optio.
+              </p>
+              <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide3">
+          <div class="inner">
+            <div class="text-wrap">
+              <h1>THIS IS A STATE OF MIND</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Non maxime iure optio. maxime iure optio.
+              </p>
+              <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="slide-number">
+        <strong>1</strong><span>3</span>
+      </div> -->
+      <div class="swiper-pagination"></div>
     </div>
   </section>
   <section id="about">
@@ -343,28 +379,28 @@
         <div class="slide-wrap">
           <ul class="cont-wrap clearfix">
             <li class="cont">
-              <a href="#">Client1</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client2</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client3</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client4</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client5</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client6</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client7</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
             <li class="cont">
-              <a href="#">Client8</a>
+              <a href="#"><img src="img/client1.png" alt="고객사 로고"></a>
             </li>
           </ul>
         </div>
@@ -451,13 +487,16 @@
   </a>
 
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "4",
-      spaceBetween: 10,
-      loop: false,
+    var swiper = new Swiper(".visualSwiper", {
+      loop: true,
+      effect: "fade",
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: ".swiper-pagination",
-        type: "progressbar",
+        clickable: true,
       },
     });
   </script>
