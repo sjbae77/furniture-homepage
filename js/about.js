@@ -12,7 +12,7 @@ let posArr = null;
 const memberList = document.querySelector(".member-wrap")
 
 setPos();
-createList("data.json");
+createList("memberData.json");
 
 //웹접근성 개선
 btns_a.forEach((el,idx)=>{
