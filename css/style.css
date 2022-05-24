@@ -994,10 +994,9 @@ body.on {
 }
 #visual .swiper-slide .inner .text-wrap p {
   margin-bottom: 20px;
-  font-family: "Open Sans";
   font-size: 30px;
   color: #555;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 #visual .swiper-slide .inner .text-wrap .moreBtn {
   font-size: 20px;
