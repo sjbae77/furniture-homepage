@@ -982,22 +982,41 @@ body.on {
 #visual .swiper-slide .inner .text-wrap {
   position: absolute;
   left: 0;
-  top: 60%;
+  top: 55%;
   transform: translateY(-50%);
   text-align: left;
 }
 #visual .swiper-slide .inner .text-wrap h1 {
   margin-bottom: 70px;
   font-family: "Koulen";
-  font-size: 60px;
+  font-size: 7vw;
   letter-spacing: 2px;
 }
 #visual .swiper-slide .inner .text-wrap p {
   margin-bottom: 20px;
   font-family: "Open Sans";
-  font-size: 26px;
+  font-size: 30px;
   color: #555;
   line-height: 1.4;
+}
+#visual .swiper-slide .inner .text-wrap .moreBtn {
+  font-size: 20px;
+}
+#visual .swiper-slide.slide2 .text-wrap h1, #visual .swiper-slide.slide3 .text-wrap h1 {
+  color: #fff;
+}
+#visual .swiper-slide.slide2 .text-wrap p, #visual .swiper-slide.slide3 .text-wrap p {
+  color: #ddd;
+}
+#visual .swiper-slide.slide2 .text-wrap .moreBtn, #visual .swiper-slide.slide3 .text-wrap .moreBtn {
+  color: #fff;
+}
+#visual .swiper-slide.slide2 .text-wrap .moreBtn span, #visual .swiper-slide.slide3 .text-wrap .moreBtn span {
+  color: #ddd;
+  border: 1px solid #fff;
+}
+#visual .swiper-slide.slide2 .text-wrap .moreBtn:hover, #visual .swiper-slide.slide3 .text-wrap .moreBtn:hover {
+  color: lightblue;
 }
 #visual .swiper-slide.slide1 {
   background: url(../img/visual1.jpg) no-repeat center/cover;
@@ -1008,26 +1027,24 @@ body.on {
 #visual .swiper-slide.slide3 {
   background: url(../img/visual3.jpg) no-repeat center/cover;
 }
-#visual .swiper-slide.slide3 .text-wrap h1 {
-  color: #fff;
-}
-#visual .swiper-slide.slide3 .text-wrap p {
-  color: #ddd;
-}
-#visual .swiper-slide.slide3 .text-wrap .moreBtn {
-  color: #fff;
-}
-#visual .swiper-slide.slide3 .text-wrap .moreBtn span {
-  color: #ddd;
-  border: 1px solid #fff;
-}
 #visual .swiper-pagination {
-  bottom: 50px;
+  bottom: auto;
+  top: 60px;
+  left: auto;
+  right: 50px;
+  text-align: right;
 }
 #visual .swiper-pagination .swiper-pagination-bullet {
   width: 100px;
+  height: 25px;
   border-radius: 10px;
   background-color: lightblue;
+  opacity: 0.6;
+  transition: 1s;
+}
+#visual .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 150px;
 }
 
 #about {

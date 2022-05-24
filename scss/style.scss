@@ -144,39 +144,34 @@ body.on{overflow: hidden;}
       .text-wrap {
         position: absolute;
         left: 0;
-        top: 60%;
+        top: 55%;
         transform: translateY(-50%);
         text-align: left;
     
         h1 {
           margin-bottom: 70px;
           font-family: "Koulen";
-          font-size: 60px;
+          font-size: 7vw;
           letter-spacing: 2px;
         }
         p {
           margin-bottom: 20px;
           font-family: "Open Sans";
-          font-size: 26px;
+          font-size: 30px;
           color: #555;
           line-height: 1.4;
         }
+
+        .moreBtn {
+          font-size: 20px;
+        }
       }
     }
-    
 
-    &.slide1{background: url(../img/visual1.jpg) no-repeat center/cover;}
-    &.slide2{background: url(../img/visual2.jpg) no-repeat center/cover;}
-    &.slide3{
-      background: url(../img/visual3.jpg) no-repeat center/cover;
-
+    &.slide2, &.slide3 {
       .text-wrap{
-        h1 {
-          color: #fff;
-        }
-        p {
-          color: #ddd;
-        }
+        h1 {color: #fff;}
+        p {color: #ddd;}
         .moreBtn {
           color: #fff;
 
@@ -184,9 +179,18 @@ body.on{overflow: hidden;}
             color: #ddd;
             border: 1px solid #fff;
           }
+
+          &:hover {
+            color: lightblue;
+          }
         }
       }
     }
+    
+
+    &.slide1{background: url(../img/visual1.jpg) no-repeat center/cover;}
+    &.slide2{background: url(../img/visual2.jpg) no-repeat center/cover;}
+    &.slide3{background: url(../img/visual3.jpg) no-repeat center/cover;}
   }
 
   // .slide-number {
@@ -229,12 +233,24 @@ body.on{overflow: hidden;}
   // }
 
   .swiper-pagination {
-    bottom: 50px;
+    bottom: auto;
+    top: 60px;
+    left: auto;
+    right: 50px;
+    text-align: right;
 
     .swiper-pagination-bullet {
       width: 100px;
+      height: 25px;
       border-radius: 10px;
       background-color: lightblue;
+      opacity: 0.6;
+      transition: 1s;
+
+      &.swiper-pagination-bullet-active {
+        opacity: 1;
+        width: 150px;
+      }
     }
   }
 
