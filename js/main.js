@@ -5,7 +5,7 @@ const _top = document.querySelectorAll(".borderTop");
 const _right = document.querySelectorAll(".borderRight");
 const _bottom = document.querySelectorAll(".borderBottom");
 const _left = document.querySelectorAll(".borderLeft");
-const speed = 300;
+const borderSpeed = 300;
 const _unHover = [];
 
 const clientSec = document.querySelector("#clients");
@@ -26,7 +26,111 @@ let num = 0;
 let wid = 0;
 let timer = null;
 
-createList("mainBannerData.json");
+/* youtube
+key:AIzaSyCNEFP7grGD77zUQvYF6Tg93dOjeA-mCjs
+playlist:PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4
+
+url:https://www.googleapis.com/youtube/v3/playlistItems
+*/
+
+const aboutSec = document.querySelector("#about");
+const youtube = aboutSec.querySelector(".article2 .youtube");
+const youtubeKey = "AIzaSyCNEFP7grGD77zUQvYF6Tg93dOjeA-mCjs";
+const youtubePlaylistId = "PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4";
+const youtubeNum = 1;
+const youtubeUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${youtubeKey}&playlistId=${youtubePlaylistId}&maxResults=${youtubeNum}`;
+
+
+/* about =================================================================*/
+createYoutubeList(youtubeUrl);
+
+function createYoutubeList(youtubeUrl){
+  //url 요청
+  fetch(youtubeUrl)
+  //요청한 url 받음(json 형태로)
+  .then(data=>{
+    return data.json();
+  })
+  .then(json=>{
+    let items = json.items;
+    console.log(items);
+
+    let result = '';
+
+    items.map(item=>{
+
+      let title = item.snippet.title;
+      if(title.length > 25) title = title.substr(0, 35)+"...";
+      let desc = item.snippet.description;
+      if(desc.length > 100) desc = desc.substr(0, 100)+"...";
+
+      let date = item.snippet.publishedAt;
+      date = date.split("T")[0];
+
+      result+=`
+        <article>
+          <div class="pic">
+            <img src="${item.snippet.thumbnails.high.url}"/>
+          </div>
+          <div class="con">
+            <h2>${title}</h2>
+            <p>${desc}</p>
+            <span>${date}</span>
+          </div>
+          <a href="#" class="youtubeBtn" data-vid=${item.snippet.resourceId.videoId}>
+            <i class="fa-solid fa-play"></i>
+          </a>
+        </article>
+      `
+    });
+
+    youtube.innerHTML = result;
+
+    createYoutubePop();
+  })
+}
+
+document.body.addEventListener("click", e=> closecreateYoutubePop(e));
+
+function createYoutubePop(){
+  const youtubeBtn = document.querySelector(".youtubeBtn");
+
+    youtubeBtn.addEventListener("click",e=>{
+      e.preventDefault();
+
+      let pop = document.createElement("aside");
+      pop.classList.add("youtubePop");
+      pop.innerHTML = `
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Fxu_iu3xc5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <span>CLOSE</span>
+      `;
+
+      document.body.append(pop);
+
+      new Anime(pop,{
+        prop:"opacity",
+        value:1,
+        duration:500
+      })
+
+      document.body.classList.add("on");
+    })
+}
+
+function closecreateYoutubePop(e){
+  const pop = document.querySelector(".youtubePop");
+
+  if(pop){
+    const close = pop.querySelector("span");
+    if(e.target == close) {
+      pop.remove();
+      document.body.classList.remove("on");
+    }
+  }
+}
+
+/* banner =================================================================*/
+createBannerList("mainBannerData.json");
 
 timer = setInterval(move, 50);
 
@@ -38,7 +142,7 @@ banner.addEventListener("mouseleave", ()=>{
 })
 
 //동적으로 list 생성
-function createList(url){
+function createBannerList(url){
   fetch(url)
   .then(data => {
     return data.json();
@@ -124,7 +228,7 @@ document.body.addEventListener("click", e=>{
 
 function createPop(imgSrc){
   const pop = document.createElement("aside");
-  pop.classList.add("pop");
+  pop.classList.add("bannerPop");
 
   pop.innerHTML = `
     <div class="pic">
@@ -159,7 +263,7 @@ function removePop(e){
         value:0,
         duration:500,
         callback:()=>{
-          document.querySelector(".pop").remove();
+          document.querySelector(".bannerPop").remove();
           document.querySelector("body").classList.remove("on");
         }
       })
@@ -193,7 +297,7 @@ function bannerPrevAni(){
   })
 }
 
-
+/* clients =====================================================================*/
 //클라이언트 섹션 슬라이드
 init(clientSec);
 
@@ -261,28 +365,7 @@ for(let section of mainSecs){
   secPosArr.push(section.offsetTop);
 }
 
-//스크롤이벤트 - 탑버튼 추가, 헤더 on으로 활성화
-window.addEventListener("scroll", ()=>{
-
-  if(this.scrollY > secPosArr[1] -200) {
-    topBtn.classList.add("on");
-    mainHd.classList.add("on");
-  } else {
-    topBtn.classList.remove("on");
-    mainHd.classList.remove("on");
-  }
-})
-
-topBtn.addEventListener("click",e=>{
-  e.preventDefault();
-
-  new Anime(window,{
-    prop:"scroll",
-    value:0,
-    duration:300
-  })
-})
-
+/* news =====================================================================*/
 //뉴스 섹션 보더 이벤트
 newsArticles.forEach((el,index)=>{
   _unHover.push(false);
@@ -346,66 +429,53 @@ function borderDraw(index){
                                     ))));
 }
 
-// function borderDraw(index){
-//   newsArticles.forEach((el,idx)=>{
-//     if (index != idx)
-//       borderRemove(idx);
-//   })
-
-//   new Anime(_top[index],{
-//     prop:"width",
-//     value:"100%",
-//     duration: speed,
-//     callback:()=>{
-//       new Anime(_right[index],{
-//           prop:"height", 
-//           value:"100%",
-//           duration: speed,
-//           callback:()=>{
-//               new Anime(_bottom[index],{
-//                   prop:"width", 
-//                   value:"100%",
-//                   duration: speed,
-//                   callback:()=>{
-//                       new Anime(_left[index],{
-//                           prop:"height", 
-//                           value:"100%",
-//                           duration: speed
-//                       })
-//                   } 
-//               })
-//           } 
-//       })
-//     }
-//   })
-// }
-
 function borderRemove(index){
   new Anime(_left[index],{
     prop:"height",
     value:"0%",
-    duration: speed,
+    duration: borderSpeed,
   })
 
   new Anime(_bottom[index],{
       prop:"width", 
       value:"0%",
-      duration: speed,
+      duration: borderSpeed,
   })
 
   new Anime(_right[index],{
       prop:"height", 
       value:"0%",
-      duration: speed,
+      duration: borderSpeed,
   })
 
   new Anime(_top[index],{
       prop:"width", 
       value:"0%",
-      duration: speed,
+      duration: borderSpeed,
   })
 
 }
 
+//스크롤이벤트 - 탑버튼 추가, 헤더 on으로 활성화
+window.addEventListener("scroll", ()=>{
+
+  if(this.scrollY > secPosArr[1] -200) {
+    topBtn.classList.add("on");
+    mainHd.classList.add("on");
+  } else {
+    topBtn.classList.remove("on");
+    mainHd.classList.remove("on");
+  }
+})
+
+topBtn.addEventListener("click",e=>{
+  e.preventDefault();
+
+  new Anime(window,{
+    prop:"scroll",
+    value:0,
+    duration:300
+  })
+})
 
 

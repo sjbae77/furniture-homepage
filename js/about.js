@@ -17,13 +17,6 @@ const playlistId = "PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4";
 const num = 1;
 const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
-/* youtube
-key:AIzaSyCNEFP7grGD77zUQvYF6Tg93dOjeA-mCjs
-playlist:PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4
-
-url:https://www.googleapis.com/youtube/v3/playlistItems
-*/
-
 setPos();
 createList("memberData.json");
 
@@ -123,9 +116,9 @@ function createList(url){
 
     createPop();
   })
-  // .catch(err=>{
-  //   console.log("데이터를 호출하는데 실패하였습니다.");
-  // })
+  .catch(err=>{
+    console.log("데이터를 호출하는데 실패하였습니다.");
+  })
 }
 
 document.body.addEventListener("click", e=> closePop(e));

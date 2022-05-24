@@ -965,7 +965,7 @@ body.on {
 }
 #visual .swiper-pagination .swiper-pagination-bullet {
   width: 100px;
-  height: 15px;
+  height: 10px;
   border-radius: 10px;
   background-color: lightblue;
   opacity: 0.5;
@@ -1049,20 +1049,74 @@ body.on {
 #about .article2 {
   margin-bottom: 100px;
 }
-#about .article2 .pic {
+#about .article2 .youtube {
   float: left;
   width: 50%;
   height: 500px;
 }
-#about .article2 .pic img {
+#about .article2 .youtube article {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#about .article2 .youtube article > .pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#about .article2 .youtube article > .pic > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+#about .article2 .youtube article .con {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+#about .article2 .youtube article .con > h2 {
+  font: bold 22px/1.2 "arial";
+  color: #fff;
+  margin-bottom: 15px;
+}
+#about .article2 .youtube article .con > p {
+  font: 16px/1.4 "arial";
+  color: #ddd;
+  margin-bottom: 20px;
+}
+#about .article2 .youtube article .con > span {
+  font: bold 16px/1 "arial";
+  color: lightblue;
+}
+#about .article2 .youtube article > a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+  opacity: 0;
+}
+#about .article2 .youtube article > a i {
+  font-size: 80px;
+  color: #000;
+}
+#about .article2 .youtube article:hover .con {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about .article2 .youtube article:hover > a {
+  opacity: 1;
+}
 #about .article2 .text-wrap {
   float: right;
   width: 50%;
-  padding: 50px 80px;
+  height: 500px;
+  padding: 40px 80px;
 }
 #about .article2 .text-wrap ul {
   margin: 50px 0;
@@ -1118,6 +1172,33 @@ body.on {
 }
 #about .article3 .inner .text-wrap a {
   margin-top: 20px;
+}
+
+aside.youtubePop {
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  padding: 10vw;
+  opacity: 0;
+}
+aside.youtubePop iframe {
+  border-radius: 10px;
+}
+aside.youtubePop > span {
+  position: absolute;
+  top: 3vw;
+  right: 10vw;
+  font: bold 22px/1 "arial";
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 #banner {
@@ -1624,7 +1705,7 @@ body.on {
   transform: translateY(0);
 }
 
-aside {
+aside.bannerPop {
   z-index: 20;
   width: 100%;
   height: 100vh;
@@ -1635,18 +1716,18 @@ aside {
   padding: 10vw;
   opacity: 0;
 }
-aside .pic {
+aside.bannerPop .pic {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-aside .pic img {
+aside.bannerPop .pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-aside > span {
+aside.bannerPop > span {
   position: absolute;
   top: 3vw;
   right: 10vw;
