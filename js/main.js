@@ -53,29 +53,25 @@ function createYoutubeList(youtubeUrl){
   })
   .then(json=>{
     let items = json.items;
-    console.log(items);
+    // console.log(items);
 
     let result = '';
 
     items.map(item=>{
 
       let title = item.snippet.title;
-      if(title.length > 25) title = title.substr(0, 35)+"...";
+      if(title.length > 25) title = title.substr(0, 25)+"...";
       let desc = item.snippet.description;
-      if(desc.length > 100) desc = desc.substr(0, 100)+"...";
-
-      let date = item.snippet.publishedAt;
-      date = date.split("T")[0];
+      if(desc.length > 80) desc = desc.substr(0, 80)+"...";
 
       result+=`
         <article>
           <div class="pic">
-            <img src="${item.snippet.thumbnails.high.url}"/>
+            <img src="${item.snippet.thumbnails.standard.url}"/>
           </div>
           <div class="con">
             <h2>${title}</h2>
             <p>${desc}</p>
-            <span>${date}</span>
           </div>
           <a href="#" class="youtubeBtn" data-vid=${item.snippet.resourceId.videoId}>
             <i class="fa-solid fa-play"></i>
@@ -99,7 +95,7 @@ function createYoutubePop(){
       e.preventDefault();
 
       let pop = document.createElement("aside");
-      pop.classList.add("youtubePop");
+      pop.classList.add("commonPop");
       pop.innerHTML = `
       <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Fxu_iu3xc5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <span>CLOSE</span>
@@ -118,7 +114,7 @@ function createYoutubePop(){
 }
 
 function closecreateYoutubePop(e){
-  const pop = document.querySelector(".youtubePop");
+  const pop = document.querySelector(".commonPop");
 
   if(pop){
     const close = pop.querySelector("span");
@@ -228,7 +224,7 @@ document.body.addEventListener("click", e=>{
 
 function createPop(imgSrc){
   const pop = document.createElement("aside");
-  pop.classList.add("bannerPop");
+  pop.classList.add("commonPop");
 
   pop.innerHTML = `
     <div class="pic">

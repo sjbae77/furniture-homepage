@@ -11,12 +11,6 @@ let posArr = null;
 
 const memberList = document.querySelector(".member-wrap");
 
-
-const key = "AIzaSyCNEFP7grGD77zUQvYF6Tg93dOjeA-mCjs";
-const playlistId = "PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4";
-const num = 1;
-const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
 setPos();
 createList("memberData.json");
 
@@ -113,55 +107,9 @@ function createList(url){
     })
 
     memberList.innerHTML = tags;
-
-    createPop();
   })
   .catch(err=>{
     console.log("데이터를 호출하는데 실패하였습니다.");
   })
 }
-
-document.body.addEventListener("click", e=> closePop(e));
-
-function createPop(){
-  const youtubeBtn = memberList.querySelector(".noMember a");
-
-    youtubeBtn.addEventListener("click",e=>{
-      e.preventDefault();
-
-      let pop = document.createElement("figure");
-      pop.classList.add("pop");
-      pop.innerHTML = `
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/7Dfno0qL3NU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <span>CLOSE</span>
-      `;
-
-      document.body.append(pop);
-
-      new Anime(pop,{
-        prop:"opacity",
-        value:1,
-        duration:500
-      })
-
-      document.body.classList.add("on");
-    })
-}
-
-function closePop(e){
-  const pop = document.querySelector(".pop");
-
-  if(pop){
-    const close = pop.querySelector("span");
-    if(e.target == close) {
-      pop.remove();
-      document.body.classList.remove("on");
-    }
-  }
-}
-
-
-
-
-
 

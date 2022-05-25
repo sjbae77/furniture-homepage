@@ -55,13 +55,18 @@ input:focus {
   position: relative;
 }
 
+section.content > .inner {
+  min-height: 500px;
+  padding: 50px 0;
+}
+
 .sub_visual {
   width: 100%;
   height: 40vh;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
-.sub_visual .inner {
+.sub_visual > .inner {
   position: relative;
   height: 100%;
 }
@@ -124,9 +129,10 @@ input:focus {
   display: block;
   width: 100%;
   height: 100%;
+  padding: 10px 50px;
+  border: 1px solid #ddd;
   text-align: center;
   font-size: 20px;
-  line-height: 50px;
   color: #777;
   transition: 0.5s;
 }
@@ -134,12 +140,12 @@ input:focus {
   left: 0;
 }
 .about #aboutTab dt:nth-of-type(2) {
-  left: 120px;
+  left: 186px;
 }
 .about #aboutTab dt.on a {
   color: #333;
   font-weight: 600;
-  text-decoration: underline;
+  background-color: #ddd;
 }
 .about #aboutTab dd {
   width: 100%;
@@ -339,10 +345,6 @@ input:focus {
   border: 1px solid lightpink;
   color: lightpink;
   font-size: 13px;
-  transition: 0.5s;
-}
-.about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember .text a:hover {
-  transform: scale(1.1);
 }
 .about #aboutTab dd .members .sub_visual_members .inner .member-wrap .member.noMember::after {
   display: none;
@@ -380,37 +382,6 @@ input:focus {
   filter: grayscale(0);
 }
 
-body.on {
-  overflow: hidden;
-}
-
-figure.pop {
-  z-index: 20;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: hidden;
-  padding: 10vw;
-  opacity: 0;
-}
-figure.pop iframe {
-  border-radius: 10px;
-}
-figure.pop > span {
-  position: absolute;
-  top: 3vw;
-  right: 10vw;
-  font: bold 22px/1 "arial";
-  color: #fff;
-  cursor: pointer;
-  border: 2px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-}
-
 @media screen and (max-width: 1179px) {
   .members .sub_visual_members .inner h1 {
     padding: 100px 20px;
@@ -427,10 +398,138 @@ figure.pop > span {
     width: 100%;
   }
 }
-.community > .inner {
-  min-height: 500px;
-  padding: 50px 0;
+.gallery .galleryCont #searchBox {
+  width: 100%;
+  padding: 50px 10px;
+  font-size: 0;
 }
+.gallery .galleryCont #searchBox #search {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #333;
+  padding-left: 10px;
+}
+.gallery .galleryCont #searchBox .btnSearch {
+  width: 80px;
+  height: 30px;
+  background-color: #333;
+  font: bold 12px/30px "arial";
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: top;
+  border: none;
+}
+.gallery .galleryCont #searchBox p {
+  margin-top: 10px;
+  font: 12px/1 "arial";
+  color: hotpink;
+}
+.gallery .galleryCont .loading {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+.gallery .galleryCont .loading.off {
+  opacity: 0;
+}
+.gallery .galleryCont #list {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+.gallery .galleryCont #list.on {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.gallery .galleryCont #list li {
+  width: calc(100% /3);
+  float: left;
+  padding: 10px;
+}
+.gallery .galleryCont #list li div {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.gallery .galleryCont #list li div a img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+.gallery .galleryCont #list li div p {
+  font: 12px/1.2 "arial";
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.gallery .galleryCont #list li div span {
+  display: flex;
+  align-items: center;
+}
+.gallery .galleryCont #list li div span img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.gallery .galleryCont #list li div span strong {
+  font: 11px/1 "arial";
+  color: orange;
+}
+.gallery .galleryCont #list li div:hover a img {
+  filter: grayscale(0%);
+}
+
+.vidList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.vidList article {
+  width: 48%;
+  height: 400px;
+  margin-bottom: 50px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.vidList article .pic {
+  display: block;
+  width: 100%;
+  height: 70%;
+}
+.vidList article .pic > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.vidList article .con {
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+}
+.vidList article .con h2 {
+  font: bold 20px/1.2 "arial";
+  color: #444;
+  margin-bottom: 15px;
+}
+.vidList article .con p {
+  font: 14px/1.4 "arial";
+  color: #666;
+  margin-bottom: 20px;
+}
+.vidList article .con span {
+  font: bold 16px/1 "arial";
+  color: orange;
+}
+
 .community > .inner .search-wrap {
   text-align: center;
   padding: 20px 0;
@@ -601,9 +700,6 @@ figure.pop > span {
 /* 회원가입 페이지 */
 .join {
   width: 100%;
-}
-.join > .inner {
-  padding: 50px 0;
 }
 .join > .inner .terms-wrap {
   margin-bottom: 100px;
@@ -815,8 +911,8 @@ body.on {
   z-index: 10;
   position: relative;
   width: 100%;
-  height: 100px;
-  line-height: 98px;
+  height: 70px;
+  line-height: 70px;
   transition: 0.5s;
   border-bottom: 1px solid #ddd;
 }
@@ -834,8 +930,12 @@ body.on {
   margin-left: 25px;
 }
 #header nav ul li a {
-  font-size: 20px;
-  color: #555;
+  font-size: 16px;
+  color: #777;
+  transition: 0.3s;
+}
+#header nav ul li a:hover {
+  color: #000;
 }
 #header.main_hd {
   border-bottom: none;
@@ -889,7 +989,7 @@ body.on {
 
 #visual {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 70px);
 }
 #visual .swiper {
   position: relative;
@@ -1080,17 +1180,20 @@ body.on {
   transition: 0.5s;
 }
 #about .article2 .youtube article .con > h2 {
-  font: bold 22px/1.2 "arial";
+  font-size: 22px;
+  font-weight: 600;
   color: #fff;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 #about .article2 .youtube article .con > p {
-  font: 16px/1.4 "arial";
+  font-size: 16px;
+  line-height: 1.6;
   color: #ddd;
   margin-bottom: 20px;
 }
 #about .article2 .youtube article .con > span {
-  font: bold 16px/1 "arial";
+  font-size: 16px;
+  font-weight: 600;
   color: lightblue;
 }
 #about .article2 .youtube article > a {
@@ -1172,33 +1275,6 @@ body.on {
 }
 #about .article3 .inner .text-wrap a {
   margin-top: 20px;
-}
-
-aside.youtubePop {
-  z-index: 20;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  overflow: hidden;
-  padding: 10vw;
-  opacity: 0;
-}
-aside.youtubePop iframe {
-  border-radius: 10px;
-}
-aside.youtubePop > span {
-  position: absolute;
-  top: 3vw;
-  right: 10vw;
-  font: bold 22px/1 "arial";
-  color: #fff;
-  cursor: pointer;
-  border: 2px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
 }
 
 #banner {
@@ -1705,7 +1781,7 @@ aside.youtubePop > span {
   transform: translateY(0);
 }
 
-aside.bannerPop {
+.commonPop {
   z-index: 20;
   width: 100%;
   height: 100vh;
@@ -1713,29 +1789,33 @@ aside.bannerPop {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.9);
-  padding: 10vw;
+  padding: 10vw 20vw;
   opacity: 0;
 }
-aside.bannerPop .pic {
+.commonPop .pic {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-aside.bannerPop .pic img {
+.commonPop .pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
-aside.bannerPop > span {
+.commonPop iframe {
+  border-radius: 10px;
+}
+.commonPop > span {
   position: absolute;
-  top: 3vw;
-  right: 10vw;
-  font: bold 22px/1 "arial";
+  top: 5vw;
+  right: 20vw;
+  font-size: 22px;
+  font-weight: 600;
   color: #fff;
   cursor: pointer;
   border: 2px solid #ddd;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
 }
 
