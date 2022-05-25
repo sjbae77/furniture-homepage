@@ -399,30 +399,43 @@ section.content > .inner {
   }
 }
 .gallery .galleryCont #searchBox {
+  margin-bottom: 50px;
+  padding: 40px 0;
+  background-color: #f5f5fa;
+  border-radius: 10px;
   width: 100%;
-  padding: 50px 10px;
   font-size: 0;
+  text-align: center;
+}
+.gallery .galleryCont #searchBox h2 {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 20px;
 }
 .gallery .galleryCont #searchBox #search {
   width: 300px;
-  height: 30px;
-  border: 1px solid #333;
+  height: 40px;
   padding-left: 10px;
+  border-radius: 10px;
+  font-size: 16px;
 }
 .gallery .galleryCont #searchBox .btnSearch {
+  margin-left: 10px;
   width: 80px;
-  height: 30px;
-  background-color: #333;
-  font: bold 12px/30px "arial";
+  height: 40px;
+  background-color: lightblue;
+  font-size: 15px;
+  line-height: 40px;
   color: #fff;
   text-align: center;
   cursor: pointer;
   vertical-align: top;
   border: none;
+  border-radius: 10px;
 }
 .gallery .galleryCont #searchBox p {
   margin-top: 10px;
-  font: 12px/1 "arial";
+  font-size: 15px;
   color: hotpink;
 }
 .gallery .galleryCont .loading {
@@ -455,34 +468,51 @@ section.content > .inner {
   width: 100%;
   padding: 20px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 0;
 }
-.gallery .galleryCont #list li div a img {
-  width: 100%;
-  filter: grayscale(100%);
+.gallery .galleryCont #list li div .title-wrap {
+  margin-bottom: 20px;
 }
-.gallery .galleryCont #list li div p {
-  font: 12px/1.2 "arial";
+.gallery .galleryCont #list li div .title-wrap p {
+  padding: 5px 0;
+  float: left;
+  font-size: 15px;
+  line-height: 1.2;
   color: #777;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  word-break: break-word;
 }
-.gallery .galleryCont #list li div span {
+.gallery .galleryCont #list li div .title-wrap span {
+  padding: 5px 0;
+  float: right;
   display: flex;
   align-items: center;
 }
-.gallery .galleryCont #list li div span img {
+.gallery .galleryCont #list li div .title-wrap span img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   margin-right: 5px;
 }
-.gallery .galleryCont #list li div span strong {
-  font: 11px/1 "arial";
-  color: orange;
+.gallery .galleryCont #list li div .title-wrap span strong {
+  font-size: 12px;
+  color: lightblue;
+}
+.gallery .galleryCont #list li div a img {
+  width: 100%;
+  filter: grayscale(100%);
 }
 .gallery .galleryCont #list li div:hover a img {
   filter: grayscale(0%);
+}
+.gallery .galleryCont .noResult {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+.gallery .galleryCont .noResult img {
+  width: 100%;
+  height: 100%;
 }
 
 .vidList {

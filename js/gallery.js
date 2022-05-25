@@ -24,33 +24,35 @@ const method_search = "flickr.photos.search";
 const per_page = 50;
 const url = `${base}method=${method_interest}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1`;
 
-
-//이름으로 찾기
-const method3 = "flickr.people.getPhotos";
-const username = "195772706@N08";
-const urlName =`${base}method=${method3}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`;
-
-callData(urlName);
-
-
 /*
 //좋아요 사진 찾기
-const method4 = "flickr.favorites.getList";
+const method_fav = "flickr.favorites.getList";
 const username = "195772706@N08";
-const url4 =`${base}method=${method4}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`;
+const url_fav =`${base}method=${method_fav}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`;
 
-callData(url4);
+callData(url_fav);
 */
 
-// const gallery ="72157720718987924";
-// const method5 = "flickr.galleries.getPhotos";
-// const username = "195772706@N08";
-// const url5 =`${base}method=${method5}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}&gallery_id=${gallery}`;
+/*
+//갤러리 사진 찾기
+const gallery ="72157720718987924";
+const method_gall = "flickr.galleries.getPhotos";
+const username = "195772706@N08";
+const url_gall =`${base}method=${method_gall}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}&gallery_id=${gallery}`;
 
-// callData(url5);
+callData(url_gall);
+*/
+
+//이름으로 찾기
+const method_name = "flickr.people.getPhotos";
+const username = "195772706@N08";
+const url_name = `${base}method=${method_name}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&user_id=${username}`;
+
+callData(url_name);
 
 
-// callData(url);
+
+
 
 //검색 버튼 클릭시 callData호출 
 btnSearch.addEventListener("click", e => {
@@ -58,54 +60,54 @@ btnSearch.addEventListener("click", e => {
 
   //if(!tag) return; //검색어 입력없이 버튼 클릭시 아래 코드를 실행하지 않고 중지
 
-  if(tag){
+  if (tag) {
     const errMsgs = input.parentElement.querySelectorAll("p");
-    if(errMsgs.length > 0) errMsgs[0].remove();
+    if (errMsgs.length > 0) errMsgs[0].remove();
 
     const url = `${base}method=${method_search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
-    
+
     callData(url);
 
-  } else{
+  } else {
     frame.innerHTML = "";
     frame.style.height = "auto";
 
     const errMsgs = input.parentElement.querySelectorAll("p");
-    if(errMsgs.length > 0) errMsgs[0].remove();
+    if (errMsgs.length > 0) errMsgs[0].remove();
 
     const errMsg = document.createElement("p");
     errMsg.append("검색어를 입력하세요");
     input.parentElement.append(errMsg);
   }
-  
+
 });
 
-input.addEventListener("keyup", e=>{
-  if(e.key === "Enter"){
+input.addEventListener("keyup", e => {
+  if (e.key === "Enter") {
     let tag = input.value.trim();
 
-  //if(!tag) return; //검색어 입력없이 버튼 클릭시 아래 코드를 실행하지 않고 중지
+    //if(!tag) return; //검색어 입력없이 버튼 클릭시 아래 코드를 실행하지 않고 중지
 
-  if(tag){
-    const errMsgs = input.parentElement.querySelectorAll("p");
-    if(errMsgs.length > 0) errMsgs[0].remove();
+    if (tag) {
+      const errMsgs = input.parentElement.querySelectorAll("p");
+      if (errMsgs.length > 0) errMsgs[0].remove();
 
-    const url = `${base}method=${method_search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
-    
-    callData(url);
+      const url = `${base}method=${method_search}&api_key=${key}&per_page=${per_page}&format=json&nojsoncallback=1&privacy_filter=1&tags=${tag}`;
 
-  } else{
-    //전에 호출했던 데이터 지우기
-    frame.innerHTML = "";
-    frame.style.height = "auto";
+      callData(url);
 
-    const errMsgs = input.parentElement.querySelectorAll("p");
-    if(errMsgs.length > 0) errMsgs[0].remove();
+    } else {
+      //전에 호출했던 데이터 지우기
+      frame.innerHTML = "";
+      frame.style.height = "auto";
 
-    const errMsg = document.createElement("p");
-    errMsg.append("검색어를 입력하세요");
-    input.parentElement.append(errMsg);
-  }
+      const errMsgs = input.parentElement.querySelectorAll("p");
+      if (errMsgs.length > 0) errMsgs[0].remove();
+
+      const errMsg = document.createElement("p");
+      errMsg.append("검색어를 입력하세요");
+      input.parentElement.append(errMsg);
+    }
   }
 })
 
@@ -115,25 +117,26 @@ input.addEventListener("keyup", e=>{
 frame.addEventListener("click", e => {
   e.preventDefault();
 
-  let target = e.target.parentElement.querySelector("img");
+  let target = e.target;
+  let imgSrc = target.parentElement.getAttribute("href");
 
-  if (e.target == target) {
+  let pop = document.createElement("aside");
+  pop.classList.add("commonPop");
+  let pops = `
+        <div class="pic">
+            <img src=${imgSrc}/>
+        </div>
+        <span class="close">close</span>
+      `;
+  pop.innerHTML = pops;
+  document.body.append(pop);
 
-    let imgSrc = target.parentElement.getAttribute("href");
-
-    let pop = document.createElement("aside");
-    pop.classList.add("commonPop");
-    let pops = `
-          <div class="pic">
-              <img src=${imgSrc}/>
-          </div>
-          <span class="close">close</span>
-        `;
-    pop.innerHTML = pops;
-    document.body.append(pop);
-    document.body.style.overflow = "hidden";
-  }
-
+  new Anime(pop,{
+    prop:"opacity",
+    value:1,
+    duration:500
+  })
+  document.body.style.overflow = "hidden";
 });
 
 
@@ -165,10 +168,10 @@ function callData(url) {
       let items = json.photos.photo;
       console.log(items);
 
-      if(items.length > 0){
+      if (items.length > 0) {
         createList(items);
         imgLoaded();
-      }else{
+      } else {
         console.log("해당하는 이미지가 없습니다.");
 
         const errMsg = document.createElement("p");
@@ -193,18 +196,20 @@ function createList(items) {
     let imgSrcBig = `https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_b.jpg`;
 
     htmls += `
-                <li class="item">
-                    <div>
-                        <a href=${imgSrcBig} class="pic">
-                            <img src=${imgSrc} />
-                        </a>
-                        <p>${item.title}</p>
-                        <span class="profile">
-                            <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg"/>
-                            <strong>${item.owner}</strong>
-                        </span>
-                    </div>
-                </li>
+      <li class="item">
+        <div>
+          <div class="title-wrap clearfix">
+            <p>${item.title}</p>
+            <span class="profile">
+              <img src="http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg"/>
+              <strong>${item.owner}</strong>
+            </span>
+          </div>
+          <a href=${imgSrcBig} class="pic">
+            <img src=${imgSrc} />
+          </a>
+        </div>
+      </li>
         `;
   });
 
