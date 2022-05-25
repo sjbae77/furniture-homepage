@@ -12,10 +12,10 @@ section.content{
 }
 .sub_visual {
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  // background: url(../img/sub_banner.jpg) no-repeat center/cover;
+  background: url(../img/sub_banner.jpg) no-repeat center/cover;
 
   >.inner{
     position: relative;
@@ -29,6 +29,7 @@ section.content{
     font-size: 6vh;
     font-weight: 600;
     color: #333;
+    text-shadow: 2px 2px 2px rgba($color: #777, $alpha: 0.5);
 
     span {
       margin-left: 20px;
@@ -37,6 +38,7 @@ section.content{
       font-size: 4vh;
       font-weight: 400;
       color: #777;
+      text-shadow: 2px 2px 2px rgba($color: #777, $alpha: 0.5);
 
       &::after {
         content: '/';

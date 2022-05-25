@@ -62,9 +62,10 @@ section.content > .inner {
 
 .sub_visual {
   width: 100%;
-  height: 40vh;
+  height: 30vh;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  background: url(../img/sub_banner.jpg) no-repeat center/cover;
 }
 .sub_visual > .inner {
   position: relative;
@@ -77,6 +78,7 @@ section.content > .inner {
   font-size: 6vh;
   font-weight: 600;
   color: #333;
+  text-shadow: 2px 2px 2px rgba(119, 119, 119, 0.5);
 }
 .sub_visual h1 span {
   margin-left: 20px;
@@ -85,6 +87,7 @@ section.content > .inner {
   font-size: 4vh;
   font-weight: 400;
   color: #777;
+  text-shadow: 2px 2px 2px rgba(119, 119, 119, 0.5);
 }
 .sub_visual h1 span::after {
   content: "/";
@@ -473,6 +476,7 @@ section.content > .inner {
 }
 .gallery .galleryCont #list li div .title-wrap {
   margin-bottom: 20px;
+  padding: 15px;
 }
 .gallery .galleryCont #list li div .title-wrap p {
   padding: 5px 0;
@@ -515,6 +519,24 @@ section.content > .inner {
   height: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .gallery .galleryCont #list li {
+    width: calc(100% /2);
+  }
+}
+@media screen and (max-width: 600px) {
+  .gallery .galleryCont #list li {
+    width: 100%;
+  }
+
+  .gallery .galleryCont #searchBox h2 {
+    display: none;
+  }
+
+  .gallery .galleryCont #searchBox #search {
+    width: 220px;
+  }
+}
 .vidList {
   width: 100%;
   display: flex;

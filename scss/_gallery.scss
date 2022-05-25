@@ -84,6 +84,7 @@
 
           .title-wrap{
             margin-bottom: 20px;
+            padding: 15px;
 
             p{
               padding: 5px 0;
@@ -137,5 +138,23 @@
         height: 100%;
       }
     }
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .gallery .galleryCont #list li{
+    width: calc(100% /2);
+  }
+}
+
+@media screen and (max-width:600px) {
+  .gallery .galleryCont #list li{
+    width: 100%;
+  }
+  .gallery .galleryCont #searchBox h2{
+    display: none;
+  }
+  .gallery .galleryCont #searchBox #search{
+    width: 220px;
   }
 }
