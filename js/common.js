@@ -16,6 +16,7 @@ webNav_lis.forEach(li=>{
 
   li.addEventListener("mouseleave", e=>{
     const sub = e.currentTarget.querySelector(".sub");
+    li.querySelector("a").classList.remove("on");
 
     if(sub) {
       sub.style.top = "0";
