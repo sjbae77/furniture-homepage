@@ -53,7 +53,7 @@ function createYoutubeList(youtubeUrl){
   })
   .then(json=>{
     let items = json.items;
-    // console.log(items);
+    console.log(items);
 
     let result = '';
 
@@ -67,7 +67,7 @@ function createYoutubeList(youtubeUrl){
       result+=`
         <article>
           <div class="pic">
-            <img src="${item.snippet.thumbnails.standard.url}"/>
+            <img src="${item.snippet.thumbnails.maxres.url}"/>
           </div>
           <div class="con">
             <h2>${title}</h2>
@@ -89,15 +89,18 @@ function createYoutubeList(youtubeUrl){
 document.body.addEventListener("click", e=> closecreateYoutubePop(e));
 
 function createYoutubePop(){
+
   const youtubeBtn = document.querySelector(".youtubeBtn");
 
     youtubeBtn.addEventListener("click",e=>{
       e.preventDefault();
 
+      const vidId = e.target.parentElement.getAttribute("data-vid");
+
       let pop = document.createElement("aside");
       pop.classList.add("commonPop");
       pop.innerHTML = `
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Fxu_iu3xc5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${vidId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <span>CLOSE</span>
       `;
 

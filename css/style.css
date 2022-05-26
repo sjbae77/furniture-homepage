@@ -974,20 +974,59 @@ body.on {
 #header h1 a {
   font-size: 30px;
 }
-#header nav {
+#header #webNav {
   float: right;
 }
-#header nav ul li {
+#header #webNav ul li {
+  position: relative;
   float: left;
-  margin-left: 25px;
+  text-align: center;
 }
-#header nav ul li a {
+#header #webNav ul li > a {
+  position: relative;
+  padding: 0 20px;
+  display: block;
   font-size: 16px;
   color: #777;
   transition: 0.3s;
 }
-#header nav ul li a:hover {
-  color: #000;
+#header #webNav ul li > a::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background-color: lightblue;
+  opacity: 0;
+  transition: 0.5s;
+}
+#header #webNav ul li > a.on {
+  color: lightblue;
+}
+#header #webNav ul li > a.on::after {
+  opacity: 1;
+  width: 100%;
+}
+#header #webNav ul li .sub {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: 0.5s;
+  opacity: 0;
+}
+#header #webNav ul li .sub li {
+  width: 100%;
+}
+#header #webNav ul li .sub a {
+  padding: 0 15px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 14px;
+}
+#header #webNav ul li .sub a::after {
+  display: none;
 }
 #header.main_hd {
   border-bottom: none;
@@ -1225,6 +1264,7 @@ body.on {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 100%;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
@@ -1884,7 +1924,7 @@ body.on {
   #header .inner h1 a {
     font-size: 25px;
   }
-  #header .inner .webNav {
+  #header .inner #webNav {
     display: none;
   }
 
