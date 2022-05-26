@@ -1959,6 +1959,52 @@ body.on {
   border-radius: 10px;
 }
 
+#cookiePop {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+#cookiePop .pic {
+  height: 500px;
+}
+#cookiePop .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#cookiePop .button-wrap {
+  width: 100%;
+}
+#cookiePop .button-wrap .chk-wrap {
+  float: left;
+  width: 50%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+}
+#cookiePop .button-wrap .chk-wrap label {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#cookiePop .button-wrap .close {
+  float: left;
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1179px) {
   .inner {
     width: 100%;

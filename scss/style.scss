@@ -1183,6 +1183,58 @@ $footerTitleColor:rgba($color: #fff, $alpha: 0.8);
   }
 }
 
+#cookiePop {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  box-shadow: 5px 5px 20px rgba($color: #000000, $alpha: 0.1);
+  
+  .pic {
+    height: 500px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .button-wrap {
+    width: 100%;
+
+    .chk-wrap {
+      float: left;
+      width: 50%;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+    .close {
+      float: left;
+      width: 50%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+
 @media screen and (max-width:$tablet) {
   .inner {
     width: 100%;

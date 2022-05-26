@@ -54,6 +54,34 @@ for(let item of skipNav_item){
   })
 }
 
+/* cookiePopup =================================================================*/
+const cookiePop = document.querySelector("#cookiePop");
+const btnCookiePopClose = cookiePop.querySelector(".close");
+const isCookie = document.cookie.indexOf("today=done");
+
+if(isCookie == -1){
+  cookiePop.style.display = "block";
+} else{
+  cookiePop.style.display ="none";
+}
+
+btnCookiePopClose.addEventListener("click", ()=>{
+  let isChecked = cookiePop.querySelector("input[type=checkbox]").checked;
+  
+  if(isChecked) setCookie("today", "done", 1);
+  cookiePop.style.display ="none";
+})
+
+function setCookie(cookieName, cookieValue, time){
+  const today = new Date();
+  const date = today.getDate();
+  today.setDate(date+time);
+
+  const duedate = today.toGMTString();
+
+  document.cookie = `${cookieName}=${cookieValue}; path="/"; expires=${duedate}`;
+}
+
 
 /* about =================================================================*/
 createYoutubeList(youtubeUrl);
