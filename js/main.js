@@ -40,6 +40,20 @@ const youtubePlaylistId = "PLKoTiVSIVIvmIOTOJ5kgr1E14mbtOp1R4";
 const youtubeNum = 1;
 const youtubeUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${youtubeKey}&playlistId=${youtubePlaylistId}&maxResults=${youtubeNum}`;
 
+const skipNav_item = document.querySelectorAll("#skipNav li a");
+
+
+/* skipNav =================================================================*/
+for(let item of skipNav_item){
+  item.addEventListener("focusin", e=>{
+    item.classList.add("on");
+  });
+
+  item.addEventListener("focusout", e=>{
+    item.classList.remove("on");
+  })
+}
+
 
 /* about =================================================================*/
 createYoutubeList(youtubeUrl);

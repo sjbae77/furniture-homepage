@@ -979,6 +979,25 @@ body.on {
   overflow: hidden;
 }
 
+#skipNav li a {
+  z-index: 30;
+  display: block;
+  width: 300px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 40px;
+  text-align: center;
+  position: fixed;
+  top: -40px;
+  left: 0;
+}
+#skipNav li a.on {
+  top: 71px;
+}
+
 #mainPage section h1 {
   font-size: 30px;
   margin-bottom: 5px;
