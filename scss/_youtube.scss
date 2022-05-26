@@ -39,10 +39,43 @@
         color: #666;
         margin-bottom: 20px;
       }
-      span{
-        font: bold 16px/1 'arial';
-        color: orange;
+    }
+  }
+}
+
+@media screen and (max-width:920px) {
+  .vidList{
+    article{
+      width: 49%;
+      height: 400px;
+      margin-bottom: 50px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+  
+      .pic{
+        height: 80%;
+      }
+      .con{
+        width: 100%;
+        height: 20%;
+        padding: 20px;
+  
+        h2{
+          margin-bottom: 0;
+          font-size: 16px;
+        }
+        p{
+          display: none;
+        }
       }
     }
   }
 }
+
+@media screen and (max-width:$mobile) {
+  .vidList{
+    article{
+      width: 100%;
+    }
+  }
+} 

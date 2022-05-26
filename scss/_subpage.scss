@@ -61,6 +61,12 @@ section.content{
       font-size: 3vh;
     }
   } 
+
+  section.content{
+    >.inner{
+      padding: 50px 20px;
+    }
+  }
 }
 
 @media screen and (max-width:$mobile) {
