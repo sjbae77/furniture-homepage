@@ -1059,10 +1059,13 @@ body.on {
 #header #webNav ul li .sub {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
   background-color: #fff;
   transition: 0.5s;
   opacity: 0;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 #header #webNav ul li .sub li {
   width: 100%;
@@ -1688,6 +1691,9 @@ body.on {
   top: 50%;
   transform: translateY(-50%);
 }
+#clients .inner .slide-container .btn-wrap a img {
+  height: 70px;
+}
 #clients .inner .slide-container .btn-wrap a.prev {
   left: -65px;
 }
@@ -1713,7 +1719,6 @@ body.on {
   width: 25%;
   height: 20vh;
   margin-right: 1%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 #clients .inner .slide-wrap .cont-wrap .cont:first-child {
   margin-right: 0;
@@ -1754,8 +1759,15 @@ body.on {
   float: left;
   width: 24%;
 }
+#number .inner .text .wrap {
+  float: left;
+  font-size: 0;
+}
+#number .inner .text .wrap strong {
+  font-size: 36px;
+  font-weight: 600;
+}
 #number .inner .text span {
-  margin-right: 20px;
   float: left;
   font-size: 36px;
   font-weight: 600;
@@ -1765,6 +1777,7 @@ body.on {
   font-size: 16px;
   color: #555;
   line-height: 46px;
+  margin-left: 20px;
 }
 
 #gallery {
@@ -1780,6 +1793,8 @@ body.on {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: grayscale(1);
+  transition: 0.5s;
 }
 #gallery .pic .text {
   position: absolute;
@@ -1791,23 +1806,35 @@ body.on {
 }
 #gallery .pic .text h1 {
   font-size: 26px;
+  transition: 0.5s;
 }
 #gallery .pic .text h2 {
   font-size: 15px;
+  transition: 0.5s;
 }
 #gallery .pic .text a {
   margin-top: 25px;
   font-size: 13px;
+  transition: 0.5s;
 }
-#gallery .pic:nth-of-type(1) img {
-  filter: grayscale(1);
+#gallery .pic:hover img {
+  filter: grayscale(0);
 }
-#gallery .pic:nth-of-type(1) .text h1, #gallery .pic:nth-of-type(1) .text h2, #gallery .pic:nth-of-type(1) .text a {
+#gallery .pic:hover .text h1 {
   color: #fff;
 }
-#gallery .pic:nth-of-type(1) .text a span {
-  color: #fff;
+#gallery .pic:hover .text h2 {
+  color: #ddd;
+}
+#gallery .pic:hover .text a {
+  color: #eee;
+}
+#gallery .pic:hover .text a span {
+  color: #eee;
   border: 1px solid #fff;
+}
+#gallery .pic:hover .text a:hover {
+  color: lightblue;
 }
 
 #footer {
@@ -1991,7 +2018,6 @@ body.on {
 }
 #cookiePop .button-wrap .chk-wrap label {
   font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
 }
 #cookiePop .button-wrap .close {
@@ -2001,7 +2027,6 @@ body.on {
   line-height: 50px;
   background-color: #fff;
   font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
 }
 

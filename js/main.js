@@ -520,3 +520,30 @@ topBtn.addEventListener("click",e=>{
 })
 
 
+/* counter =================================================================*/
+window.addEventListener("scroll", ()=>{
+  if(this.scrollY > secPosArr[6] -800) {
+    counter(".num1", 15, 2000);
+    counter(".num2", 25, 2000);
+    counter(".num3", 1143, 2000);
+    counter(".num4", 379, 2000);
+  }
+})
+
+function counter(el, target, time){
+  const item = document.querySelector(el);
+  let current = parseInt(item.innerText);
+  let count = target - current;
+  let interval = time/count;
+
+  let timer = setInterval(()=>{
+    if(current === target){
+      clearInterval(timer);
+      return;
+    }
+
+  current++;
+  item.innerText = current;
+
+  },interval)
+}
