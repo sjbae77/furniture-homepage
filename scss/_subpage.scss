@@ -37,8 +37,7 @@ section.content{
       padding-left: 20px;
       font-size: 4vh;
       font-weight: 400;
-      color: #777;
-      text-shadow: 2px 2px 2px rgba($color: #777, $alpha: 0.5);
+      color: #ddd;
 
       &::after {
         content: '/';
@@ -47,6 +46,17 @@ section.content{
         top: 0;
         left: 0;
       }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #333;
     }
   }
 }

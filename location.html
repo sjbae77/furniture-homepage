@@ -7,7 +7,9 @@
   <title>community</title>
   <script src="https://kit.fontawesome.com/16312fa746.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab2b2da3f94cd0fc1f16d0fe8578e064"></script>
   <script src="js/common.js" defer></script>
+  <script src="js/location.js" defer></script>
 </head>
 <body>
   <header id="header" class="header_sub">
@@ -33,14 +35,33 @@
     </div>
   </header>
 
-  <section class="content community">
+  <section class="content location">
     <div class="sub_visual">
       <div class="inner">
-        <h1>location<span>찾아오시는길</span></h1>
+        <h1>Location<span>찾아오시는길</span></h1>
       </div>
     </div>
     <div class="inner">
+      <ul class="branch clearfix">
+        <li class="on"><a href="#">광명점</a></li>
+        <li><a href="#">기흥점</a></li>
+        <li><a href="#">고양점</a></li>
+      </ul>
 
+      <div class="map_wrap">
+        <div id="map"></div> 
+
+        <div class="controlType">
+          <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
+          <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
+        </div>
+
+        <div class="controlZoom"> 
+          <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+          <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+        </div>
+      </div>
+      
     </div>
   </section>
 
