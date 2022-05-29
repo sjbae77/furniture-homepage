@@ -885,6 +885,7 @@ section.content > .inner {
   margin-top: 20px;
   font-size: 15px;
   font-style: normal;
+  line-height: 1.4;
 }
 .location .contents-wrap .cont span {
   display: block;
@@ -912,6 +913,13 @@ section.content > .inner {
   margin-right: 0;
 }
 
+@media screen and (max-width: 1179px) {
+  .location .contents-wrap .cont {
+    width: 100%;
+    margin-bottom: 50px;
+    word-break: keep-all;
+  }
+}
 /* 회원가입 페이지 */
 .join {
   width: 100%;

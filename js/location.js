@@ -65,6 +65,14 @@ for (let i = 0; i < markerOptions.length; i++) {
   })
 }
 
+window.addEventListener("resize",()=>{
+  let active = document.querySelector(".branch li.on");
+  let active_index = branch.indexOf(active);
+  console.log(active_index);
+
+  map.setCenter(markerOptions[active_index].latlng);
+})
+
 function setMapType(maptype) { 
   const roadmapControl = document.getElementById('btnRoadmap');
   const skyviewControl = document.getElementById('btnSkyview'); 
