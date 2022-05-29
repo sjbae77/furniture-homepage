@@ -52,13 +52,13 @@
             </div>
 
             <div class="all-agree-wrap">
-              <input type="checkbox" name="allAgree" id="allAgree">
+              <input type="checkbox" name="allAgree" id="allAgree" onclick="selectAll(this)">
               <label for="allAgree">약관 전체 항목 동의</label>
             </div>
 
             <div class="agree-wrap">
               <div class="agreement">
-                <input type="checkbox" name="termsAgree" id="termsAgree">
+                <input type="checkbox" name="termsAgree" id="termsAgree" onclick="checkSelectAll()">
                 <label for="termsAgree">회원가입 약관 동의 <strong>[필수]</strong></label>
               </div>
               <div class="terms">
@@ -70,7 +70,7 @@
 
             <div class="agree-wrap">
               <div class="agreement">
-                <input type="checkbox" name="policyAgree" id="policyAgree">
+                <input type="checkbox" name="policyAgree" id="policyAgree" onclick="checkSelectAll()">
                 <label for="policyAgree">개인정보 처리방침 안내 동의 <strong>[필수]</strong></label>
               </div>
               <div class="terms">

@@ -1,5 +1,8 @@
 const form = document.querySelector("#signUp");
-const btnSubmit = document.querySelector(".btnSubmit");
+const btnSubmit = form.querySelector(".btnSubmit");
+const termsWrap = form.querySelector(".terms-wrap");
+const btnAllCheck = termsWrap.querySelector("[name=allAgree]");
+const checkboxs = termsWrap.querySelectorAll("[type=checkbox]");
 
 btnSubmit.addEventListener("click", e=>{
   if(!isTxt("user_id", 5)) e.preventDefault();
@@ -8,7 +11,51 @@ btnSubmit.addEventListener("click", e=>{
   if(!isEmail("user_email", 5)) e.preventDefault();
   if(!isSelect("user_loc")) e.preventDefault();
   if(!isRadio("gender")) e.preventDefault();
+  if(!isChecked("termsAgree","policyAgree")) e.preventDefault();
 })
+
+function checkSelectAll() {
+  const checked = termsWrap.querySelectorAll("[type=checkbox]:checked");
+  btnAllCheck.checked = (checkboxs.length === checked.length);
+}
+
+function selectAll(checkAll){
+  checkboxs.forEach(checkbox=>{
+    checkbox.checked = checkAll.checked;
+  })
+}
+
+//체크박스 인증 함수
+function isChecked(name1, name2){
+  let input1 = form.querySelector(`[name=${name1}]`);
+  let input2 = form.querySelector(`[name=${name2}]`);
+
+  if(input1.checked && input2.checked) {
+    const errMsgs1 = input1.closest(".agreement").querySelectorAll("p");
+    const errMsgs2 = input1.closest(".agreement").querySelectorAll("p");
+    if(errMsgs1.length > 0) input1.closest(".agreement").querySelector("p").remove();
+    if(errMsgs2.length > 0) input2.closest(".agreement").querySelector("p").remove();
+
+    return true;
+
+  } else {
+    const errMsgs1 = input1.closest(".agreement").querySelectorAll("p");
+    const errMsgs2 = input2.closest(".agreement").querySelectorAll("p");
+
+    if(errMsgs1.length > 0) input1.closest(".agreement").querySelector("p").remove();
+    if(errMsgs2.length > 0) input2.closest(".agreement").querySelector("p").remove();
+
+    const errMsg1 = document.createElement("p");
+    const errMsg2 = document.createElement("p");
+    errMsg1.append("약관에 동의해주세요");
+    errMsg2.append("약관에 동의해주세요");
+    input1.closest(".agreement").append(errMsg1);
+    input2.closest(".agreement").append(errMsg2);
+
+    return false;
+  }
+  
+}
 
 //텍스트 인증 함수
 function isTxt(name, len){
@@ -151,8 +198,6 @@ function isRadio(name){
     const errMsg = document.createElement("p"); 
     errMsg.append("항목을 선택해 주세요."); 
     items[0].closest(".userInfo").append(errMsg); 
-
-    console.log("미체크")
 
     return false;
   }

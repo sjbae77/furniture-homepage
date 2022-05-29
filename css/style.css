@@ -963,6 +963,10 @@ section.content > .inner {
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+.join > .inner .terms-wrap .agree-wrap .agreement p {
+  margin-top: 5px;
+  color: lightpink;
+}
 .join > .inner .terms-wrap .agree-wrap .terms {
   padding: 20px 0 20px 20px;
 }
