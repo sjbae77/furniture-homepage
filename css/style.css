@@ -57,7 +57,7 @@ input:focus {
 
 section.content > .inner {
   min-height: 500px;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .sub_visual {
@@ -133,7 +133,7 @@ section.content > .inner {
 }
 .about #aboutTab {
   position: relative;
-  margin: 50px auto 0;
+  margin: 0 auto;
   padding-top: 50px;
   width: 100%;
 }
@@ -145,23 +145,21 @@ section.content > .inner {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 10px 50px;
-  border: 1px solid #ddd;
+  padding: 10px;
   text-align: center;
   font-size: 20px;
-  color: #777;
-  transition: 0.5s;
+  font-weight: 600;
+  color: #919191;
 }
 .about #aboutTab dt:nth-of-type(1) {
   left: 0;
 }
 .about #aboutTab dt:nth-of-type(2) {
-  left: 186px;
+  left: 110px;
 }
 .about #aboutTab dt.on a {
   color: #333;
-  font-weight: 600;
-  background-color: #ddd;
+  border-bottom: 3px solid lightblue;
 }
 .about #aboutTab dd {
   width: 100%;
@@ -789,6 +787,7 @@ section.content > .inner {
 
 .location .branch {
   width: 300px;
+  margin: 0 auto 30px;
 }
 .location .branch li {
   float: left;
@@ -796,24 +795,29 @@ section.content > .inner {
 }
 .location .branch li a {
   display: block;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  font-size: 15px;
+  padding-bottom: 10px;
+  border-bottom: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #919191;
   text-align: center;
   background-color: #fff;
 }
-.location .map_wrap {
+.location .branch li.on a {
+  border-bottom: 3px solid lightblue;
+  color: #222;
+}
+.location .map-wrap {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 400px;
 }
-.location .map_wrap #map {
+.location .map-wrap #map {
   width: 100%;
   height: 100%;
 }
-.location .map_wrap .controlType {
+.location .map-wrap .controlType {
   z-index: 1;
   position: absolute;
   top: 10px;
@@ -823,7 +827,7 @@ section.content > .inner {
   border: 1px solid #919191;
   border-radius: 5px;
 }
-.location .map_wrap .controlType span {
+.location .map-wrap .controlType span {
   display: inline-block;
   width: 65px;
   height: 30px;
@@ -833,10 +837,10 @@ section.content > .inner {
   font-size: 13px;
   cursor: pointer;
 }
-.location .map_wrap .controlType span.selected_btn {
+.location .map-wrap .controlType span.selected_btn {
   background-color: lightblue;
 }
-.location .map_wrap .controlZoom {
+.location .map-wrap .controlZoom {
   z-index: 1;
   position: absolute;
   top: 50px;
@@ -848,7 +852,7 @@ section.content > .inner {
   border: 1px solid #919191;
   border-radius: 5px;
 }
-.location .map_wrap .controlZoom span {
+.location .map-wrap .controlZoom span {
   display: block;
   width: 100%;
   height: 40px;
@@ -856,12 +860,56 @@ section.content > .inner {
   text-align: center;
   cursor: pointer;
 }
-.location .map_wrap .controlZoom span img {
+.location .map-wrap .controlZoom span img {
   width: 15px;
   height: 15px;
 }
-.location .map_wrap .controlZoom span:last-child {
+.location .map-wrap .controlZoom span:last-child {
   border-top: 1px solid #919191;
+}
+.location .contents-wrap {
+  margin-top: 100px;
+}
+.location .contents-wrap .cont {
+  position: relative;
+  float: left;
+  width: 380px;
+  margin-right: 20px;
+  height: 200px;
+}
+.location .contents-wrap .cont h1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+.location .contents-wrap .cont address {
+  margin-top: 20px;
+  font-size: 15px;
+  font-style: normal;
+}
+.location .contents-wrap .cont span {
+  display: block;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.location .contents-wrap .cont em {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  background-color: lightblue;
+}
+.location .contents-wrap .cont::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: #000;
+}
+.location .contents-wrap .cont:last-child {
+  margin-right: 0;
 }
 
 /* 회원가입 페이지 */
