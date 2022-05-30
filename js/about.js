@@ -1,8 +1,3 @@
-const tab = document.querySelector("#aboutTab");
-const btns = tab.querySelectorAll("dt");
-const boxs = tab.querySelectorAll("dd");
-const btns_a = document.querySelectorAll("dt>a");
-
 const company = document.querySelector(".company")
 const articles = company.querySelectorAll("article");
 const svgTxt = company.querySelector("svg text");
@@ -13,26 +8,6 @@ const memberList = document.querySelector(".member-wrap");
 
 setPos();
 createList("memberData.json");
-
-//웹접근성 개선
-btns_a.forEach((el,idx)=>{
-    el.addEventListener("focusin", ()=>{
-        activation(btns, idx);
-        activation(boxs, idx);
-    })
-})
-
-//탭메뉴 구현
-btns.forEach((el,index)=>{
-  el.addEventListener("click", e=>{
-      e.preventDefault();
-      let isOn = e.currentTarget.classList.contains("on");
-      if(isOn) return;
-
-      activation(btns, index);
-      activation(boxs, index);
-  })
-})
 
 //브라우저 스크롤시 현재의 스크롤 거리값 출력
 // company section의 article들 offset값을 구하여 svg모션,banner scale 구현
@@ -54,10 +29,6 @@ window.addEventListener("scroll", e=>{
   else if(scroll < posArr[2] || scroll > posArr[2]) banner.classList.remove("on");
 })
 
-function activation(arr, index){
-  for(const item of arr) item.classList.remove("on");
-  arr[index].classList.add("on");
-}
 
 function setPos(){
   posArr = [];
