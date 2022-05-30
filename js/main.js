@@ -8,12 +8,6 @@ const _left = document.querySelectorAll(".borderLeft");
 const borderSpeed = 300;
 const _unHover = [];
 
-const clientSec = document.querySelector("#clients");
-const prevBtn = clientSec.querySelector(".prev");
-const nextBtn = clientSec.querySelector(".next");
-let enableClick = true;
-const clientSlideSpeed = 500;
-
 const mainSecs = document.querySelectorAll("section");
 const mainHd = document.querySelector(".main_hd");
 const secPosArr = [];
@@ -95,7 +89,7 @@ function createYoutubeList(youtubeUrl){
   })
   .then(json=>{
     let items = json.items;
-    console.log(items);
+    // console.log(items);
 
     let result = '';
 
@@ -338,73 +332,6 @@ function bannerPrevAni(){
   })
 }
 
-/* clients =====================================================================*/
-//클라이언트 섹션 슬라이드
-init(clientSec);
-
-nextBtn.addEventListener("click",e=>{
-  e.preventDefault();
-
-  if(enableClick){
-    enableClick = false; 
-    nextSlide(clientSec);
-  }
-
-})
-prevBtn.addEventListener("click",e=>{
-  e.preventDefault();
-
-  if(enableClick){
-    enableClick = false; 
-    prevSlide(clientSec);
-  }
-
-})
-
-function init(frame){
-  const ul = frame.querySelector("ul"); 
-  const lis = ul.querySelectorAll("li"); 
-  const len = lis.length; 
-
-  ul.style.left = "-26%";    
-  ul.style.width = `${26 * len}%`; 
-  ul.prepend(ul.lastElementChild);
-  lis.forEach((li)=>li.style.width = `${100 / len}%`);
-}
-
-function nextSlide(frame){
-  const ul = frame.querySelector("ul");
-
-  new Anime(ul,{
-      prop:"left", 
-      value:"-52%", 
-      duration: clientSlideSpeed, 
-      callback:()=>{
-        ul.append(ul.firstElementChild); 
-        ul.style.left = "-26%"; 
-        enableClick = true; 
-      }
-  })
-}
-
-function prevSlide(frame){
-  const ul = frame.querySelector("ul");
-
-  new Anime(ul, {
-      prop:"left", 
-      value:"0%", 
-      duration:clientSlideSpeed, 
-      callback:()=>{
-        ul.prepend(ul.lastElementChild);
-        ul.style.left = "-27%"; 
-        enableClick = true; 
-      }
-  })
-}
-
-for(let section of mainSecs){
-  secPosArr.push(section.offsetTop);
-}
 
 /* news =====================================================================*/
 //뉴스 섹션 보더 이벤트
