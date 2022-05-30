@@ -2193,6 +2193,99 @@ body.on {
     display: none;
   }
 
+  #visual .swiper-slide .inner .text-wrap {
+    left: 20px;
+  }
+  #visual .swiper-slide .inner .text-wrap p {
+    font-size: 18px;
+  }
+  #visual .swiper-pagination .swiper-pagination-bullet {
+    width: 80px;
+  }
+  #visual .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 100px;
+  }
+
+  #about .article1 .icon-wrap {
+    width: 100%;
+  }
+  #about .article1 .text-wrap .right {
+    margin: 50px 0 0;
+  }
+  #about .article2 .youtube {
+    width: 100%;
+  }
+  #about .article2 .text-wrap {
+    width: 100%;
+    height: auto;
+    padding: 50px 20px 0;
+  }
+  #about .article3 .inner .pic {
+    width: 500px;
+    height: auto;
+    margin-right: 0;
+  }
+  #about .article3 .inner .pic img {
+    margin-top: 0;
+  }
+  #about .article3 .inner .text-wrap {
+    margin-top: 50px;
+    width: 100%;
+  }
+  #about .article3 .inner .text-wrap > div p {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  #service .inner .article-wrap article {
+    width: 100%;
+  }
+  #service .inner .article-wrap article .icon-wrap {
+    text-align: center;
+  }
+
+  #display {
+    margin-bottom: 200px;
+  }
+  #display .inner {
+    padding: 20px;
+  }
+  #display .inner .card {
+    width: 100%;
+    padding: 50px;
+    margin: 0 0 20px;
+  }
+  #display .inner .card p {
+    margin-top: 50px;
+  }
+  #display .inner .img {
+    width: 100%;
+  }
+  #display .inner .img .img2 {
+    right: -22px;
+  }
+
+  #news .inner .article-wrap article {
+    width: 49%;
+    margin-right: 1%;
+  }
+
+  #number .inner .text p {
+    line-height: 20px;
+    margin: 10px 0 0;
+  }
+
+  #gallery .pic {
+    width: 50%;
+  }
+  #gallery .pic:nth-of-type(2) {
+    display: none;
+  }
+  #gallery .pic .text h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
   #footer .inner .footer-cont .cont {
     width: 48%;
     margin-right: 2%;
@@ -2212,6 +2305,94 @@ body.on {
   }
 }
 @media screen and (max-width: 539px) {
+  #visual .swiper-pagination .swiper-pagination-bullet {
+    width: 50px;
+  }
+  #visual .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 80px;
+  }
+
+  #about .article1 .icon-wrap .cont {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+  #about .article1 .icon-wrap .cont:first-child::before, #about .article1 .icon-wrap .cont::after {
+    display: none;
+  }
+  #about .article2 .youtube article .con > h2 {
+    font-size: 18px;
+  }
+  #about .article2 .youtube article .con > p {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  #about .article3 .inner .pic {
+    width: 100%;
+  }
+  #about .article3 .inner .text-wrap {
+    margin-top: 50px;
+    width: 100%;
+  }
+  #about .article3 .inner .text-wrap > div p {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  #service .inner .article-wrap article {
+    width: 100%;
+  }
+  #service .inner .article-wrap article .icon-wrap {
+    text-align: center;
+  }
+
+  #display {
+    margin-bottom: 200px;
+  }
+  #display .inner .card {
+    padding: 20px;
+  }
+  #display .inner .card h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  #display .inner .card p {
+    margin-top: 30px;
+  }
+  #display .inner .img .img2 {
+    display: none;
+  }
+
+  #news .inner .article-wrap article {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #number .inner .text {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  #number .inner .text .wrap strong {
+    font-size: 25px;
+  }
+  #number .inner .text span {
+    font-size: 25px;
+  }
+  #number .inner .text p {
+    font-size: 15px;
+  }
+
+  #gallery .pic {
+    width: 100%;
+  }
+
+  #topBtn {
+    width: 50px;
+    height: 50px;
+  }
+  #topBtn i {
+    font-size: 25px;
+  }
+
   #footer .inner .footer-cont .cont {
     width: 100%;
     margin-right: 0;
