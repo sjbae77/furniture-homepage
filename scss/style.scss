@@ -21,9 +21,9 @@ body.on {
   overflow: hidden;
 }
 
-
+//스크롤 커스텀
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -763,7 +763,7 @@ body::-webkit-scrollbar-track {
         height: 100px;
         margin-right: 20px;
         margin-bottom: 30px;
-        padding: 12px;
+        padding: 20px 12px;
         transition: 0.5s;
 
         &:nth-child(3n) {
@@ -831,8 +831,8 @@ body::-webkit-scrollbar-track {
 
       .title-wrap {
         opacity: 0;
-        transform: translateX(200px);
-        transition: 1s;
+        transform: translateY(100px);
+        transition: 1.2s;
         transition-delay: 0.3s;
 
         h2 {
@@ -852,7 +852,7 @@ body::-webkit-scrollbar-track {
         font-size: 16px;
         line-height: 1.6;
         opacity: 0;
-        transform: translateX(200px);
+        transform: translateY(100px);
         transition: 1s;
         transition-delay: 0.6s;
       }
@@ -860,7 +860,7 @@ body::-webkit-scrollbar-track {
       a {
         margin-top: 60px;
         opacity: 0;
-        transform: translateX(200px);
+        transform: translateY(100px);
         transition: 1s;
         transition-delay: 0.9s;
       }
@@ -883,7 +883,7 @@ body::-webkit-scrollbar-track {
         height: 80%;
         position: absolute;
         top: 200px;
-        right: -70px;
+        right: 0;
         padding: 20px;
         border: 2px solid #ddd;
       }
@@ -893,7 +893,7 @@ body::-webkit-scrollbar-track {
   &.on .inner .card {
     .title-wrap, p, a {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
 }
@@ -1583,10 +1583,6 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
 
       .img {
         width: 100%;
-
-        .img2 {
-          right: -22px;
-        }
       }
     }
   }
