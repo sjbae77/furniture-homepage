@@ -154,9 +154,7 @@
       width: 100%;
   
       input{
-        padding: 16px 30px;
         font-size: 20px;
-        // box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.15);
         border-radius: 50px;
       }
   
@@ -168,6 +166,7 @@
       }
       .btnSubmit{
         float: right;
+        padding: 16px 30px;
         background-color: #333;
         color: #fff;
         cursor: pointer;

@@ -25,7 +25,7 @@ window.addEventListener("scroll", e=>{
   }
 
   //세번째 article에 스크롤이 도달했을 때
-  if(scroll >= posArr[2] -200) banner.classList.add("on");
+  if(scroll >= posArr[2] - 200) banner.classList.add("on");
   else if(scroll < posArr[2] || scroll > posArr[2]) banner.classList.remove("on");
 })
 

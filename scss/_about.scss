@@ -176,7 +176,7 @@
         .text-box{
           width: 100%;
           height: 200px;
-          padding: 300px 0;
+          padding: 120px 0 200px;
     
           svg{
             float: right;
@@ -188,18 +188,8 @@
               stroke-width: 1px;
               stroke-dasharray: 465;
               stroke-dashoffset: 465;
-              // animation: stroke 2s linear;
-              
             }
     
-            // @keyframes stroke{
-            //   0%{
-            //     stroke-dashoffset: 465px;
-            //   }
-            //   100%{
-            //     stroke-dashoffset: 0;
-            //   }
-            // }
           }
         }
     

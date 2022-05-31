@@ -55,7 +55,7 @@ window.addEventListener("scroll", () => {
     aboutSec.querySelector(".article2").classList.remove("on");
   }
 
-  if (this.scrollY > secPosArr[1] + 300) {
+  if (this.scrollY > secPosArr[1] + 400) {
     aboutSec.querySelector(".article3").classList.add("on");
   }
   else {
