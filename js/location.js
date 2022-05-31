@@ -1,122 +1,104 @@
-const mapContainer = document.getElementById('map');
-const branch_btns = document.querySelectorAll(".branch li");
-const branch = Array.from(branch_btns);
+class Location{
+  constructor(frame, opt){
+    this.mapContainer = document.getElementById(frame);
+    this.branch = document.querySelector(opt.branchName);
+    this.branch_btns = this.branch.querySelectorAll("li");
 
-mapOption = { 
-  center: new kakao.maps.LatLng(37.4244, 126.8828), // 지도의 중심좌표
-  level: 3 // 지도의 확대 레벨
-};
+    this.mapOption = { 
+      center: new kakao.maps.LatLng(opt.branch1.latlng[0],opt.branch1.latlng[1]), // 지도의 중심좌표
+      level: 3 // 지도의 확대 레벨
+    };
 
-let map = new kakao.maps.Map(mapContainer, mapOption);
+    this.map = new kakao.maps.Map(this.mapContainer, this.mapOption);
 
-let markerOptions = [
-  {
-    title: "광명점",
-    latlng: new kakao.maps.LatLng(37.4244, 126.8828),
-    imgSrc: "img/marker.png",
-    imgSize: new kakao.maps.Size(50, 50),
-    imgPos: { offset: new kakao.maps.Point(20, 50) },
-    button: branch_btns[0],
-    content: '<div>이케아 광명점</div>'
-  },
-  {
-    title: "기흥점",
-    latlng: new kakao.maps.LatLng(37.2228, 127.1161),
-    imgSrc: "img/marker.png",
-    imgSize: new kakao.maps.Size(50, 50),
-    imgPos: { offset: new kakao.maps.Point(20, 50) },
-    button: branch_btns[1],
-    content: '<div>이케아 기흥점</div>'
-  },
-  {
-    title: "고양점",
-    latlng: new kakao.maps.LatLng(37.6301, 126.863),
-    imgSrc: "img/marker.png",
-    imgSize: new kakao.maps.Size(50, 50),
-    imgPos: { offset: new kakao.maps.Point(20, 50) },
-    button: branch_btns[2],
-    content: '<div>이케아 고양점</div>'
-  }
-];
+    this.markerOptions = [
+      {
+        title: opt.branch1.title,
+        latlng: new kakao.maps.LatLng(opt.branch1.latlng[0],opt.branch1.latlng[1]),
+        imgSrc: opt.branch1.imgSrc,
+        imgSize: new kakao.maps.Size(50, 50),
+        imgPos: { offset: new kakao.maps.Point(20, 50) },
+        button: this.branch_btns[0],
+        content: opt.branch1.content
+      },
+      {
+        title: opt.branch2.title,
+        latlng: new kakao.maps.LatLng(opt.branch2.latlng[0], opt.branch2.latlng[1]),
+        imgSrc: opt.branch2.imgSrc,
+        imgSize: new kakao.maps.Size(50, 50),
+        imgPos: { offset: new kakao.maps.Point(20, 50) },
+        button: this.branch_btns[1],
+        content: opt.branch2.content
+      },
+      {
+        title: opt.branch3.title,
+        latlng: new kakao.maps.LatLng(opt.branch3.latlng[0],opt.branch3.latlng[1]),
+        imgSrc: opt.branch3.imgSrc,
+        imgSize: new kakao.maps.Size(50, 50),
+        imgPos: { offset: new kakao.maps.Point(20, 50) },
+        button: this.branch_btns[2],
+        content: opt.branch3.content
+      }
+    ];
 
-for (let i = 0; i < markerOptions.length; i++) {
-  const marker = new kakao.maps.Marker({
-    map: map,
-    position: markerOptions[i].latlng,
-    title: markerOptions[i].title,
-    image: new kakao.maps.MarkerImage(markerOptions[i].imgSrc, markerOptions[i].imgSize, markerOptions[i].imgPos)
-  });
+    for (let i = 0; i < this.markerOptions.length; i++) {
+      const marker = new kakao.maps.Marker({
+        map: this.map,
+        position: this.markerOptions[i].latlng,
+        title: this.markerOptions[i].title,
+        image: new kakao.maps.MarkerImage(this.markerOptions[i].imgSrc, this.markerOptions[i].imgSize, this.markerOptions[i].imgPos)
+      });
 
-  const infowindow = new kakao.maps.InfoWindow({
-    content: markerOptions[i].content
-  });
-
-  kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-  kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-
-  //branch 버튼 클릭시 지도이동 
-  markerOptions[i].button.addEventListener("click", e => {
-    e.preventDefault();
-    for (let branch of branch_btns) {
-      branch.classList.remove("on");
+      //branch 버튼 클릭시 지도이동 
+      this.markerOptions[i].button.addEventListener("click", e => {
+        e.preventDefault();
+        for (let branch of this.branch_btns) {
+          branch.classList.remove("on");
+        }
+        this.markerOptions[i].button.classList.add("on");
+        this.moveTo(this.markerOptions[i].latlng)
+      })
     }
-    markerOptions[i].button.classList.add("on");
-    moveTo(markerOptions[i].latlng)
-  })
-}
 
-window.addEventListener("resize",()=>{
-  let active = document.querySelector(".branch li.on");
-  let active_index = branch.indexOf(active);
-  console.log(active_index);
+    window.addEventListener("resize",()=>{
+      let active = document.querySelector(".branch li.on");
 
-  map.setCenter(markerOptions[active_index].latlng);
-})
+      const branch = Array.from(this.branch_btns);
+      let active_index = branch.indexOf(active);
 
-function setMapType(maptype) { 
-  const roadmapControl = document.getElementById('btnRoadmap');
-  const skyviewControl = document.getElementById('btnSkyview'); 
-  if (maptype === 'roadmap') {
-      map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
-      roadmapControl.className = 'selected_btn';
-      skyviewControl.className = 'btn';
-  } else {
-      map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
-      skyviewControl.className = 'selected_btn';
-      roadmapControl.className = 'btn';
+      this.map.setCenter(this.markerOptions[active_index].latlng);
+    })
   }
+
+  setMapType(maptype) { 
+    const roadmapControl = document.getElementById('btnRoadmap');
+    const skyviewControl = document.getElementById('btnSkyview'); 
+    if (maptype === 'roadmap') {
+        this.map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);    
+        roadmapControl.className = 'selected_btn';
+        skyviewControl.className = 'btn';
+    } else {
+        this.map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);    
+        skyviewControl.className = 'selected_btn';
+        roadmapControl.className = 'btn';
+    }
+  }
+
+  zoomIn() {
+    this.map.setLevel(map.getLevel() - 1);
+  }
+  
+  zoomOut() {
+    this.map.setLevel(map.getLevel() + 1);
+  }
+  
+  moveTo(target) {
+    var moveLatLon = target;
+    this.map.setCenter(moveLatLon);
+  }
+  
 }
 
-function zoomIn() {
-  map.setLevel(map.getLevel() - 1);
-}
 
-function zoomOut() {
-  map.setLevel(map.getLevel() + 1);
-}
 
-function makeOverListener(map, marker, infowindow) {
-  return function() {
-      infowindow.open(map, marker);
-  };
-}
-
-function makeOutListener(infowindow) {
-  return function() {
-      infowindow.close();
-  };
-}
-
-// //지도 컨트롤 보이기 
-// var mapTypeControl = new kakao.maps.MapTypeControl();
-// map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-// //zoom 컨트롤 보이기 
-// var zoomControl = new kakao.maps.ZoomControl();
-// map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-function moveTo(target) {
-  var moveLatLon = target;
-  map.setCenter(moveLatLon);
-}
 

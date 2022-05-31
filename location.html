@@ -10,6 +10,31 @@
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab2b2da3f94cd0fc1f16d0fe8578e064"></script>
   <script src="js/common.js" defer></script>
   <script src="js/location.js" defer></script>
+  <script>
+    window.addEventListener("load", ()=>{
+      new Location("map",{
+        branchName:".branch",
+        branch1: {
+          title:"광명점",
+          latlng:[37.4244, 126.8828],
+          imgSrc:"img/marker.png",
+          content:"<div>이케아 광명점</div>"
+        },
+        branch2: {
+          title:"기흥점",
+          latlng:[37.2228, 127.1161],
+          imgSrc:"img/marker.png",
+          content:"<div>이케아 기흥점</div>"
+        },
+        branch3: {
+          title:"고양점",
+          latlng:[37.6301, 126.863],
+          imgSrc:"img/marker.png",
+          content:"<div>이케아 고양점</div>"
+        },
+      })
+    })
+  </script>
 </head>
 <body>
   <header id="header" class="header_sub">
