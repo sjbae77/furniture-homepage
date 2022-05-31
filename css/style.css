@@ -1392,38 +1392,44 @@ body.on {
   display: block;
   font-size: 16px;
 }
-#about .article1 .icon-wrap .cont:first-child::before {
+#about .article1 .icon-wrap .cont::before {
   content: "";
   display: block;
   position: absolute;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 70%;
-  background-color: #ddd;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  z-index: -1;
+  transition: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.07);
 }
-#about .article1 .icon-wrap .cont::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 70%;
-  background-color: #ddd;
+#about .article1 .icon-wrap .cont:hover::before {
+  background-color: lightblue;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
-#about .article1 .icon-wrap .cont:hover i {
-  transform: translateY(-10px);
-  color: lightblue;
+#about .article1 .icon-wrap .cont:hover i, #about .article1 .icon-wrap .cont:hover span {
+  color: #fff;
+}
+#about .article1 .text-wrap {
+  padding: 50px 0;
 }
 #about .article1 .text-wrap .left {
   float: left;
+  width: 25%;
+  transform: translateX(-100px);
+  transition: 1s;
+  opacity: 0;
 }
 #about .article1 .text-wrap .right {
   float: left;
-  margin-left: 50px;
+  width: 75%;
+  transform: translateX(100px);
+  transition: 1s;
+  opacity: 0;
 }
 #about .article1 .text-wrap .right p {
   font-size: 20px;
@@ -1433,6 +1439,14 @@ body.on {
 #about .article1 .text-wrap .right a {
   margin-top: 20px;
   font-size: 16px;
+}
+#about .article1.on .text-wrap .left {
+  transform: translateX(0);
+  opacity: 1;
+}
+#about .article1.on .text-wrap .right {
+  transform: translateX(0);
+  opacity: 1;
 }
 #about .article2 {
   margin-bottom: 100px;
@@ -1511,13 +1525,20 @@ body.on {
   padding: 40px 80px;
 }
 #about .article2 .text-wrap ul {
-  margin: 50px 0;
+  margin: 50px 0 30px;
 }
 #about .article2 .text-wrap ul li {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
+  color: #555;
+  transform: translateY(50px);
+  transition: 1s;
+  opacity: 0;
+}
+#about .article2 .text-wrap ul li:last-child {
+  margin-bottom: 0;
 }
 #about .article2 .text-wrap ul li::before {
   content: "";
@@ -1530,6 +1551,28 @@ body.on {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+#about .article2 .text-wrap ul li:nth-of-type(1) {
+  transition-delay: 0s;
+}
+#about .article2 .text-wrap ul li:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+#about .article2 .text-wrap ul li:nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+#about .article2 .text-wrap ul li:nth-of-type(4) {
+  transition-delay: 0.6s;
+}
+#about .article2 .text-wrap ul li:nth-of-type(5) {
+  transition-delay: 0.8s;
+}
+#about .article2 .text-wrap ul li:nth-of-type(6) {
+  transition-delay: 1s;
+}
+#about .article2.on .text-wrap ul li {
+  transform: translateY(0);
+  opacity: 1;
 }
 #about .article3 {
   margin-bottom: 150px;
@@ -1558,12 +1601,27 @@ body.on {
   font-size: 18px;
   line-height: 1.4;
   color: #777;
+  transition: 1s;
+  opacity: 0;
 }
-#about .article3 .inner .text-wrap > div p:last-child {
+#about .article3 .inner .text-wrap > div p:nth-of-type(1) {
+  transform: translateX(-100px);
+}
+#about .article3 .inner .text-wrap > div p:nth-of-type(2) {
   float: right;
+  transform: translateX(100px);
 }
 #about .article3 .inner .text-wrap a {
   margin-top: 20px;
+}
+#about .article3.on .text-wrap > div p {
+  opacity: 1;
+}
+#about .article3.on .text-wrap > div p:nth-of-type(1) {
+  transform: translateX(0);
+}
+#about .article3.on .text-wrap > div p:nth-of-type(2) {
+  transform: translateX(0);
 }
 
 #banner {
@@ -1832,19 +1890,24 @@ body.on {
   width: 100%;
   position: relative;
 }
+#clients .inner .slide-container .btn-wrap {
+  position: relative;
+  text-align: right;
+}
 #clients .inner .slide-container .btn-wrap a {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+}
+#clients .inner .slide-container .btn-wrap a i {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-}
-#clients .inner .slide-container .btn-wrap a img {
-  height: 70px;
-}
-#clients .inner .slide-container .btn-wrap a.prev {
-  left: -65px;
-}
-#clients .inner .slide-container .btn-wrap a.next {
-  right: -65px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #fff;
 }
 #clients .inner .slide-wrap {
   margin-top: 50px;
@@ -1878,7 +1941,6 @@ body.on {
   line-height: 20vh;
   font-size: 24px;
   transition: 0.5s;
-  opacity: 0.5;
 }
 #clients .inner .slide-wrap .cont-wrap .cont a img {
   width: 100%;
@@ -1886,7 +1948,7 @@ body.on {
 }
 #clients .inner .slide-wrap .cont-wrap .cont a:hover {
   opacity: 1;
-  transform: scale(0.9);
+  transform: scale(1.05);
 }
 #clients .inner .slide-wrap .cont-wrap .cont a:hover::before {
   background-color: #ccc;
@@ -2209,7 +2271,11 @@ body.on {
   #about .article1 .icon-wrap {
     width: 100%;
   }
+  #about .article1 .text-wrap .left {
+    width: 100%;
+  }
   #about .article1 .text-wrap .right {
+    width: 100%;
     margin: 50px 0 0;
   }
   #about .article2 .youtube {

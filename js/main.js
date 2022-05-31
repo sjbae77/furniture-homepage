@@ -29,9 +29,50 @@ const youtubeUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=sni
 const skipNav_item = document.querySelectorAll("#skipNav li a");
 
 
+/* 스크롤이벤트 =================================================================*/
+// 탑버튼 추가, 헤더 on으로 활성화
 for(let section of mainSecs){
   secPosArr.push(section.offsetTop);
 }
+
+window.addEventListener("scroll", () => {
+
+  if (this.scrollY > secPosArr[1] - 200) {
+    topBtn.classList.add("on");
+    mainHd.classList.add("on");
+    aboutSec.querySelector(".article1").classList.add("on");
+
+  } else {
+    topBtn.classList.remove("on");
+    mainHd.classList.remove("on");
+    aboutSec.querySelector(".article1").classList.remove("on");
+  }
+
+  if (this.scrollY > secPosArr[1]) {
+    aboutSec.querySelector(".article2").classList.add("on");
+  }
+  else {
+    aboutSec.querySelector(".article2").classList.remove("on");
+  }
+
+  if (this.scrollY > secPosArr[1] + 300) {
+    aboutSec.querySelector(".article3").classList.add("on");
+  }
+  else {
+    aboutSec.querySelector(".article3").classList.remove("on");
+  }
+})
+
+topBtn.addEventListener("click", e => {
+  e.preventDefault();
+
+  new Anime(window, {
+    prop: "scroll",
+    value: 0,
+    duration: 300
+  })
+})
+
 
 /* skipNav =================================================================*/
 for (let item of skipNav_item) {
@@ -43,35 +84,6 @@ for (let item of skipNav_item) {
     item.classList.remove("on");
   })
 }
-
-/* cookiePopup =================================================================*/
-const cookiePop = document.querySelector("#cookiePop");
-const btnCookiePopClose = cookiePop.querySelector(".close");
-const isCookie = document.cookie.indexOf("today=done");
-
-if (isCookie == -1) {
-  cookiePop.style.display = "block";
-} else {
-  cookiePop.style.display = "none";
-}
-
-btnCookiePopClose.addEventListener("click", () => {
-  let isChecked = cookiePop.querySelector("input[type=checkbox]").checked;
-
-  if (isChecked) setCookie("today", "done", 1);
-  cookiePop.style.display = "none";
-})
-
-function setCookie(cookieName, cookieValue, time) {
-  const today = new Date();
-  const date = today.getDate();
-  today.setDate(date + time);
-
-  const duedate = today.toGMTString();
-
-  document.cookie = `${cookieName}=${cookieValue}; path="/"; expires=${duedate}`;
-}
-
 
 /* about =================================================================*/
 createYoutubeList(youtubeUrl);
@@ -250,29 +262,6 @@ function borderRemove(index) {
   })
 
 }
-
-//스크롤이벤트 - 탑버튼 추가, 헤더 on으로 활성화
-window.addEventListener("scroll", () => {
-
-  if (this.scrollY > secPosArr[1] - 200) {
-    topBtn.classList.add("on");
-    mainHd.classList.add("on");
-  } else {
-    topBtn.classList.remove("on");
-    mainHd.classList.remove("on");
-  }
-})
-
-topBtn.addEventListener("click", e => {
-  e.preventDefault();
-
-  new Anime(window, {
-    prop: "scroll",
-    value: 0,
-    duration: 300
-  })
-})
-
 
 /* counter =================================================================*/
 window.addEventListener("scroll", () => {
