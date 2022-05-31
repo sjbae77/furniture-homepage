@@ -98,12 +98,14 @@
 
             strong{
               margin-left: 20px;
+              font-weight: 500;
               i{
                 position: absolute;
                 top: 50%;
                 right: 50px;
                 transform: translateY(-50%);
                 font-size: 30px;
+                transition: 0.5s;
               }
             }
 
@@ -116,13 +118,18 @@
             border-top: none;
           }
 
+          &.on {
+            td strong i {
+              transform: translateY(-50%) rotate(180deg);
+            }
+          }
         }
 
         tr.toggle_faq_a{
           width: 100%;
           background-color: #f5f5fa;
           border-radius: 10px;
-          // display: none;
+          display: none;
           
           td{
             padding: 50px 50px 50px 30%;
@@ -137,7 +144,9 @@
               }
             }
           }
-          
+          &.on {
+            display: table-row;
+          }
         }
       }
     }

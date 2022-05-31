@@ -702,6 +702,7 @@ section.content > .inner {
 }
 .community > .inner #faqList tbody tr.toggle_faq td strong {
   margin-left: 20px;
+  font-weight: 500;
 }
 .community > .inner #faqList tbody tr.toggle_faq td strong i {
   position: absolute;
@@ -709,6 +710,7 @@ section.content > .inner {
   right: 50px;
   transform: translateY(-50%);
   font-size: 30px;
+  transition: 0.5s;
 }
 .community > .inner #faqList tbody tr.toggle_faq td:last-child {
   text-align: left;
@@ -716,10 +718,14 @@ section.content > .inner {
 .community > .inner #faqList tbody tr.toggle_faq:first-of-type {
   border-top: none;
 }
+.community > .inner #faqList tbody tr.toggle_faq.on td strong i {
+  transform: translateY(-50%) rotate(180deg);
+}
 .community > .inner #faqList tbody tr.toggle_faq_a {
   width: 100%;
   background-color: #f5f5fa;
   border-radius: 10px;
+  display: none;
 }
 .community > .inner #faqList tbody tr.toggle_faq_a td {
   padding: 50px 50px 50px 30%;
@@ -731,6 +737,9 @@ section.content > .inner {
   display: inline-block;
   margin-left: 20px;
   font-size: 16px;
+}
+.community > .inner #faqList tbody tr.toggle_faq_a.on {
+  display: table-row;
 }
 .community > .inner .pagination {
   margin: 30px auto;
