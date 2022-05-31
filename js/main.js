@@ -36,31 +36,34 @@ for(let section of mainSecs){
 }
 
 window.addEventListener("scroll", () => {
+  if (this.scrollY > secPosArr[0] + 100) {
+    aboutSec.querySelector(".article1").classList.add("on1");
+  } else {
+    aboutSec.querySelector(".article1").classList.remove("on1");
+  }
 
   if (this.scrollY > secPosArr[1] - 200) {
     topBtn.classList.add("on");
     mainHd.classList.add("on");
-    aboutSec.querySelector(".article1").classList.add("on");
+    aboutSec.querySelector(".article1").classList.add("on2");
 
   } else {
     topBtn.classList.remove("on");
     mainHd.classList.remove("on");
-    aboutSec.querySelector(".article1").classList.remove("on");
+    aboutSec.querySelector(".article1").classList.remove("on2");
   }
 
-  if (this.scrollY > secPosArr[1]) {
-    aboutSec.querySelector(".article2").classList.add("on");
-  }
-  else {
-    aboutSec.querySelector(".article2").classList.remove("on");
-  }
+  if (this.scrollY > secPosArr[1]) aboutSec.querySelector(".article2").classList.add("on");
+  else aboutSec.querySelector(".article2").classList.remove("on");
 
-  if (this.scrollY > secPosArr[1] + 400) {
-    aboutSec.querySelector(".article3").classList.add("on");
-  }
-  else {
-    aboutSec.querySelector(".article3").classList.remove("on");
-  }
+  if (this.scrollY > secPosArr[1] + 400) aboutSec.querySelector(".article3").classList.add("on");
+  else aboutSec.querySelector(".article3").classList.remove("on");
+
+  if (this.scrollY > secPosArr[3]) document.querySelector("#display").classList.add("on");
+  else document.querySelector("#display").classList.remove("on");
+
+  if (this.scrollY > secPosArr[4] + 200) document.querySelector("#news").classList.add("on");
+  else document.querySelector("#news").classList.remove("on");
 })
 
 topBtn.addEventListener("click", e => {
