@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,37 +12,61 @@
   <script src="js/common.js" defer></script>
   <script src="js/location.js" defer></script>
   <script>
-    window.addEventListener("load", ()=>{
-      new Location("map",{
-        branchName:".branch",
+    window.addEventListener("load", () => {
+      new Location("map", {
+        branchName: ".branch",
         branch1: {
-          title:"광명점",
-          latlng:[37.4244, 126.8828],
-          imgSrc:"img/marker.png",
-          content:"<div>이케아 광명점</div>"
+          title: "광명점",
+          latlng: [37.4244, 126.8828],
+          imgSrc: "img/marker.png",
+          content: "<div>이케아 광명점</div>"
         },
         branch2: {
-          title:"기흥점",
-          latlng:[37.2228, 127.1161],
-          imgSrc:"img/marker.png",
-          content:"<div>이케아 기흥점</div>"
+          title: "기흥점",
+          latlng: [37.2228, 127.1161],
+          imgSrc: "img/marker.png",
+          content: "<div>이케아 기흥점</div>"
         },
         branch3: {
-          title:"고양점",
-          latlng:[37.6301, 126.863],
-          imgSrc:"img/marker.png",
-          content:"<div>이케아 고양점</div>"
+          title: "고양점",
+          latlng: [37.6301, 126.863],
+          imgSrc: "img/marker.png",
+          content: "<div>이케아 고양점</div>"
         },
       })
     })
   </script>
 </head>
+
 <body>
+  <div class="bg"></div>
   <header id="header" class="header_sub">
     <div class="inner clearfix">
       <h1><a href="index.html">Furniture</a></h1>
-      <nav id="webNav">
+      <nav id="navWeb">
         <ul class="clearfix">
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Media</a>
+            <div class="sub">
+              <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <nav id="navMo">
+        <ul id="gnbMo" class="clearfix">
           <li><a href="about.html">About</a></li>
           <li>
             <a href="#">Media</a>
@@ -74,16 +99,18 @@
       </ul>
 
       <div class="map-wrap">
-        <div id="map"></div> 
+        <div id="map"></div>
 
         <div class="controlType">
           <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
           <span id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</span>
         </div>
 
-        <div class="controlZoom"> 
-          <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
-          <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+        <div class="controlZoom">
+          <span onclick="zoomIn()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png"
+              alt="확대"></span>
+          <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png"
+              alt="축소"></span>
         </div>
       </div>
 
@@ -91,7 +118,7 @@
         <div class="cont">
           <h1>광명점</h1>
           <address>
-            경기도 광명시 일직로 17 IKEA광명점(도로명)<br/>
+            경기도 광명시 일직로 17 IKEA광명점(도로명)<br />
             경기도 광명시 일직동 500 IKEA광명점(지번)
           </address>
           <span>010-7933-1330</span>
@@ -100,7 +127,7 @@
         <div class="cont">
           <h1>기흥점</h1>
           <address>
-            경기도 용인시 기흥구 신고매로 62 이케아 기흥점(도로명)<br/>
+            경기도 용인시 기흥구 신고매로 62 이케아 기흥점(도로명)<br />
             경기도 용인시 기흥구 고매동 산41-7 이케아 기흥점(지번)
           </address>
           <span>010-7933-1330</span>
@@ -109,14 +136,14 @@
         <div class="cont">
           <h1>광명점</h1>
           <address>
-            경기도 고양시 덕양구 권율대로 420(도로명)<br/>
+            경기도 고양시 덕양구 권율대로 420(도로명)<br />
             경기도 고양시 덕양구 도내동 1003(지번)
           </address>
           <span>010-7933-1330</span>
           <em>tnwjd_@naver.com</em>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -128,15 +155,15 @@
           <input type="text" placeholder="Your Email">
           <button class="subscribe">Subscribe</button>
           <p>
-            Be the first to find out about exclusive<br/>
+            Be the first to find out about exclusive<br />
             the latest lookbooks, and top
           </p>
         </div>
         <div class="cont">
           <h2>Information</h2>
           <address>
-            Phone: +82 10 7933 1330<br/>
-            Email: tnwjd_@naver.com<br/>
+            Phone: +82 10 7933 1330<br />
+            Email: tnwjd_@naver.com<br />
             Address: Ansan-si, Gyeonggi-do, Republic of Korea.
           </address>
         </div>
@@ -160,7 +187,7 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             <p>Lorem ipsum dolor sit.</p>
           </div>
-          
+
         </div>
       </div>
 
@@ -168,4 +195,5 @@
     </div>
   </footer>
 </body>
+
 </html>

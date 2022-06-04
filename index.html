@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,10 @@
   <script src="js/main_slide.js" defer></script>
   <script src="js/cookiePopup.js" defer></script>
 </head>
+
 <body id="mainPage">
+
+  <div class="bg"></div>
 
   <ul id="skipNav">
     <li><a href="#webNav">주메뉴 바로가기</a></li>
@@ -26,11 +30,36 @@
   <header id="header" class="main_hd">
     <div class="inner clearfix">
       <h1><a href="index.html">Furniture</a></h1>
-      <nav id="webNav">
+      <nav id="navWeb">
         <ul class="clearfix">
           <li><a href="about.html">About</a></li>
           <li>
             <a href="#">Media</a>
+            <div class="sub">
+              <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <nav id="navMo">
+        <ul id="gnbMo" class="clearfix">
+          <li><a href="about.html">About</a></li>
+          <li class="subMenu">
+            <a href="#">
+              <span>Media</span>
+              <i class="fas fa-angle-down"></i>
+            </a>
             <div class="sub">
               <ul>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -54,7 +83,7 @@
             <div class="text-wrap">
               <h1>THIS IS A STATE OF MIND</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />
                 Non maxime iure optio. maxime iure optio.
               </p>
               <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
@@ -66,7 +95,7 @@
             <div class="text-wrap">
               <h1>THIS IS A STATE OF MIND</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />
                 Non maxime iure optio. maxime iure optio.
               </p>
               <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
@@ -78,7 +107,7 @@
             <div class="text-wrap">
               <h1>THIS IS A STATE OF MIND</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />
                 Non maxime iure optio. maxime iure optio.
               </p>
               <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
@@ -113,15 +142,15 @@
         <div class="text-wrap clearfix">
           <div class="left">
             <h1>
-              A UNIQUE &<br/>
+              A UNIQUE &<br />
               MINIMAL DESIGN
             </h1>
             <h2>Lorem ipsum dolor sit amet.</h2>
           </div>
           <div class="right">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit alias cumque omnis<br/>
-              numquam magni, Temporibus asperiores voluptatibus, reiciendis beatae iste magni <br/>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit alias cumque omnis<br />
+              numquam magni, Temporibus asperiores voluptatibus, reiciendis beatae iste magni <br />
               illum dolores fugiat id repellat, tenetur ipsum rem asperiores!
             </p>
             <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
@@ -133,7 +162,7 @@
       <div class="youtube"></div>
       <div class="text-wrap">
         <h1>
-          TAKE EVERY CHANCE<br/>
+          TAKE EVERY CHANCE<br />
           DROP EVERY FEAR
         </h1>
         <h2>Lorem ipsum dolor sit amet.</h2>
@@ -171,8 +200,14 @@
           <h1>IT'S ALL ABOUT MILO</h1>
           <h2>Lorem ipsum dolor sit amet.</h2>
           <div class="clearfix">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laboriosam tempore, ipsa quod dicta inventore eius accusamus placeat error alias maiores ratione voluptate commodi rerum repellat expedita. Non, iusto dolores.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laboriosam tempore, ipsa quod dicta inventore eius accusamus placeat error alias maiores ratione voluptate commodi rerum repellat expedita. Non, iusto dolores.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laboriosam tempore, ipsa
+              quod dicta inventore eius accusamus placeat error alias maiores ratione voluptate commodi rerum repellat
+              expedita. Non, iusto dolores.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laboriosam tempore, ipsa
+              quod dicta inventore eius accusamus placeat error alias maiores ratione voluptate commodi rerum repellat
+              expedita. Non, iusto dolores.</p>
           </div>
           <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
         </div>
@@ -265,7 +300,8 @@
           <h2>A UNIQUE DISPLAY</h2>
           <h3>Lorem ipsum dolor</h3>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, asperiores inventore! Officia vitae vero saepe, Labore, asperiores inventore! Officia vitae vero, rem et minus quia magnam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, asperiores inventore! Officia vitae vero
+          saepe, Labore, asperiores inventore! Officia vitae vero, rem et minus quia magnam.</p>
         <a href="#" class="moreBtn">VIEW MORE <span>+</span></a>
       </div>
       <div class="img">
@@ -354,7 +390,7 @@
         </article>
       </div>
     </div>
-    
+
   </section>
   <section id="number">
     <div class="inner clearfix">
@@ -384,13 +420,13 @@
       <h2>Lorem, ipsum dolor.</h2>
 
       <div class="btn-wrap clearfix">
-          <a href="#" class="prev">
-            <i class="fas fa-angle-left"></i>
-          </a>
-          <a href="#" class="next">
-            <i class="fas fa-angle-right"></i>
-          </a>
-        </div>
+        <a href="#" class="prev">
+          <i class="fas fa-angle-left"></i>
+        </a>
+        <a href="#" class="next">
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </div>
 
       <div class="slide-container">
         <div class="slide-wrap">
@@ -422,8 +458,8 @@
           </ul>
         </div>
       </div>
-      
-      
+
+
     </div>
   </section>
   <section id="gallery" class="clearfix">
@@ -442,7 +478,7 @@
       <img src="img/img4.jpg" alt="가구 이미지">
       <div class="text">
         <h1>
-          WE ARE MILO<br/>
+          WE ARE MILO<br />
           DIGITAL AGENCY
         </h1>
         <h2>Lorem ipsum dolor sit.</h2>
@@ -459,15 +495,15 @@
           <input type="text" placeholder="Your Email">
           <button class="subscribe">Subscribe</button>
           <p>
-            Be the first to find out about exclusive<br/>
+            Be the first to find out about exclusive<br />
             the latest lookbooks, and top
           </p>
         </div>
         <div class="cont">
           <h2>Information</h2>
           <address>
-            Phone: +82 10 7933 1330<br/>
-            Email: tnwjd_@naver.com<br/>
+            Phone: +82 10 7933 1330<br />
+            Email: tnwjd_@naver.com<br />
             Address: Ansan-si, Gyeonggi-do, Republic of Korea.
           </address>
         </div>
@@ -491,7 +527,7 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             <p>Lorem ipsum dolor sit.</p>
           </div>
-          
+
         </div>
       </div>
 
@@ -517,12 +553,12 @@
   </aside>
 
   <script>
-    window.addEventListener("load", ()=>{
+    window.addEventListener("load", () => {
       new MySlider("#clients");
       new CookiePop({
-        cookieName:"today=done",
-        popup:"#cookiePop",
-        close:".close",
+        cookieName: "today=done",
+        popup: "#cookiePop",
+        close: ".close",
       });
     })
 
@@ -540,4 +576,5 @@
     });
   </script>
 </body>
+
 </html>

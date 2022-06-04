@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +12,41 @@
   <script src="js/about.js" defer></script>
   <script src="js/about_tab.js" defer></script>
   <script>
-    window.addEventListener("load", ()=>{
+    window.addEventListener("load", () => {
       new MyTab("#aboutTab");
     })
   </script>
 </head>
+
 <body>
+  <div class="bg"></div>
   <header id="header" class="header_sub">
     <div class="inner clearfix">
       <h1><a href="index.html">Furniture</a></h1>
-      <nav id="webNav">
+      <nav id="navWeb">
         <ul class="clearfix">
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Media</a>
+            <div class="sub">
+              <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <nav id="navMo">
+        <ul id="gnbMo" class="clearfix">
           <li><a href="about.html">About</a></li>
           <li>
             <a href="#">Media</a>
@@ -43,76 +68,79 @@
   <section class="content about">
     <div class="inner">
 
-        <dl id="aboutTab">
-          <dt class="on"><a href="#">Company</a></dt>
-          <dd class="on">
-            <section class="company">
-              <article class="content cont1 clearfix">
-                <div class="left">
-                  <span>MOTO</span>
-                  <h1>
-                    Beyond the<br/>
-                    Kitchen
-                  </h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate quia expedita non, quis cum repellendus sunt voluptates. Ratione voluptas non odit quisquam iure culpa qui, praesentium voluptates numquam</p>
-                </div>
-                <div class="right">
-                  <div class="img">
-                    <img src="img/img3.jpg" alt="가구 이미지">
-                    <img src="img/img4.jpg" alt="가구 이미지" class="img2">
-                  </div>
-                </div>
-              </article>
-              <article class="text-box clearfix">
-                <svg width=100% height=160 viewBox="0 -50 900 200">
-                  <text x="18%" y="50%">About Furniture</text>
-                </svg>
-              </article>
-              <article class="banner"></article>
-              <article class="content cont2 clearfix">
-                <div class="left">
-                  <span>LAB</span>
-                  <h1>
-                    Leading<br/>
-                    the Trend
-                  </h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </article>
-              <article class="content cont3 clearfix">
-                <div class="left">
-                  <div class="img">
-                    <img src="img/img3.jpg" alt="가구 이미지">
-                    <img src="img/img4.jpg" alt="가구 이미지" class="img2">
-                  </div>
-                </div>
-                <div class="right">
-                  <span>MOTO</span>
-                  <h1>
-                    Beyond the<br/>
-                    Kitchen
-                  </h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate quia expedita non, quis cum repellendus sunt voluptates.</p>
-                </div>
-              </article>
-            </section>
-          </dd>
-  
-          <dt><a href="#">Members</a></dt>
-          <dd>
-            <div class="members">
-              <div class="sub_visual_members">
-                <div class="inner">
-                  <h1>
-                    We are a team.<br/>
-                    We <strong>love</strong> what we do. Simple as that.
-                  </h1>
-                  <div class="member-wrap clearfix"></div>
+      <dl id="aboutTab">
+        <dt class="on"><a href="#">Company</a></dt>
+        <dd class="on">
+          <section class="company">
+            <article class="content cont1 clearfix">
+              <div class="left">
+                <span>MOTO</span>
+                <h1>
+                  Beyond the<br />
+                  Kitchen
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate quia expedita non, quis cum
+                  repellendus sunt voluptates. Ratione voluptas non odit quisquam iure culpa qui, praesentium voluptates
+                  numquam</p>
+              </div>
+              <div class="right">
+                <div class="img">
+                  <img src="img/img3.jpg" alt="가구 이미지">
+                  <img src="img/img4.jpg" alt="가구 이미지" class="img2">
                 </div>
               </div>
+            </article>
+            <article class="text-box clearfix">
+              <svg width=100% height=160 viewBox="0 -50 900 200">
+                <text x="18%" y="50%">About Furniture</text>
+              </svg>
+            </article>
+            <article class="banner"></article>
+            <article class="content cont2 clearfix">
+              <div class="left">
+                <span>LAB</span>
+                <h1>
+                  Leading<br />
+                  the Trend
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </article>
+            <article class="content cont3 clearfix">
+              <div class="left">
+                <div class="img">
+                  <img src="img/img3.jpg" alt="가구 이미지">
+                  <img src="img/img4.jpg" alt="가구 이미지" class="img2">
+                </div>
+              </div>
+              <div class="right">
+                <span>MOTO</span>
+                <h1>
+                  Beyond the<br />
+                  Kitchen
+                </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate quia expedita non, quis cum
+                  repellendus sunt voluptates.</p>
+              </div>
+            </article>
+          </section>
+        </dd>
+
+        <dt><a href="#">Members</a></dt>
+        <dd>
+          <div class="members">
+            <div class="sub_visual_members">
+              <div class="inner">
+                <h1>
+                  We are a team.<br />
+                  We <strong>love</strong> what we do. Simple as that.
+                </h1>
+                <div class="member-wrap clearfix"></div>
+              </div>
             </div>
-          </dd>
-        </dl>
+          </div>
+        </dd>
+      </dl>
 
     </div>
   </section>
@@ -125,15 +153,15 @@
           <input type="text" placeholder="Your Email">
           <button class="subscribe">Subscribe</button>
           <p>
-            Be the first to find out about exclusive<br/>
+            Be the first to find out about exclusive<br />
             the latest lookbooks, and top
           </p>
         </div>
         <div class="cont">
           <h2>Information</h2>
           <address>
-            Phone: +82 10 7933 1330<br/>
-            Email: tnwjd_@naver.com<br/>
+            Phone: +82 10 7933 1330<br />
+            Email: tnwjd_@naver.com<br />
             Address: Ansan-si, Gyeonggi-do, Republic of Korea.
           </address>
         </div>
@@ -157,7 +185,7 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             <p>Lorem ipsum dolor sit.</p>
           </div>
-          
+
         </div>
       </div>
 
@@ -165,5 +193,5 @@
     </div>
   </footer>
 </body>
-</html>
 
+</html>

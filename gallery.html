@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +13,36 @@
   <script src="js/common.js" defer></script>
   <script src="js/gallery.js" defer></script>
 </head>
+
 <body>
+  <div class="bg"></div>
   <header id="header" class="header_sub">
     <div class="inner clearfix">
       <h1><a href="index.html">Furniture</a></h1>
-      <nav id="webNav">
+      <nav id="navWeb">
         <ul class="clearfix">
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Media</a>
+            <div class="sub">
+              <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <nav id="navMo">
+        <ul id="gnbMo" class="clearfix">
           <li><a href="about.html">About</a></li>
           <li>
             <a href="#">Media</a>
@@ -50,7 +75,7 @@
           <button class="btnSearch">검색</button>
         </article>
         <article>
-          <img src="img/loading.gif" class="loading"/>
+          <img src="img/loading.gif" class="loading" />
           <ul id="list" class="clearfix">
             <!-- <li>
               <div>
@@ -62,7 +87,7 @@
             </li> -->
           </ul>
         </article>
-        
+
       </div>
     </div>
   </section>
@@ -75,15 +100,15 @@
           <input type="text" placeholder="Your Email">
           <button class="subscribe">Subscribe</button>
           <p>
-            Be the first to find out about exclusive<br/>
+            Be the first to find out about exclusive<br />
             the latest lookbooks, and top
           </p>
         </div>
         <div class="cont">
           <h2>Information</h2>
           <address>
-            Phone: +82 10 7933 1330<br/>
-            Email: tnwjd_@naver.com<br/>
+            Phone: +82 10 7933 1330<br />
+            Email: tnwjd_@naver.com<br />
             Address: Ansan-si, Gyeonggi-do, Republic of Korea.
           </address>
         </div>
@@ -107,7 +132,7 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             <p>Lorem ipsum dolor sit.</p>
           </div>
-          
+
         </div>
       </div>
 
@@ -115,4 +140,5 @@
     </div>
   </footer>
 </body>
+
 </html>

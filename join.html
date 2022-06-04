@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,36 @@
   <script src="js/common.js" defer></script>
   <script src="js/join.js" defer></script>
 </head>
+
 <body>
+  <div class="bg"></div>
   <header id="header" class="header_sub">
     <div class="inner clearfix">
       <h1><a href="index.html">Furniture</a></h1>
-      <nav id="webNav">
+      <nav id="navWeb">
         <ul class="clearfix">
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="#">Media</a>
+            <div class="sub">
+              <ul>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="youtube.html">Youtube</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btnCall">
+        <span>메뉴호출</span>
+      </a>
+
+      <nav id="navMo">
+        <ul id="gnbMo" class="clearfix">
           <li><a href="about.html">About</a></li>
           <li>
             <a href="#">Media</a>
@@ -63,7 +88,14 @@
               </div>
               <div class="terms">
                 <div class="content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laudantium reprehenderit officia ipsum eligendi aperiam explicabo ratione amet quos laboriosam tempora dolores officiis porro temporibus tempore cupiditate maxime, impedit veniam nesciunt accusamus. Accusamus non quos natus nisi quam exercitationem commodi reiciendis saepe? Aliquam voluptates autem nemo modi consequatur ipsum culpa ullam tenetur obcaecati et ex quaerat, odit non itaque fugit vitae eius inventore exercitationem amet. Fugit sunt in ex aliquid, rem amet eius consequatur, minus fuga vitae totam cupiditate debitis nesciunt, excepturi itaque! Nostrum ea saepe aperiam! Architecto eligendi fuga error magni molestiae magnam natus? Maxime expedita natus pariatur eaque!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laudantium reprehenderit officia
+                    ipsum eligendi aperiam explicabo ratione amet quos laboriosam tempora dolores officiis porro
+                    temporibus tempore cupiditate maxime, impedit veniam nesciunt accusamus. Accusamus non quos natus
+                    nisi quam exercitationem commodi reiciendis saepe? Aliquam voluptates autem nemo modi consequatur
+                    ipsum culpa ullam tenetur obcaecati et ex quaerat, odit non itaque fugit vitae eius inventore
+                    exercitationem amet. Fugit sunt in ex aliquid, rem amet eius consequatur, minus fuga vitae totam
+                    cupiditate debitis nesciunt, excepturi itaque! Nostrum ea saepe aperiam! Architecto eligendi fuga
+                    error magni molestiae magnam natus? Maxime expedita natus pariatur eaque!</p>
                 </div>
               </div>
             </div>
@@ -75,13 +107,20 @@
               </div>
               <div class="terms">
                 <div class="content">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laudantium reprehenderit officia ipsum eligendi aperiam explicabo ratione amet quos laboriosam tempora dolores officiis porro temporibus tempore cupiditate maxime, impedit veniam nesciunt accusamus. Accusamus non quos natus nisi quam exercitationem commodi reiciendis saepe? Aliquam voluptates autem nemo modi consequatur ipsum culpa ullam tenetur obcaecati et ex quaerat, odit non itaque fugit vitae eius inventore exercitationem amet. Fugit sunt in ex aliquid, rem amet eius consequatur, minus fuga vitae totam cupiditate debitis nesciunt, excepturi itaque! Nostrum ea saepe aperiam! Architecto eligendi fuga error magni molestiae magnam natus? Maxime expedita natus pariatur eaque!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laudantium reprehenderit officia
+                    ipsum eligendi aperiam explicabo ratione amet quos laboriosam tempora dolores officiis porro
+                    temporibus tempore cupiditate maxime, impedit veniam nesciunt accusamus. Accusamus non quos natus
+                    nisi quam exercitationem commodi reiciendis saepe? Aliquam voluptates autem nemo modi consequatur
+                    ipsum culpa ullam tenetur obcaecati et ex quaerat, odit non itaque fugit vitae eius inventore
+                    exercitationem amet. Fugit sunt in ex aliquid, rem amet eius consequatur, minus fuga vitae totam
+                    cupiditate debitis nesciunt, excepturi itaque! Nostrum ea saepe aperiam! Architecto eligendi fuga
+                    error magni molestiae magnam natus? Maxime expedita natus pariatur eaque!</p>
                 </div>
               </div>
-            </div> 
+            </div>
 
           </div>
-          
+
           <div class="userInfo-wrap clearfix">
             <h2>회원가입 정보 입력</h2>
 
@@ -103,7 +142,8 @@
             </div>
             <div class="userInfo">
               <label for="user_year">생년월일</label>
-              <input type="number" name="user_year" id="user_year" placeholder="ex) 961130" maxlength="6" oninput="numberMaxLength(this);">
+              <input type="number" name="user_year" id="user_year" placeholder="ex) 961130" maxlength="6"
+                oninput="numberMaxLength(this);">
             </div>
             <div class="userInfo">
               <label for="user_email">이메일</label>
@@ -143,7 +183,7 @@
         </fieldset>
       </form>
     </div>
-    
+
   </section>
 
   <footer id="footer">
@@ -154,15 +194,15 @@
           <input type="text" placeholder="Your Email">
           <button class="subscribe">Subscribe</button>
           <p>
-            Be the first to find out about exclusive<br/>
+            Be the first to find out about exclusive<br />
             the latest lookbooks, and top
           </p>
         </div>
         <div class="cont">
           <h2>Information</h2>
           <address>
-            Phone: +82 10 7933 1330<br/>
-            Email: tnwjd_@naver.com<br/>
+            Phone: +82 10 7933 1330<br />
+            Email: tnwjd_@naver.com<br />
             Address: Ansan-si, Gyeonggi-do, Republic of Korea.
           </address>
         </div>
@@ -186,13 +226,14 @@
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
             <p>Lorem ipsum dolor sit.</p>
           </div>
-          
+
         </div>
       </div>
 
       <p>Copyright &copy; 2022 Furniture ALL Right reserved.</p>
     </div>
   </footer>
-  
+
 </body>
+
 </html>

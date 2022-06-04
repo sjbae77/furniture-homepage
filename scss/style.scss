@@ -35,6 +35,19 @@ body::-webkit-scrollbar-track {
   background-color: #fff;
 }
 
+.bg {
+  display: none;
+  z-index: 30;
+  position: fixed;
+  background: rgba($color: #000, $alpha: 0.6);
+  width: calc(100% - 270px);
+  height: 100vh;
+
+  &.on {
+    display: block;
+  }
+}
+
 #skipNav li a {
   z-index: 30;
   display: block;
@@ -84,7 +97,7 @@ body::-webkit-scrollbar-track {
     }
   }
 
-  #webNav {
+  #navWeb {
     float: right;
 
     ul {
@@ -153,6 +166,138 @@ body::-webkit-scrollbar-track {
     }
 
 
+  }
+
+  // 햄버거버튼
+  .btnCall {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      text-indent: -9999px;
+      transition: 0.5s;
+    }
+
+    &.on {
+      &::before {
+        top: 50%;
+        transform: rotate(45deg);
+        margin-top: -1px;
+        transition: top 0.5s, transform 0.5s 0.5s;
+      }
+      &::after {
+        bottom: 50%;
+        transform: rotate(-45deg);
+        margin-bottom: -1px;
+        transition: bottom 0.5s, transform 0.5s 0.5s;
+      }
+
+      span {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  }
+
+  /* 모바일 메뉴 */
+  #navMo {
+    display: none;
+    width: 270px;
+    height: calc(100vh - 70px);
+    background: #f3f3f3;
+    position: fixed;
+    top: 70px;
+    right: 270px;
+    padding-top: 30px;
+    z-index: 10;
+    transition: 0.5s;
+
+    > ul li {
+      border-bottom: 1px solid #ddd;
+      a {
+        position: relative;
+        display: block;
+        padding: 20px 25px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        color: #333;
+
+        i {
+          position: absolute;
+          top: 20px;
+          right: 25px;
+        }
+      }
+
+      &.subMenu {
+        a i {
+          transition: 0.5s;
+          transform: rotate(0);
+        }
+        ul {
+          display: none;
+
+          li {
+            padding-left: 20px;
+            border-bottom: 0;
+
+            a {
+              color: #555;
+            }
+          }
+        }
+
+        &.on {
+          a i {
+            transform: rotate(180deg);
+          }
+          ul {
+            display: block;
+          }
+        }
+      }
+    } 
+
+    &.on {
+      display: block;
+      right: 0;
+    }
   }
 
   &.main_hd {
@@ -407,6 +552,7 @@ body::-webkit-scrollbar-track {
       }
 
       .right {
+        margin-top: -10px;
         float: left;
         width: 75%;
         transform: translateX(100px);
@@ -763,7 +909,7 @@ body::-webkit-scrollbar-track {
         height: 100px;
         margin-right: 20px;
         margin-bottom: 30px;
-        padding: 20px 12px;
+        padding: 12px;
         transition: 0.5s;
 
         &:nth-child(3n) {
@@ -1472,29 +1618,40 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
   }
 
   #header {
-    height: 80px;
-    line-height: 80px;
+    position: fixed;
+    background-color: #fff;
 
     .inner {
+      height: 70px;
+      
       h1 {
         a {
           font-size: 25px;
         }
       }
 
-      #webNav {
+      #navWeb {
         display: none;
+      }
+
+      .btnCall {
+        display: block;
       }
     }
   }
 
   #visual {
+    height: 100vh;
     .swiper-slide .inner .text-wrap {
       left: 20px;
 
       p {
         font-size: 18px;
       }
+    }
+
+    .swiper-pagination {
+      top: 90px;
     }
 
     .swiper-pagination .swiper-pagination-bullet {
@@ -1558,6 +1715,7 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
   #service .inner .article-wrap {
     article {
       width: 100%;
+      padding: 20px 12px;
 
       .icon-wrap {
         text-align: center;
@@ -1702,6 +1860,7 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
   #service .inner .article-wrap {
     article {
       width: 100%;
+      height: auto;
 
       .icon-wrap {
         text-align: center;
@@ -1716,13 +1875,21 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
 
       .card {
         padding: 20px;
-        h2 {
-          margin-bottom: 10px;
-          font-size: 30px;
+
+        .title-wrap {
+          h2 {
+            margin-bottom: 10px;
+            font-size: 26px;
+          }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            margin-top: 30px;
+            font-size: 15px;
+          }
         }
-        p {
-          margin-top: 30px;
-        }
+        
       }
 
       .img {
