@@ -2603,6 +2603,14 @@ body::-webkit-scrollbar-track {
   }
 }
 @media screen and (max-width: 539px) {
+  .bg {
+    width: 0;
+  }
+
+  #header #navMo {
+    width: 100%;
+  }
+
   #visual .swiper-pagination .swiper-pagination-bullet {
     width: 50px;
   }

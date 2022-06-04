@@ -1806,6 +1806,14 @@ $footerTitleColor: rgba($color: #fff, $alpha: 0.8);
 }
 
 @media screen and (max-width:$mobile) {
+  .bg {
+    width: 0;
+  }
+  #header {
+    #navMo {
+      width: 100%;
+    }
+  }
   #visual {
     .swiper-pagination .swiper-pagination-bullet {
       width: 50px;

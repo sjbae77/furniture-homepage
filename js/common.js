@@ -6,6 +6,7 @@ const moNav = document.querySelector("#navMo");
 const bg = document.querySelector(".bg");
 
 const subMenu = document.querySelector(".subMenu");
+const body = document.querySelector("body");
 
 /* nav =================================================================*/
 webNav_lis.forEach((li) => {
@@ -57,6 +58,7 @@ btnCall.addEventListener("click", (e) => {
   btnCall.classList.toggle("on");
   moNav.classList.toggle("on");
   bg.classList.toggle("on");
+  body.classList.toggle("on");
 });
 
 subMenu.addEventListener("click", () => {
